@@ -1,6 +1,7 @@
 package PPersona.PMedico;
 
-public abstract class Medico implements IMedico {
+
+public abstract class Medico implements IMedico{
     /*
     *   Esta es la "Master Class" que controla a todos los medicos con sus respectivos decorados.
     *
@@ -10,7 +11,6 @@ public abstract class Medico implements IMedico {
     *
     *   **La variable "sueldo básico" es el sueldo base asignado a cada medico, el cual es modificado
     *       por cada decorado que se le haga a las clases hijas de medico
-    *
     *
     * */
     public static int matriculaMedicos=0;
