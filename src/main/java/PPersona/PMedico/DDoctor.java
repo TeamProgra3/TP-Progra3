@@ -2,7 +2,7 @@ package PPersona.PMedico;
 
 public class DDoctor extends DoctorDecorator{
 
-    public DDoctor(Medico medico) {
+    public DDoctor(IMedico medico) {
         super(medico);
     }
 
@@ -21,20 +21,13 @@ public class DDoctor extends DoctorDecorator{
 
     }
 
-    @Override
-    public void setNombre(String nombre) {
-        medico.setNombre(nombre);
-    }
 
     @Override
     public String getNombre() {
         return medico.getNombre();
     }
 
-    @Override
-    public void setApellido(String apellido) {
-        medico.setApellido(apellido);
-    }
+
 
     @Override
     public String getApellido() {

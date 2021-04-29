@@ -1,35 +1,24 @@
 package PPersona.PMedico;
 
 public class Clinico extends Medico{
-    private String nombre;
-    private String apellido;
-    private String DNI;
-    private String domicilio;
-    private String ciudad;
-    private String telefono;
-    public Clinico(){
+    public Clinico(String nombre,String apellido){
+        this.nombre=nombre;
+        this.apellido=apellido;
         iniciaMatricula();
     }
-
     @Override
     public void iniciaMatricula() {
         Medico.matriculaMedicos++;
         this.matricula=Medico.matriculaMedicos;
     }
-    @Override
-    public void setNombre(String nombre) {
-        this.nombre=nombre;
-    }
+
 
     @Override
     public String getNombre() {
         return this.nombre;
     }
 
-    @Override
-    public void setApellido(String apellido) {
-        this.apellido=apellido;
-    }
+
 
     @Override
     public String getApellido() {

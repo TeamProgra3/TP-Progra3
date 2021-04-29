@@ -3,17 +3,17 @@ package PPersona.PMedico;
 public class MedicoFactory {
 
 
-    private Medico setprofesion(String profesion){
+    private IMedico setprofesion(String profesion,String nombre,String apellido){
         if(profesion.equals("cirujano"))
-            return new Cirugia();
+            return new Cirugia(nombre,apellido);
         if(profesion.equals("clinico"))
-            return  new Clinico();
+            return  new Clinico(nombre,apellido);
         if (profesion.equals("pediatra"))
-            return new Pediatria();
+            return new Pediatria(nombre,apellido);
         return null;// hay que crear una clase con errores para tirar errores como haberme anotado a arquitectura :D
     }
 
-    private Medico setTipo(String tipo,Medico loDecorado){
+    private IMedico setTipo(String tipo,IMedico loDecorado){
         if(tipo.equals("permanente"))
             return new DPermanente(loDecorado);
         if(tipo.equals("residente"))
@@ -22,7 +22,7 @@ public class MedicoFactory {
 
     }
 
-    private Medico setEstudio(String estudio,Medico loDecorado){
+    private IMedico setEstudio(String estudio,IMedico loDecorado){
         if(estudio.equals("magister"))
             return new DMagister(loDecorado);
         if(estudio.equals("doctor"))
@@ -30,9 +30,9 @@ public class MedicoFactory {
         return null;
 
     }
-    public Medico getMedico(String profesion,String tipo,String estudio){
-        Medico aux;
-        aux= setprofesion(profesion);
+    public IMedico getMedico(String nombre,String apellido, String profesion,String tipo,String estudio){
+        IMedico aux;
+        aux= setprofesion(profesion,nombre,apellido);
         aux= setTipo(tipo,aux);
         return setEstudio(estudio,aux);
     }

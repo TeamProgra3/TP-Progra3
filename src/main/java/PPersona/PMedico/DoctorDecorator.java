@@ -1,12 +1,10 @@
 package PPersona.PMedico;
 
-public abstract class DoctorDecorator extends Medico {
+public abstract class DoctorDecorator implements IMedico {
 
 
-
-
-    protected Medico medico;
-    public DoctorDecorator(Medico medico){
+    protected IMedico medico;
+    public DoctorDecorator(IMedico medico){
         this.medico=medico;
 
     }

@@ -2,24 +2,18 @@ package PPersona.PMedico;
 
 public class DMagister extends DoctorDecorator{
 
-    public DMagister(Medico medico) {
+    public DMagister(IMedico medico) {
         super(medico);
     }
 
-    @Override
-    public void setNombre(String nombre) {
-        medico.setNombre(nombre);
-    }
+
 
     @Override
     public String getNombre() {
         return medico.getNombre();
     }
 
-    @Override
-    public void setApellido(String apellido) {
-        medico.setApellido(apellido);
-    }
+
 
     @Override
     public String getApellido() {

@@ -15,6 +15,12 @@ public abstract class Medico implements IMedico {
     * */
     public static int matriculaMedicos=0;
     protected int matricula;
+    protected String nombre;
+    protected String apellido;
+    protected String DNI;
+    protected String domicilio;
+    protected String ciudad;
+    protected String telefono;
 
 
 

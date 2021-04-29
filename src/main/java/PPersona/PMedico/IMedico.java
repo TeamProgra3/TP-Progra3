@@ -11,9 +11,8 @@ public interface IMedico {
 
     void iniciaMatricula();
 
-    void setNombre(String nombre);
+
     String getNombre();
-    void setApellido(String apellido);
     String getApellido();
     void setDNI(String DNI);
     String getDNI();
