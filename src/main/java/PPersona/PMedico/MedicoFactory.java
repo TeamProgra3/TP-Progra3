@@ -3,12 +3,12 @@ package PPersona.PMedico;
 public class MedicoFactory {
 
 
-    private Medico setprofecion(String profecion){
-        if(profecion.equals("cirujano"))
+    private Medico setprofesion(String profesion){
+        if(profesion.equals("cirujano"))
             return new Cirugia();
-        if(profecion.equals("clinico"))
+        if(profesion.equals("clinico"))
             return  new Clinico();
-        if (profecion.equals("pediatra"))
+        if (profesion.equals("pediatra"))
             return new Pediatria();
         return null;// hay que crear una clase con errores para tirar errores como haberme anotado a arquitectura :D
     }
@@ -30,9 +30,9 @@ public class MedicoFactory {
         return null;
 
     }
-    public Medico getMedico(String profecion,String tipo,String estudio){
+    public Medico getMedico(String profesion,String tipo,String estudio){
         Medico aux;
-        aux= setprofecion(profecion);
+        aux= setprofesion(profesion);
         aux= setTipo(tipo,aux);
         return setEstudio(estudio,aux);
     }
