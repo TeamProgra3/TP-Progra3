@@ -1,11 +1,71 @@
 package PPersona.PMedico;
 
 public class DMagister extends DoctorDecorator{
-    private float bonificacion= (float) 1.05;
 
     public DMagister(Medico medico) {
         super(medico);
     }
+
+    @Override
+    public void setNombre(String nombre) {
+        medico.setNombre(nombre);
+    }
+
+    @Override
+    public String getNombre() {
+        return medico.getNombre();
+    }
+
+    @Override
+    public void setApellido(String apellido) {
+        medico.setApellido(apellido);
+    }
+
+    @Override
+    public String getApellido() {
+        return medico.getApellido();
+    }
+
+    @Override
+    public void setDNI(String DNI) {
+        medico.setDNI(DNI);
+    }
+
+    @Override
+    public String getDNI() {
+        return medico.getDNI();
+    }
+
+    @Override
+    public void setDomicilio(String domicilio) {
+        medico.setDomicilio(domicilio);
+    }
+
+    @Override
+    public String getDomicilio() {
+        return medico.getDomicilio();
+    }
+
+    @Override
+    public void setCiudad(String ciudad) {
+        medico.setCiudad(ciudad);
+    }
+
+    @Override
+    public String getCiudad() {
+        return medico.getCiudad();
+    }
+
+    @Override
+    public void setTelefono(String telefono) {
+        medico.setTelefono(telefono);
+    }
+
+    @Override
+    public String getTelefono() {
+        return medico.getTelefono();
+    }
+
 
     @Override
     public String saludo() {
@@ -24,6 +84,7 @@ public class DMagister extends DoctorDecorator{
     }
     @Override
     public float getHonorario() {
-        return medico.getHonorario()*bonificacion;
+        float bonificacion = (float) 1.05;
+        return medico.getHonorario()* bonificacion;
     }
 }

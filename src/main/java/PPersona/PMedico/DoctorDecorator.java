@@ -1,11 +1,8 @@
 package PPersona.PMedico;
 
 public abstract class DoctorDecorator extends Medico {
-    /*
-    *   Aca susede la magic 
-    *
-    *
-    * */
+
+
 
 
     protected Medico medico;
