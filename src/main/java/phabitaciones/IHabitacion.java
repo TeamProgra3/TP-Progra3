@@ -1,4 +1,4 @@
-package PHabitaciones;
+package phabitaciones;
 
 import java.util.Date;
 

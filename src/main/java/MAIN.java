@@ -1,6 +1,6 @@
 
-import PException.FactoryException;
-import PPersona.PMedico.*;
+import pexception.FactoryException;
+import ppersona.pmedico.*;
 
 
 public class MAIN {

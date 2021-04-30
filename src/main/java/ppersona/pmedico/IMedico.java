@@ -1,4 +1,4 @@
-package PPersona.PMedico;
+package ppersona.pmedico;
 
 public interface IMedico {
     public static float sueldoBasico=2000;

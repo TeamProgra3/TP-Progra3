@@ -1,4 +1,4 @@
-package PPersona.PPacientes;
+package ppersona.ppacientes;
 
 public class Paciente {
     public static int historiasClinicasPacientes=0;

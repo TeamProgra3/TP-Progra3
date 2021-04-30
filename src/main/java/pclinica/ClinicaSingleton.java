@@ -1,4 +1,4 @@
-package PClinica;
+package pclinica;
 
 public class ClinicaSingleton {
     /** ACA HAY QUE PONER TODAS LAS VARIABLES DE LA CLINICA

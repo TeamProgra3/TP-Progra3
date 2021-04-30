@@ -1,4 +1,4 @@
-package PHabitaciones;
+package phabitaciones;
 
 public abstract class HabitacionDecorator implements IHabitacion {
     protected IHabitacion habitacion;

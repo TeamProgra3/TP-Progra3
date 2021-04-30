@@ -1,4 +1,4 @@
-package PPersona.PMedico;
+package ppersona.pmedico;
 
 public abstract class DoctorDecorator implements IMedico {
 

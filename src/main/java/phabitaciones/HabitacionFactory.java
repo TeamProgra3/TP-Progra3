@@ -1,6 +1,6 @@
-package PHabitaciones;
+package phabitaciones;
 
-import PException.FactoryHabitacionException;
+import pexception.FactoryHabitacionException;
 
 public class HabitacionFactory {
 

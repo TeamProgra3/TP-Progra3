@@ -1,4 +1,4 @@
-package PPersona.PMedico;
+package ppersona.pmedico;
 
 public class Cirugia extends Medico{
     public Cirugia(String nombre,String apellido){

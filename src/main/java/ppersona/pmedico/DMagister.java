@@ -1,15 +1,19 @@
-package PPersona.PMedico;
+package ppersona.pmedico;
 
-public class DPermanente extends DoctorDecorator{
-    public DPermanente(IMedico medico) {
+public class DMagister extends DoctorDecorator{
+
+    public DMagister(IMedico medico) {
         super(medico);
     }
+
 
 
     @Override
     public String getNombre() {
         return medico.getNombre();
     }
+
+
 
     @Override
     public String getApellido() {
@@ -59,12 +63,13 @@ public class DPermanente extends DoctorDecorator{
 
     @Override
     public String saludo() {
-        return super.saludo()+" Permanente";
+        return super.saludo()+" Magister";
     }
 
     @Override
     public int getMatricula() {
         return this.medico.getMatricula();
+
     }
 
     @Override
@@ -73,9 +78,7 @@ public class DPermanente extends DoctorDecorator{
     }
     @Override
     public float getHonorario() {
-        float bonificacion = (float) 1.10;
+        float bonificacion = (float) 1.05;
         return medico.getHonorario()* bonificacion;
     }
-
-
 }

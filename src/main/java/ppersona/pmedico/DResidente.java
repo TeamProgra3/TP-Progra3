@@ -1,4 +1,4 @@
-package PPersona.PMedico;
+package ppersona.pmedico;
 
 public class DResidente extends DoctorDecorator{
     public DResidente(IMedico medico) {

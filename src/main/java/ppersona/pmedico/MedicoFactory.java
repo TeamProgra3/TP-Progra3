@@ -1,6 +1,6 @@
-package PPersona.PMedico;
+package ppersona.pmedico;
 
-import PException.FactoryException;
+import pexception.FactoryException;
 
 public class MedicoFactory {
 

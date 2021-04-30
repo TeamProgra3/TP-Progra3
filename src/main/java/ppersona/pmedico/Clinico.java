@@ -1,10 +1,7 @@
-package PPersona.PMedico;
+package ppersona.pmedico;
 
-
-
-public class Pediatria extends Medico{
-
-    public Pediatria(String nombre,String apellido){
+public class Clinico extends Medico{
+    public Clinico(String nombre,String apellido){
         this.nombre=nombre;
         this.apellido=apellido;
         iniciaMatricula();
@@ -70,9 +67,10 @@ public class Pediatria extends Medico{
 
 
 
+
     @Override
     public String saludo() {
-        return super.saludo() + " Pediatra";
+        return super.saludo()+" Clinico";
     }
 
     @Override
@@ -80,10 +78,11 @@ public class Pediatria extends Medico{
         return this.matricula;
     }
 
+
     @Override
     public float getHonorario() {
 
-        float bonificacion = (float) 1.07;
+        float bonificacion = (float) 1.05;
         return super.getHonorario()* bonificacion;
     }
 }
