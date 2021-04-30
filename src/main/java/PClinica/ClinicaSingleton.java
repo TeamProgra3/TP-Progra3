@@ -13,13 +13,13 @@ public class ClinicaSingleton {
 	public ArrayList<Paciente> patio; //Muchos pacientes
 	
     public String nombre;
-    public String dirrecion;
+    public String direccion;
     public String telefono;
     public String ciudad;
     private static ClinicaSingleton instanciaClinica=null;
     private ClinicaSingleton(){
         this.nombre ="Clinica Facultad De Ingenieria";
-        this.dirrecion="Av.Siempreviva 742";
+        this.direccion="Av.Siempreviva 742";
         this.telefono="2231597536";
         this.ciudad="Mar Del Plata";
         this.salaPrivada = null;

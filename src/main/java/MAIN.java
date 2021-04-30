@@ -1,5 +1,6 @@
 
-import PException.FactoryException;
+
+import PException.FactoryMedicoException;
 import PPersona.PMedico.*;
 
 
@@ -15,7 +16,7 @@ public class MAIN {
         System.out.println("el medico 1 se llama: "+m1.getNombre()+" "+m1.getApellido());
 
 
-      } catch (FactoryException e) {
+      } catch (FactoryMedicoException e) {
         e.printStackTrace();
       }
 
@@ -30,7 +31,7 @@ public class MAIN {
         System.out.println(m2.getHonorario());
         System.out.println("el medico 2 se llama: "+m2.getNombre()+" "+m2.getApellido());
 
-      } catch (FactoryException e) {
+      } catch (FactoryMedicoException e) {
         e.printStackTrace();
       }
 
