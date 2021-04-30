@@ -9,12 +9,28 @@ public class ClinicaSingleton {
      *
      */
 	
-	public Paciente salaPrivada; //Una unico paciente
-	public ArrayList<Paciente> patio; //Muchos pacientes
+	private Paciente salaPrivada; //Un unico paciente
+	public Paciente getSalaPrivada() {
+		return salaPrivada;
+	}
+
+	public void setSalaPrivada(Paciente salaPrivada) {
+		this.salaPrivada = salaPrivada;
+	}
+
+	public ArrayList<Paciente> getPatio() {
+		return patio;
+	}
+	
+	public void addPatio(Paciente p) {
+		this.patio.add(p);
+	}
+
+	private ArrayList<Paciente> patio; //Muchos pacientes
 	
     public String nombre;
     public String direccion;
-    public String telefono;
+    public String telefono; 
     public String ciudad;
     private static ClinicaSingleton instanciaClinica=null;
     private ClinicaSingleton(){
@@ -32,18 +48,4 @@ public class ClinicaSingleton {
         return instanciaClinica;
     }
 
-    public void ingresarPaciente(Paciente ingresante) {
-    	if (salaPrivada == null)
-    		salaPrivada = ingresante;
-    	else { //Resolver conflicto Double Dispatch
-    		if (salaPrivada.tienePrioridad(ingresante)) { 
-    		//Verifica si el ingresante tiene prioridad frente a quien ya estaba de antes
-    		this.patio.add(salaPrivada);
-    		salaPrivada = ingresante;
-    		}
-    		else {
-    			this.patio.add(ingresante);
-    		}
-    	}
-    }
 }

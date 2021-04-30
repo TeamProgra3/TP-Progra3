@@ -1,7 +1,9 @@
 
 
 import PException.FactoryMedicoException;
-import PPersona.PMedico.*;
+import PPersona.PMedico.IMedico;
+import PPersona.PMedico.Medico;
+import PPersona.PMedico.MedicoFactory;
 
 
 public class MAIN {
@@ -36,7 +38,6 @@ public class MAIN {
       }
 
       System.out.println("matriculas totales despues del segundo medico="+ Medico.matriculaMedicos);
-
 
 
 
