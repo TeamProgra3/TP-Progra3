@@ -37,14 +37,9 @@ public class MedicoFactory {
     }
     public IMedico getMedico(String nombre,String apellido, String profesion,String tipo,String estudio) throws FactoryException{
         IMedico aux;
-       try {
-           aux= setprofesion(profesion,nombre,apellido);
-           aux= setTipo(tipo,aux);
-           return setEstudio(estudio,aux);
+        aux= setprofesion(profesion,nombre,apellido);
+        aux= setTipo(tipo,aux);
+        return setEstudio(estudio,aux);
 
-       }catch (FactoryException e){
-          throw e;
-
-       }
     }
 }

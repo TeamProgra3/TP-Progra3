@@ -8,7 +8,7 @@ public class MAIN {
       MedicoFactory medicoFactory=new MedicoFactory();
       IMedico m1= null;
       try {
-        m1 = medicoFactory.getMedico("juan","garcia","Apediatra","permanente","doctor");
+        m1 = medicoFactory.getMedico("juan","garcia","pediatra","permanente","doctor");
         System.out.println("Primer medico= "+m1.saludo());
         System.out.println("Matricula primer medico: "+m1.getMatricula());
         System.out.println(m1.getHonorario());
