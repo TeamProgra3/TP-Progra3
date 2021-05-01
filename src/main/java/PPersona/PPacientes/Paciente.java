@@ -62,6 +62,10 @@ public abstract class Paciente {
     	//consultas.add(new ConsultaPaciente(fecha,medico));
     }
 
+    /**Resuelve la prioridad en la sala privada usando Double Dispatch
+     * @param p: Paciente que se quiere verificar si tiene prioridad sobre el actual
+     * @return boolean: True si el parámetro tiene prioridad y debe ingresar
+     */
     public abstract boolean tienePrioridad(Paciente p);
 
 	protected abstract boolean prioridadMayor();

@@ -1,5 +1,14 @@
 package PPersona.PPacientes;
 
+
+/**
+ * @author Los Cafeteros
+ *  <br>
+ * Esta clase hereda de la clase abstract Paciente, su implementacion corresponde a uno de los grupos etarios <br>
+ * <b> Patrón aplicado: </b> Double Dispatch.
+ *
+ */
+
 public class Nino extends Paciente {
 
 	public Nino(String DNI, String nombre, String apellido) {

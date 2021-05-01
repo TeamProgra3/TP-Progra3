@@ -5,11 +5,10 @@ import PPersona.PPacientes.Paciente;
 
 /**
  *  @author Los Cafeteros <br>
- *  Este modulo se encarga de ingresar al paciente, sus responsabilidades son <br>
+ *  Este modulo se encarga de ingresar al paciente, sus responsabilidades son: <br>
  *  Asignar numero de orden al paciente <br>
  *  Resolver conflictos en la sala de espera privada y el patio <br>
  *  Cargar al paciente en los registros de la clinica <br>
- *
  */
 public class ModuloIngreso {
 	public void ingresarPaciente(Paciente ingresante) {
