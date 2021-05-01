@@ -20,7 +20,6 @@ public class ClinicaSingleton {
     private HashMap<Integer, IMedico> medicos=new HashMap<Integer, IMedico>();
     private HashMap<Integer, Habitacion> habitaciones =new HashMap<Integer, Habitacion>();
 
-
     public String nombre;
     public String direccion;
     public String telefono; 
@@ -55,6 +54,10 @@ public class ClinicaSingleton {
 
     public void addPatio(Paciente p) {
         this.patio.add(p);
+    }
+
+    public Paciente buscaPaciente(Integer num){
+        return this.pacientesRegistrados.get(num);
     }
 
 
