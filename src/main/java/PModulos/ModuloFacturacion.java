@@ -1,7 +1,8 @@
 package PModulos;
 
 import PClinica.ClinicaSingleton;
-import PHabitaciones.Habitacion;
+
+import PHabitaciones.IHabitacion;
 import PPersona.PMedico.Consulta;
 import PPersona.PMedico.IMedico;
 import PPersona.PPacientes.Paciente;
@@ -20,7 +21,7 @@ public class ModuloFacturacion {
         String factura="";
         float aux,total=0;
         IMedico medico;
-        Habitacion habitacion;
+        IHabitacion habitacion;
         int dias=0;//hay que ver como resolver los dias que esta internado
         Paciente paciente= clinica.buscaPaciente(dni);
         ArrayList<Consulta> consultas=paciente.getConsultas();

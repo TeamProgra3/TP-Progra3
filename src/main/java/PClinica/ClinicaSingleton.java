@@ -2,8 +2,8 @@ package PClinica;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import PHabitaciones.Habitacion;
+import PHabitaciones.IHabitacion;
 import PPersona.PMedico.IMedico;
 import PPersona.PPacientes.Paciente;
 
@@ -18,7 +18,7 @@ public class ClinicaSingleton {
 	private ArrayList<Paciente> patio; //Muchos pacientes
     private HashMap<Integer,Paciente> pacientesRegistrados =new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos=new HashMap<Integer, IMedico>();
-    private HashMap<Integer, Habitacion> habitaciones =new HashMap<Integer, Habitacion>();
+    private HashMap<Integer, IHabitacion> habitaciones =new HashMap<Integer, IHabitacion>();
 
     public String nombre;
     public String direccion;
@@ -64,9 +64,23 @@ public class ClinicaSingleton {
         return this.medicos.get(num);
     }
 
-    public Habitacion buscaHabitacion(Integer num){
+
+    public IHabitacion buscaHabitacion(Integer num){
         return  this.habitaciones.get(num);
     }
+
+    public void addMedicos(IMedico medico){
+        this.medicos.put(medico.getMatricula(),medico);
+
+    }
+
+    public void addHabitacion(Habitacion habitacion){
+        this.habitaciones.put(habitacion.getId(),habitacion);
+    }
+
+
+    }
+
 
 
 }
