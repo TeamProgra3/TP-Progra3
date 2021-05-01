@@ -8,7 +8,7 @@ package PPersona.PPacientes;
  *
  */
 public class Joven extends Paciente {
-	public Joven(String DNI, String nombre, String apellido) {
+	public Joven(int DNI, String nombre, String apellido) {
 		super(DNI, nombre, apellido);
 		// TODO Auto-generated constructor stub
 	}

@@ -56,6 +56,8 @@ public class ClinicaSingleton {
     public void addPatio(Paciente p) {
         this.patio.add(p);
     }
-
+    
+    public Paciente buscaPaciente(int DNI){ 
+    	return this.pacientesRegistrados.get(DNI);     }
 
 }

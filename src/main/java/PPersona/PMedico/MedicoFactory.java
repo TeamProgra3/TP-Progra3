@@ -18,7 +18,7 @@ public class MedicoFactory {
             return  new Clinico(nombre,apellido);
         if (profesion.equals("pediatra"))
             return new Pediatria(nombre,apellido);
-        String aux="Profecion "+profesion+" no se reconoce como opcion valida";
+        String aux="Profesion "+profesion+" no se reconoce como opcion valida";
         throw new FactoryMedicoException(aux);// hay que crear una clase con errores para tirar errores como haberme anotado a arquitectura :D
     }
 
