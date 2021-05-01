@@ -60,5 +60,10 @@ public class ClinicaSingleton {
         return this.pacientesRegistrados.get(num);
     }
 
+    public IMedico buscaMedico(Integer num){
+        return this.medicos.get(num);
+    }
+
+
 
 }
