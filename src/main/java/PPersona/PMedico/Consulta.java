@@ -26,7 +26,7 @@ public class Consulta implements Comparable<Consulta>{
 	}
 
 	public GregorianCalendar getFecha() {
-		return fecha;
+		return this.fecha;
 	}
 
 	@Override

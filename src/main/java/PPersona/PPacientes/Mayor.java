@@ -10,7 +10,7 @@ package PPersona.PPacientes;
 
 public class Mayor extends Paciente {
 
-	public Mayor(int DNI, String nombre, String apellido, String rangoEtario) {
+	public Mayor(int DNI, String nombre, String apellido) {
 		super(DNI, nombre, apellido);
 	}
 

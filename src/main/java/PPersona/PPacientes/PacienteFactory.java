@@ -6,9 +6,9 @@ public class PacienteFactory {
 		if (rangoEtario.equalsIgnoreCase("JOVEN"))
 			aux = new Joven(DNI, nombre, apellido);
 		else if (rangoEtario.equalsIgnoreCase("MAYOR"))
-			aux = new Joven(DNI, nombre, apellido);
+			aux = new Mayor(DNI, nombre, apellido);
 		else if (rangoEtario.equalsIgnoreCase("NINO"))
-			aux = new Joven(DNI, nombre, apellido);
+			aux = new Nino(DNI, nombre, apellido);
 		return aux; // Ver si se tira una excepcion en caso de null
 	}
 }
