@@ -59,8 +59,8 @@ public abstract class Paciente {
         return direccion;
     }
     
-    public void agregaConsulta(GregorianCalendar fecha,Medico medico) {
-    	//consultas.add(new ConsultaPaciente(fecha,medico));
+    public void agregaConsulta(GregorianCalendar fecha,int matricula) {
+    	consultas.add(new Consulta(fecha,matricula));
     }
     public ArrayList<Consulta> getConsultas(){
         return this.consultas;

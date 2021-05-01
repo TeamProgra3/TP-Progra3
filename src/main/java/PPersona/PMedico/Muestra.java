@@ -1,10 +1,9 @@
 package PPersona.PMedico;
 
-import PPersona.PPacientes.Paciente;
-
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import PClinica.ClinicaSingleton;
 
 /**
  * @author Los cafeteros
@@ -12,41 +11,64 @@ import java.util.Iterator;
  */
 public class Muestra {
 	
-	private int totalConsultas;
 	private ArrayList<MuestraAuxiliar> aux = new ArrayList<MuestraAuxiliar>();
 
+	
 	private class MuestraAuxiliar {
-		public Paciente paciente;
+		public int id;
 		public int cont;
-
-
-
-		public MuestraAuxiliar(Paciente paciente, int cont) {
+		public MuestraAuxiliar(int id, int cont) {
 			super();
-			this.paciente = paciente;
+			this.id = id;
 			this.cont = cont;
 		}
-
-		public Paciente getPaciente() {
-			return paciente;
+		public int getPaciente() {
+			return id;
 		}
-
-
-
 		public int getCont() {
 			return cont;
 		}
-
 		public void incrementa() {
 			this.cont++;
 		}
 
 	}
 
+
+	public void reporteActividadDiaria2(int matricula,GregorianCalendar desde,GregorianCalendar hasta) {
+		MuestraAuxiliar aux1;
+		ClinicaSingleton clinica=ClinicaSingleton.getInstance();
+		
+	    //private HashMap<Integer,Paciente> pacientesRegistrados =new HashMap<Integer, Paciente>();
+	    //private HashMap<Integer, IMedico> medicos=new HashMap<Integer, IMedico>();
+		
+		Iterator<Consulta> it=clinica.buscaMedico(matricula).getConsultas().iterator();
+		
+		while(it.hasNext() && it.next().getFecha().compareTo(desde)<=0)
+			it.next();
+		if(it.next().getFecha().compareTo(desde)>=0) {
+			while(it.hasNext() && (it.next().getFecha().compareTo(hasta))<=0) {
+				
+				if(aux.size()==0 || !aux.contains(it.next().getId())) //si no existe el paciente en la lista aux o esta vacia
+					aux.add(new MuestraAuxiliar(it.next().getId(),0));
+				else {
+					aux1=aux.get( aux.indexOf(it.next().getId()));
+					aux1.incrementa();
+				}
+				System.out.println("Paciente:"+ clinica.buscaPaciente(it.next().getId()).getNombre() +"Fecha:"+it.next().getFecha() );	
+			}
+			Iterator<MuestraAuxiliar> it2=aux.iterator();
+			while(it2.hasNext()) {
+				System.out.println("Paciente:"+clinica.buscaPaciente(it2.next().getPaciente()).getNombre()+" fue atendido "+it2.next().getCont()+"veces" );
+			}
+		}	
+	}
 	
 	
+
 	
-	/*public void reporteActividadDiaria(Medico medico,GregorianCalendar desde,GregorianCalendar hasta) {
+	/*
+	public void reporteActividadDiaria(Medico medico,GregorianCalendar desde,GregorianCalendar hasta) {
 		totalConsultas=0;
 		MuestraAuxiliar aux1;
 		
@@ -55,7 +77,6 @@ public class Muestra {
 		while(it.hasNext() && it.next().getFecha().compareTo(desde)<=0)
 			it.next();
 		if(it.next().getFecha().compareTo(desde)>=0) {
-			//System.out.println("Listado de pacientes atendidos por:"+medico.apellido);
 			while(it.hasNext() && (it.next().getFecha().compareTo(hasta))<=0) {
 				
 				
@@ -68,20 +89,15 @@ public class Muestra {
 				System.out.println("Paciente:"+it.next().getPaciente().getApellido()+"Fecha:"+it.next().getFecha() );
 				totalConsultas++;	
 			}
-			Listado();
+			Iterator<MuestraAuxiliar> it2=aux.iterator();
+			while(it2.hasNext()) {
+				System.out.println("Paciente:"+it2.next().getPaciente().getApellido()+" fue atendido "+it2.next().getCont()+"veces" );
+			}
+			
+			
 		}
 		System.out.println("Total de pacientes en el periodo:"+totalConsultas);
 	}
-	
-	private void Listado() {
-		
-		Iterator<MuestraAuxiliar> it=aux.iterator();
-		while(it.hasNext()) {
-			System.out.println("Paciente:"+it.next().getPaciente().getApellido()+" fue atendido "+it.next().getCont()+"veces" );
-		}
-		
-	}
-		
 	
 */
 }
