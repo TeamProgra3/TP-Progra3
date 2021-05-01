@@ -1,2 +1,2 @@
-package PException;public class IngresoPacienteHabitacionException {
+package PException;public class IngresoPacienteHabitacionException extends Exception{
 }

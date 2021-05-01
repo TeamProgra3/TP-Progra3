@@ -1,5 +1,7 @@
 package PPersona.PMedico;
 
+import PPersona.PPacientes.Paciente;
+
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
@@ -12,12 +14,39 @@ public class Muestra {
 	
 	private int totalConsultas;
 	private ArrayList<MuestraAuxiliar> aux = new ArrayList<MuestraAuxiliar>();
-	 
+
+	private class MuestraAuxiliar {
+		public Paciente paciente;
+		public int cont;
+
+
+
+		public MuestraAuxiliar(Paciente paciente, int cont) {
+			super();
+			this.paciente = paciente;
+			this.cont = cont;
+		}
+
+		public Paciente getPaciente() {
+			return paciente;
+		}
+
+
+
+		public int getCont() {
+			return cont;
+		}
+
+		public void incrementa() {
+			this.cont++;
+		}
+
+	}
 
 	
 	
 	
-	public void reporteActividadDiaria(Medico medico,GregorianCalendar desde,GregorianCalendar hasta) {
+	/*public void reporteActividadDiaria(Medico medico,GregorianCalendar desde,GregorianCalendar hasta) {
 		totalConsultas=0;
 		MuestraAuxiliar aux1;
 		
@@ -54,5 +83,5 @@ public class Muestra {
 	}
 		
 	
-
+*/
 }

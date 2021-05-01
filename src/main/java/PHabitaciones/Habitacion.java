@@ -1,9 +1,12 @@
 package PHabitaciones;
 
-import java.util.Date;
+
 
 public class Habitacion implements IHabitacion{
     public static int numeroHabitaciones=0;
+    /*
+    *   Capacidad maxima???
+    * */
     protected int numeroHabitacion;
     protected float costoHabitacion=100;
     public Habitacion(){

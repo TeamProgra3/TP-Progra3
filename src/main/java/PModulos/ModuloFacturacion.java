@@ -1,2 +1,3 @@
-package PModulos;public class ModuloFacturacion {
+package PModulos;
+public class ModuloFacturacion {
 }

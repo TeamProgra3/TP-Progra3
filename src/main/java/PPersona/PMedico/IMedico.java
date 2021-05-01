@@ -27,6 +27,6 @@ public interface IMedico {
     String getCiudad();
     void setTelefono(String telefono);
     String getTelefono();
-	void atenderPaciente(GregorianCalendar fecha, Paciente paciente);
+	void atenderPaciente(GregorianCalendar fecha, int historiaClinica);
 
 }

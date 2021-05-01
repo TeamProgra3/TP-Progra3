@@ -1,7 +1,10 @@
 package PClinica;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import PHabitaciones.Habitacion;
+import PPersona.PMedico.IMedico;
 import PPersona.PPacientes.Paciente;
 
 /**
@@ -10,27 +13,14 @@ import PPersona.PPacientes.Paciente;
  * <b> Patrón aplicado: </b> Singleton
  *
  */
-
 public class ClinicaSingleton { 
 	private Paciente salaPrivada; //Un unico paciente
-	public Paciente getSalaPrivada() {
-		return salaPrivada;
-	}
-
-	public void setSalaPrivada(Paciente salaPrivada) {
-		this.salaPrivada = salaPrivada;
-	}
-
-	public ArrayList<Paciente> getPatio() {
-		return patio;
-	}
-	
-	public void addPatio(Paciente p) {
-		this.patio.add(p);
-	}
-
 	private ArrayList<Paciente> patio; //Muchos pacientes
-	
+    private HashMap<Integer,Paciente> pacientesRegistrados =new HashMap<Integer, Paciente>();
+    private HashMap<Integer, IMedico> medicos=new HashMap<Integer, IMedico>();
+    private HashMap<Integer, Habitacion> habitaciones =new HashMap<Integer, Habitacion>();
+
+
     public String nombre;
     public String direccion;
     public String telefono; 
@@ -50,5 +40,22 @@ public class ClinicaSingleton {
             instanciaClinica=new ClinicaSingleton();
         return instanciaClinica;
     }
+
+    public Paciente getSalaPrivada() {
+        return salaPrivada;
+    }
+
+    public void setSalaPrivada(Paciente salaPrivada) {
+        this.salaPrivada = salaPrivada;
+    }
+
+    public ArrayList<Paciente> getPatio() {
+        return patio;
+    }
+
+    public void addPatio(Paciente p) {
+        this.patio.add(p);
+    }
+
 
 }

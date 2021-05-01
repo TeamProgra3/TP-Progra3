@@ -86,8 +86,8 @@ public class DDoctor extends DoctorDecorator{
     }
 
 	@Override
-	public void atenderPaciente(GregorianCalendar fecha, Paciente paciente) {
-	    this.medico.atenderPaciente(fecha, paciente);
+	public void atenderPaciente(GregorianCalendar fecha, int historiaClinica) {
+	    this.medico.atenderPaciente(fecha, historiaClinica);
 	}
 
     

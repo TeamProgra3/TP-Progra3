@@ -1,2 +1,5 @@
-package PModulos;public class Factura {
+package PModulos;
+public class Factura {
+
+
 }

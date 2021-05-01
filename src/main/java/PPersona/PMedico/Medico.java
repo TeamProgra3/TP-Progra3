@@ -16,6 +16,8 @@ public abstract class Medico implements IMedico{
     *   **La variable "sueldo básico" es el sueldo base asignado a cada medico, el cual es modificado
     *       por cada decorado que se le haga a las clases hijas de medico
     *
+    *
+    *
     * */
     public static int matriculaMedicos=0;
     protected int matricula;
@@ -54,26 +56,8 @@ public abstract class Medico implements IMedico{
     }
     
 	@Override
-    public void atenderPaciente(GregorianCalendar fecha,Paciente paciente) {
-		/*
-		Iterator<Consulta> it=consultas.iterator();
-				
-		while(it.hasNext() && paciente.getHistoriaClinica()!=it.next().getID() ) {
-			it.next();
-		}
-		if(paciente.getHistoriaClinica()==it.next().getID()) {
-			it.next().incremento();
-			consultas.add( new Consulta(fecha,paciente.getHistoriaClinica())   );	
-		}
-		else
-		*/
-			consultas.add( new Consulta(fecha,paciente));	
-			/*
-			si ya lo atendi
-				sumo +1 al array para saber cuantas veces este medico atendio al paciente
-			sino
-				lo creo
-			*/  	
+    public void atenderPaciente(GregorianCalendar fecha,int historiaClinica) {
+			consultas.add( new Consulta(fecha,historiaClinica));
     }
 		
 }

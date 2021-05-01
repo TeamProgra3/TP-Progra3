@@ -10,16 +10,16 @@ import PPersona.PPacientes.Paciente;
  */
 public class Consulta {
 	private GregorianCalendar fecha;
-	private Paciente paciente;
+	private int id;
 		
-	public Consulta(GregorianCalendar fecha, Paciente paciente) {
+	public Consulta(GregorianCalendar fecha, int id) {
 		super();
 		this.fecha = fecha;
-		this.paciente=paciente;
+		this.id=id;
 	}
 
-	public Paciente getPaciente() {
-		return this.paciente;
+	public int getId() {
+		return this.id;
 	}
 
 	public GregorianCalendar getFecha() {

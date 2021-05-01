@@ -11,6 +11,13 @@ import PPersona.PPacientes.Paciente;
  *  Cargar al paciente en los registros de la clinica <br>
  */
 public class ModuloIngreso {
+
+	/*
+	*
+	*
+	* */
+
+
 	public void ingresarPaciente(Paciente ingresante) {
 		ClinicaSingleton clinica = ClinicaSingleton.getInstance();
     	if (clinica.getSalaPrivada() == null)

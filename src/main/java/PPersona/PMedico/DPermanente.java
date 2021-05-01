@@ -80,11 +80,10 @@ public class DPermanente extends DoctorDecorator{
         float bonificacion = (float) 1.10;
         return medico.getHonorario()* bonificacion;
     }
-    
     @Override
-	public void atenderPaciente(GregorianCalendar fecha, Paciente paciente) {
-	    this.medico.atenderPaciente(fecha, paciente);
-	}
+    public void atenderPaciente(GregorianCalendar fecha, int historiaClinica) {
+        this.medico.atenderPaciente(fecha, historiaClinica);
+    }
 
 
 }
