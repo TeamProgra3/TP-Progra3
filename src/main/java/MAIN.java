@@ -4,14 +4,19 @@ import PException.FactoryMedicoException;
 import PPersona.PMedico.IMedico;
 import PPersona.PMedico.Medico;
 import PPersona.PMedico.MedicoFactory;
+import PPersona.PMedico.Muestra;
 import PPersona.PPacientes.Joven;
 import PPersona.PPacientes.Paciente;
+import PPersona.PPacientes.PacienteFactory;
 
 import java.util.GregorianCalendar;
+
+import PClinica.ClinicaSingleton;
 
 
 public class MAIN {
     public static void main(String[] args) {
+      ClinicaSingleton clinica=ClinicaSingleton.getInstance();
       MedicoFactory medicoFactory=new MedicoFactory();
       IMedico m1= null;
       try {
@@ -44,8 +49,17 @@ public class MAIN {
       System.out.println("matriculas totales despues del segundo medico="+ Medico.matriculaMedicos);
 
       
-     
+      //Muestra test
+      PacienteFactory pacienteFactory=new PacienteFactory();
+      Paciente p1=pacienteFactory.getPaciente("Jamon", "Maletta", 42987432, "Joven");
+      Paciente p2=pacienteFactory.getPaciente("Guillermo", "Lazurri", 20987432, "Mayor");
+      Paciente p3=pacienteFactory.getPaciente("Pablo", "Montini", 1, "Mayor");
+      m1.atenderPaciente(new GregorianCalendar(2021,4,4), 1);
+      m1.atenderPaciente(new GregorianCalendar(2021,3,3), 2);
+      m1.atenderPaciente(new GregorianCalendar(2021,2,2), 1);
+      clinica.addMedicos(m1);
+      Muestra prueba=new Muestra();
+      prueba.reporteActividadDiaria2(1, new GregorianCalendar(2020,3,3), new GregorianCalendar(2021,5,5));
       
-
     }
 }

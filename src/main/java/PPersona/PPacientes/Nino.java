@@ -11,7 +11,7 @@ package PPersona.PPacientes;
 
 public class Nino extends Paciente {
 
-	public Nino(String DNI, String nombre, String apellido) {
+	public Nino(int DNI, String nombre, String apellido) {
 		super(DNI, nombre, apellido);
 	}
 

@@ -9,8 +9,8 @@ import PPersona.PPacientes.Paciente;
 
 /**
  * @author Los Cafeteros <br>
- * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones)
- * <b> Patrón aplicado: </b> Singleton
+ * Esta clase contiene en diferentes colecciones informacion (mÃ©dicos, pacientes atendidos, habitaciones)
+ * <b> PatrÃ³n aplicado: </b> Singleton
  *
  */
 public class ClinicaSingleton { 
@@ -56,13 +56,16 @@ public class ClinicaSingleton {
         this.patio.add(p);
     }
 
-    public Paciente buscaPaciente(Integer num){
-        return this.pacientesRegistrados.get(num);
-    }
+    
+    public Paciente buscaPaciente(int DNI){ 
+    	return this.pacientesRegistrados.get(DNI);     }
 
     public IMedico buscaMedico(Integer num){
         return this.medicos.get(num);
     }
+
+    public void addMedicos(IMedico medico){
+        this.medicos.put(medico.getMatricula(),medico);
 
 
     public IHabitacion buscaHabitacion(Integer num){
@@ -80,7 +83,4 @@ public class ClinicaSingleton {
 
 
     }
-
-
-
 }
