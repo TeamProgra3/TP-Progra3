@@ -9,8 +9,9 @@ import PPersona.PMedico.Medico;
 public abstract class Paciente {
     public static int historiasClinicasPacientes=0;
 
-    private String DNI;
+    private int DNI;
     private int historiaClinica;
+    private int nroOrden;
     private String nombre;
     private String apellido;
     private String telefono;
@@ -19,7 +20,7 @@ public abstract class Paciente {
     private ArrayList<Consulta> consultas = new ArrayList<Consulta>();
     private ArrayList<Consulta> habitaciones= new ArrayList<Consulta>();
 
-    public Paciente(String DNI, String nombre, String apellido) {
+    public Paciente(int DNI, String nombre, String apellido) {
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -35,7 +36,7 @@ public abstract class Paciente {
         this.direccion = direccion;
     }
 
-    public String getDNI() {
+    public int getDNI() {
         return DNI;
     }
 
@@ -62,6 +63,15 @@ public abstract class Paciente {
     public void agregaConsulta(GregorianCalendar fecha,Medico medico) {
     	//consultas.add(new ConsultaPaciente(fecha,medico));
     }
+
+    public int getNroOrden() {
+		return nroOrden;
+	}
+
+	public void setNroOrden(int nroOrden) {
+		this.nroOrden = nroOrden;
+	}
+
     public ArrayList<Consulta> getConsultas(){
         return this.consultas;
     }
@@ -69,8 +79,9 @@ public abstract class Paciente {
         return this.habitaciones;
     }
     /**Resuelve la prioridad en la sala privada usando Double Dispatch
+
      * @param p: Paciente que se quiere verificar si tiene prioridad sobre el actual
-     * @return boolean: True si el par·metro tiene prioridad y debe ingresar
+     * @return boolean: True si el par√°metro tiene prioridad y debe ingresar
      */
     public abstract boolean tienePrioridad(Paciente p);
 
