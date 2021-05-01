@@ -1,5 +1,9 @@
 package PPersona.PMedico;
 
+import java.util.GregorianCalendar;
+
+import PPersona.PPacientes.Paciente;
+
 public class DResidente extends DoctorDecorator{
     public DResidente(IMedico medico) {
         super(medico);
@@ -76,4 +80,9 @@ public class DResidente extends DoctorDecorator{
         float bonificacion = (float) 1.05;
         return medico.getHonorario()* bonificacion;
     }
+    
+    @Override
+	public void atenderPaciente(GregorianCalendar fecha, Paciente paciente) {
+	    this.medico.atenderPaciente(fecha, paciente);
+	}
 }

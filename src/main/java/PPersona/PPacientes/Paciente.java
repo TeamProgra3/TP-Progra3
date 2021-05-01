@@ -1,5 +1,12 @@
 package PPersona.PPacientes;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
+import PPersona.PMedico.Consulta;
+import PPersona.PMedico.ConsultaPaciente;
+import PPersona.PMedico.Medico;
+
 public abstract class Paciente {
     public static int historiasClinicasPacientes=0;
 
@@ -9,6 +16,7 @@ public abstract class Paciente {
     private String apellido;
     private String telefono;
     private String direccion;
+    private ArrayList<Consulta> consultas = new ArrayList<Consulta>();
 
     public Paciente(String DNI, String nombre, String apellido) {
         this.DNI = DNI;
@@ -48,6 +56,10 @@ public abstract class Paciente {
 
     public String getDireccion() {
         return direccion;
+    }
+    
+    public void agregaConsulta(GregorianCalendar fecha,Medico medico) {
+    	//consultas.add(new ConsultaPaciente(fecha,medico));
     }
 
     public abstract boolean tienePrioridad(Paciente p);

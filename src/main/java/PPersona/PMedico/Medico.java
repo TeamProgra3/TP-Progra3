@@ -1,5 +1,9 @@
 package PPersona.PMedico;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+import PPersona.PPacientes.Paciente;
 
 public abstract class Medico implements IMedico{
     /*
@@ -21,6 +25,7 @@ public abstract class Medico implements IMedico{
     protected String domicilio;
     protected String ciudad;
     protected String telefono;
+    protected ArrayList<Consulta> consultas = new ArrayList<Consulta>();
 
 
 
@@ -47,5 +52,28 @@ public abstract class Medico implements IMedico{
     @Override
     public void iniciaMatricula() {
     }
-
+    
+	@Override
+    public void atenderPaciente(GregorianCalendar fecha,Paciente paciente) {
+		/*
+		Iterator<Consulta> it=consultas.iterator();
+				
+		while(it.hasNext() && paciente.getHistoriaClinica()!=it.next().getID() ) {
+			it.next();
+		}
+		if(paciente.getHistoriaClinica()==it.next().getID()) {
+			it.next().incremento();
+			consultas.add( new Consulta(fecha,paciente.getHistoriaClinica())   );	
+		}
+		else
+		*/
+			consultas.add( new Consulta(fecha,paciente));	
+			/*
+			si ya lo atendi
+				sumo +1 al array para saber cuantas veces este medico atendio al paciente
+			sino
+				lo creo
+			*/  	
+    }
+		
 }

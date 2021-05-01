@@ -1,5 +1,9 @@
 package PPersona.PMedico;
 
+import java.util.GregorianCalendar;
+
+import PPersona.PPacientes.Paciente;
+
 public interface IMedico {
     public static float sueldoBasico=2000;
 
@@ -10,6 +14,7 @@ public interface IMedico {
     int getMatricula();
 
     void iniciaMatricula();
+    
 
 
     String getNombre();
@@ -22,5 +27,6 @@ public interface IMedico {
     String getCiudad();
     void setTelefono(String telefono);
     String getTelefono();
+	void atenderPaciente(GregorianCalendar fecha, Paciente paciente);
 
 }

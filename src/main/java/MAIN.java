@@ -4,6 +4,10 @@ import PException.FactoryMedicoException;
 import PPersona.PMedico.IMedico;
 import PPersona.PMedico.Medico;
 import PPersona.PMedico.MedicoFactory;
+import PPersona.PPacientes.Joven;
+import PPersona.PPacientes.Paciente;
+
+import java.util.GregorianCalendar;
 
 
 public class MAIN {
@@ -39,7 +43,9 @@ public class MAIN {
 
       System.out.println("matriculas totales despues del segundo medico="+ Medico.matriculaMedicos);
 
-
+      
+     
+      
 
     }
 }
