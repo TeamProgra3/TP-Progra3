@@ -5,7 +5,6 @@ import PPersona.PMedico.IMedico;
 import PPersona.PMedico.Medico;
 import PPersona.PMedico.MedicoFactory;
 import PPersona.PMedico.Muestra;
-import PPersona.PPacientes.Joven;
 import PPersona.PPacientes.Paciente;
 import PPersona.PPacientes.PacienteFactory;
 

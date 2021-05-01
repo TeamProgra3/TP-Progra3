@@ -73,10 +73,6 @@ public class ClinicaSingleton {
     public IHabitacion buscaHabitacion(Integer num){
         return  this.habitaciones.get(num);
     }
-
-    public void addMedicos(IMedico medico){
-        this.medicos.put(medico.getMatricula(),medico);
-    }
     
     public void addHabitacion(Habitacion habitacion){
         this.habitaciones.put(habitacion.getId(),habitacion);
