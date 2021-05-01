@@ -13,7 +13,7 @@ import PPersona.PPacientes.PacienteFactory;
  *         Cargar al paciente en los registros de la clinica <br>
  */
 public class ModuloIngreso {
-	private static int nroOrden;
+	private static int nroOrden=0;
 
 	public void ingresarPaciente(String nombre, String apellido, int DNI, String rangoEtario) {
 

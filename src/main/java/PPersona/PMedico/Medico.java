@@ -59,5 +59,10 @@ public abstract class Medico implements IMedico{
     public void atenderPaciente(GregorianCalendar fecha,int historiaClinica) {
 			consultas.add( new Consulta(fecha,historiaClinica));
     }
+	
+    @Override
+    public ArrayList<Consulta> getConsultas() {
+        return this.consultas;
+    }
 		
 }

@@ -64,4 +64,8 @@ public class ClinicaSingleton {
         return this.medicos.get(num);
     }
 
+    public void addMedicos(IMedico medico){
+        this.medicos.put(medico.getMatricula(),medico);
+
+    }
 }
