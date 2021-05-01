@@ -13,4 +13,9 @@ public class DHabitacionCompartida extends HabitacionDecorator{
     public float getCosto(int dias) {
         return habitacion.getCosto(dias)+costoHabitacion*dias;
     }
+    @Override
+    public int getId() {
+        return habitacion.getId();
+    }
 }
+
