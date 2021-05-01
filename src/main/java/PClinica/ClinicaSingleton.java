@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 import PPersona.PPacientes.Paciente;
 
-public class ClinicaSingleton {
-    /** ACA HAY QUE PONER TODAS LAS VARIABLES DE LA CLINICA
-     *
-     */
-	
+/**
+ * @author Los Cafeteros <br>
+ * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones)
+ * <b> Patrón aplicado: </b> Singleton
+ *
+ */
+
+public class ClinicaSingleton { 
 	private Paciente salaPrivada; //Un unico paciente
 	public Paciente getSalaPrivada() {
 		return salaPrivada;

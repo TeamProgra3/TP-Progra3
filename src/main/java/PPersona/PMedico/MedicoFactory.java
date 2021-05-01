@@ -3,6 +3,11 @@ package PPersona.PMedico;
 
 import PException.FactoryMedicoException;
 
+/**
+ * @author Los Cafeteros <br>
+ * Clase que aplica el patrón Factory para la creación de nuevas instancias de médicos
+ * <b>Patrón aplicado:</b> Factory
+ */
 public class MedicoFactory {
 
 
