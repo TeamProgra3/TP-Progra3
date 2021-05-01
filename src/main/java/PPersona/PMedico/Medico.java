@@ -23,7 +23,7 @@ public abstract class Medico implements IMedico{
     protected int matricula;
     protected String nombre;
     protected String apellido;
-    protected String DNI;
+    protected int DNI;
     protected String domicilio;
     protected String ciudad;
     protected String telefono;

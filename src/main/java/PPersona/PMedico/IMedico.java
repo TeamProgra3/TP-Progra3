@@ -19,8 +19,8 @@ public interface IMedico {
 
     String getNombre();
     String getApellido();
-    void setDNI(String DNI);
-    String getDNI();
+    void setDNI(int DNI);
+    int getDNI();
     void setDomicilio(String domicilio);
     String getDomicilio();
     void setCiudad(String ciudad);

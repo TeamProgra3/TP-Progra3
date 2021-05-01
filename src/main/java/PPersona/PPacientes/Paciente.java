@@ -62,7 +62,12 @@ public abstract class Paciente {
     public void agregaConsulta(GregorianCalendar fecha,Medico medico) {
     	//consultas.add(new ConsultaPaciente(fecha,medico));
     }
-
+    public ArrayList<Consulta> getConsultas(){
+        return this.consultas;
+    }
+    public ArrayList<Consulta> getHabitaciones(){
+        return this.habitaciones;
+    }
     /**Resuelve la prioridad en la sala privada usando Double Dispatch
      * @param p: Paciente que se quiere verificar si tiene prioridad sobre el actual
      * @return boolean: True si el parámetro tiene prioridad y debe ingresar

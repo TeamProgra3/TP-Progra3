@@ -39,12 +39,12 @@ public class DDoctor extends DoctorDecorator{
     }
 
     @Override
-    public void setDNI(String DNI) {
+    public void setDNI(int DNI) {
         medico.setDNI(DNI);
     }
 
     @Override
-    public String getDNI() {
+    public int getDNI() {
         return medico.getDNI();
     }
 

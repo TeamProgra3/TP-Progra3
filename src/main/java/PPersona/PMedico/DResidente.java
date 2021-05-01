@@ -2,8 +2,6 @@ package PPersona.PMedico;
 
 import java.util.GregorianCalendar;
 
-import PPersona.PPacientes.Paciente;
-
 public class DResidente extends DoctorDecorator{
     public DResidente(IMedico medico) {
         super(medico);
@@ -20,12 +18,12 @@ public class DResidente extends DoctorDecorator{
     }
 
     @Override
-    public void setDNI(String DNI) {
+    public void setDNI(int DNI) {
         medico.setDNI(DNI);
     }
 
     @Override
-    public String getDNI() {
+    public int getDNI() {
         return medico.getDNI();
     }
 
