@@ -25,7 +25,6 @@ public class ModuloFacturacion {
         Paciente paciente= clinica.buscaPaciente(dni);
         ArrayList<Consulta> consultas=paciente.getConsultas();
         ArrayList<Consulta> habitaciones=paciente.getHabitaciones();
-        Collections.sort(consultas);
         Map<Integer, Long> map= consultas.stream().collect(Collectors.groupingBy(Consulta::getId,Collectors.counting()));
         for (Map.Entry<Integer,Long> entry : map.entrySet()) {
             medico=clinica.buscaMedico(entry.getKey());
@@ -36,9 +35,10 @@ public class ModuloFacturacion {
         Iterator<Consulta> it =habitaciones.iterator();
         while(it.hasNext()){
             habitacion=clinica.buscaHabitacion(it.next().getId());
-            factura+=habitacion.getId()+" "+ habitacion.getCosto(dias)+" ";
+            total+=habitacion.getCosto(dias);
+            factura+=habitacion.getId()+" "+ habitacion.getCosto(dias)+" "+dias+" "+habitacion.getCosto(dias) +"\n";
         }
-
-       
+        System.out.println(factura);
+        System.out.println("El costo total es de: "+ total);
     }
 }
