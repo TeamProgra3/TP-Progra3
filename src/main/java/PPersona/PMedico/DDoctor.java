@@ -1,5 +1,6 @@
 package PPersona.PMedico;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import PPersona.PPacientes.Paciente;
@@ -90,6 +91,10 @@ public class DDoctor extends DoctorDecorator{
 	    this.medico.atenderPaciente(fecha, historiaClinica);
 	}
 
-    
+    @Override
+    public ArrayList<Consulta> getConsultas() {
+        return medico.getConsultas();
+    }
+
 
 }

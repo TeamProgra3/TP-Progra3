@@ -1,5 +1,7 @@
 package PPersona.PMedico;
 
+import java.util.ArrayList;
+
 public class Cirugia extends Medico{
     public Cirugia(String nombre,String apellido){
         this.nombre=nombre;
@@ -65,6 +67,11 @@ public class Cirugia extends Medico{
     @Override
     public String getTelefono() {
         return this.telefono;
+    }
+
+    @Override
+    public ArrayList<Consulta> getConsultas() {
+        return this.consultas;
     }
 
     @Override

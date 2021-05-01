@@ -1,5 +1,6 @@
 package PPersona.PMedico;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import PPersona.PPacientes.Paciente;
@@ -28,5 +29,7 @@ public interface IMedico {
     void setTelefono(String telefono);
     String getTelefono();
 	void atenderPaciente(GregorianCalendar fecha, int historiaClinica);
+
+	ArrayList<Consulta> getConsultas();
 
 }
