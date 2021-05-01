@@ -17,4 +17,9 @@ public class Habitacion implements IHabitacion{
     public float getCosto(int dias) {
         return this.costoHabitacion;
     }
+
+    @Override
+    public int getId() {
+        return this.numeroHabitacion;
+    }
 }

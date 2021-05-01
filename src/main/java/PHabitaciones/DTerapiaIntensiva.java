@@ -11,4 +11,9 @@ public class DTerapiaIntensiva  extends  HabitacionDecorator{
     public float getCosto(int dias){
         return (float) (habitacion.getCosto(dias)+ (habitacion.getCosto(dias)+Math.pow(this.costoHabitacion,dias)));
     }
+
+    @Override
+    public int getId() {
+        return habitacion.getId();
+    }
 }

@@ -64,6 +64,9 @@ public class ClinicaSingleton {
         return this.medicos.get(num);
     }
 
+    public Habitacion buscaHabitacion(Integer num){
+        return  this.habitaciones.get(num);
+    }
 
 
 }

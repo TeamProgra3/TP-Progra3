@@ -20,4 +20,9 @@ public class DHabitacionPrivada extends HabitacionDecorator{
                 aux= (dias*this.costoHabitacion*2);
         return habitacion.getCosto(dias)+aux;
     }
+    @Override
+    public int getId() {
+        return habitacion.getId();
+    }
 }
+
