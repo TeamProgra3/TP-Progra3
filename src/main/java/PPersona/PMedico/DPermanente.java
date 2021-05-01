@@ -1,8 +1,7 @@
 package PPersona.PMedico;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
-
-import PPersona.PPacientes.Paciente;
 
 public class DPermanente extends DoctorDecorator{
     public DPermanente(IMedico medico) {
@@ -21,12 +20,12 @@ public class DPermanente extends DoctorDecorator{
     }
 
     @Override
-    public void setDNI(String DNI) {
+    public void setDNI(int DNI) {
         medico.setDNI(DNI);
     }
 
     @Override
-    public String getDNI() {
+    public int getDNI() {
         return medico.getDNI();
     }
 
@@ -83,6 +82,11 @@ public class DPermanente extends DoctorDecorator{
     @Override
     public void atenderPaciente(GregorianCalendar fecha, int historiaClinica) {
         this.medico.atenderPaciente(fecha, historiaClinica);
+    }
+
+    @Override
+    public ArrayList<Consulta> getConsultas() {
+        return medico.getConsultas();
     }
 
 

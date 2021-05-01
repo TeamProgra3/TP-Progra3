@@ -1,5 +1,7 @@
 package PPersona.PMedico;
 
+import java.util.ArrayList;
+
 public class Clinico extends Medico{
     public Clinico(String nombre,String apellido){
         this.nombre=nombre;
@@ -26,12 +28,12 @@ public class Clinico extends Medico{
     }
 
     @Override
-    public void setDNI(String DNI) {
+    public void setDNI(int DNI) {
         this.DNI=DNI;
     }
 
     @Override
-    public String getDNI() {
+    public int getDNI() {
         return this.DNI;
     }
 
@@ -65,7 +67,10 @@ public class Clinico extends Medico{
         return this.telefono;
     }
 
-
+    @Override
+    public ArrayList<Consulta> getConsultas() {
+        return this.consultas;
+    }
 
 
     @Override

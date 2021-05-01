@@ -9,8 +9,8 @@ import PPersona.PPacientes.Paciente;
 
 /**
  * @author Los Cafeteros <br>
- * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones)
- * <b> Patrón aplicado: </b> Singleton
+ * Esta clase contiene en diferentes colecciones informacion (mÃ©dicos, pacientes atendidos, habitaciones)
+ * <b> PatrÃ³n aplicado: </b> Singleton
  *
  */
 public class ClinicaSingleton { 
@@ -19,7 +19,6 @@ public class ClinicaSingleton {
     private HashMap<Integer,Paciente> pacientesRegistrados =new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos=new HashMap<Integer, IMedico>();
     private HashMap<Integer, Habitacion> habitaciones =new HashMap<Integer, Habitacion>();
-
 
     public String nombre;
     public String direccion;
@@ -56,8 +55,13 @@ public class ClinicaSingleton {
     public void addPatio(Paciente p) {
         this.patio.add(p);
     }
+
     
     public Paciente buscaPaciente(int DNI){ 
     	return this.pacientesRegistrados.get(DNI);     }
+
+    public IMedico buscaMedico(Integer num){
+        return this.medicos.get(num);
+    }
 
 }

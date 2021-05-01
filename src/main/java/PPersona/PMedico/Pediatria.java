@@ -1,6 +1,7 @@
 package PPersona.PMedico;
 
 
+import java.util.ArrayList;
 
 public class Pediatria extends Medico{
 
@@ -29,12 +30,12 @@ public class Pediatria extends Medico{
     }
 
     @Override
-    public void setDNI(String DNI) {
+    public void setDNI(int DNI) {
         this.DNI=DNI;
     }
 
     @Override
-    public String getDNI() {
+    public int getDNI() {
         return this.DNI;
     }
 
@@ -78,6 +79,12 @@ public class Pediatria extends Medico{
     @Override
     public int getMatricula() {
         return this.matricula;
+    }
+
+
+    @Override
+    public ArrayList<Consulta> getConsultas() {
+        return this.consultas;
     }
 
     @Override

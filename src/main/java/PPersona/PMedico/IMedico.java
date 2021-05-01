@@ -1,5 +1,6 @@
 package PPersona.PMedico;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import PPersona.PPacientes.Paciente;
@@ -19,8 +20,8 @@ public interface IMedico {
 
     String getNombre();
     String getApellido();
-    void setDNI(String DNI);
-    String getDNI();
+    void setDNI(int DNI);
+    int getDNI();
     void setDomicilio(String domicilio);
     String getDomicilio();
     void setCiudad(String ciudad);
@@ -28,5 +29,7 @@ public interface IMedico {
     void setTelefono(String telefono);
     String getTelefono();
 	void atenderPaciente(GregorianCalendar fecha, int historiaClinica);
+
+	ArrayList<Consulta> getConsultas();
 
 }

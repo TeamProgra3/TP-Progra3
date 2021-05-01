@@ -72,9 +72,16 @@ public abstract class Paciente {
 		this.nroOrden = nroOrden;
 	}
 
-	/**Resuelve la prioridad en la sala privada usando Double Dispatch
+    public ArrayList<Consulta> getConsultas(){
+        return this.consultas;
+    }
+    public ArrayList<Consulta> getHabitaciones(){
+        return this.habitaciones;
+    }
+    /**Resuelve la prioridad en la sala privada usando Double Dispatch
+
      * @param p: Paciente que se quiere verificar si tiene prioridad sobre el actual
-     * @return boolean: True si el par·metro tiene prioridad y debe ingresar
+     * @return boolean: True si el par√°metro tiene prioridad y debe ingresar
      */
     public abstract boolean tienePrioridad(Paciente p);
 
