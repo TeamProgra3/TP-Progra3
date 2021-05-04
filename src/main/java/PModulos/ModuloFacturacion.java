@@ -8,7 +8,6 @@ import PPersona.PMedico.IMedico;
 import PPersona.PPacientes.Paciente;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 public class ModuloFacturacion {

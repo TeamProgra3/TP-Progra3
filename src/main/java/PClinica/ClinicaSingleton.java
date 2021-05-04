@@ -14,8 +14,8 @@ import PPersona.PPacientes.Paciente;
  *
  */
 public class ClinicaSingleton { 
-	private Paciente salaPrivada; //Un unico paciente
-	private ArrayList<Paciente> patio; //Muchos pacientes
+	private Paciente salaPrivada; //Un unico paciente   --------------------------------------
+	private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------
     private HashMap<Integer,Paciente> pacientesRegistrados =new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos=new HashMap<Integer, IMedico>();
     private HashMap<Integer, IHabitacion> habitaciones =new HashMap<Integer, IHabitacion>();
@@ -56,7 +56,10 @@ public class ClinicaSingleton {
         this.patio.add(p);
     }
 
-    
+    public void addPacienteRegistrado(Paciente paciente){
+        this.pacientesRegistrados.put(paciente.getDNI(),paciente);
+    }
+
     public Paciente buscaPaciente(int DNI){ 
     	return this.pacientesRegistrados.get(DNI);     
     }
@@ -77,4 +80,5 @@ public class ClinicaSingleton {
     public void addHabitacion(Habitacion habitacion){
         this.habitaciones.put(habitacion.getId(),habitacion);
     }
+
 }
