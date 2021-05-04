@@ -22,4 +22,9 @@ public class Habitacion implements IHabitacion{
     public int getId() {
         return this.numeroHabitacion;
     }
+
+    @Override
+    public String getTipo() {
+        return null;
+    }
 }

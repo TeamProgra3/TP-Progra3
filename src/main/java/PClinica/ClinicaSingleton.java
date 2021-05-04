@@ -77,7 +77,7 @@ public class ClinicaSingleton {
         return  this.habitaciones.get(num);
     }
     
-    public void addHabitacion(Habitacion habitacion){
+    public void addHabitacion(IHabitacion habitacion){
         this.habitaciones.put(habitacion.getId(),habitacion);
     }
 

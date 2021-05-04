@@ -24,5 +24,10 @@ public class DHabitacionPrivada extends HabitacionDecorator{
     public int getId() {
         return habitacion.getId();
     }
+
+    @Override
+    public String getTipo() {
+        return "Privada";
+    }
 }
 
