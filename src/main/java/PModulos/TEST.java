@@ -11,8 +11,12 @@ import PPersona.PPacientes.Paciente;
 import PPersona.PPacientes.PacienteFactory;
 
 public class TEST {
-    ClinicaSingleton clinica = ClinicaSingleton.getInstance();
-    void cargaDatos() throws FactoryMedicoException, FactoryHabitacionException {
+    ClinicaSingleton clinica;
+    public TEST(){
+        this.clinica= ClinicaSingleton.getInstance();
+    }
+
+    public void cargaDatos() throws FactoryMedicoException, FactoryHabitacionException {
 
         MedicoFactory medicoFactory=new MedicoFactory();
         PacienteFactory pacienteFactory=new PacienteFactory();
@@ -48,19 +52,19 @@ public class TEST {
         clinica.addPacienteRegistrado(paciente);
 
     }
-    void muestraInformacion(){
+    public void muestraInformacion(){
         Paciente paciente = clinica.buscaPaciente(221586156);
         System.out.println("Deberia mostrar al paciente nicolas "+paciente.getNombre());
         paciente=clinica.buscaPaciente(75421342);
-        System.out.println("Deberia mostrar null "+paciente.getNombre());
+        System.out.println("Deberia mostrar null "+paciente);
         IMedico medico =clinica.buscaMedico(1);
         System.out.println("Deberia mostrar al primer medico "+ medico.saludo());
         medico =clinica.buscaMedico(7);
-        System.out.println("deberia mostrar null"+medico.getNombre());
+        System.out.println("deberia mostrar null"+medico);
         IHabitacion habitacion=clinica.buscaHabitacion(1);
         System.out.println("deberia mostrar el tipo de la primera habitacion "+habitacion.getTipo());
         habitacion=clinica.buscaHabitacion(32);
-        System.out.println("deberia mostrar null"+habitacion.getTipo());
+        System.out.println("deberia mostrar null "+habitacion);
     }
 
 
