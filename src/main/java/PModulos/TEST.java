@@ -50,6 +50,9 @@ public class TEST {
         clinica.addPacienteRegistrado(paciente);
         paciente=pacienteFactory.getPaciente("franquito","delalcon",321588956,"joven");
         clinica.addPacienteRegistrado(paciente);
+        paciente=pacienteFactory.getPaciente("guan jabriel","rrodrriges",321588956,"joven");
+        clinica.addPacienteRegistrado(paciente);
+
 
     }
     public void muestraInformacion(){
