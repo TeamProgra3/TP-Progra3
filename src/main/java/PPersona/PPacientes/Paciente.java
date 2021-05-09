@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 import PPersona.PMedico.Consulta;
-import PPersona.PMedico.Medico;
 
 public abstract class Paciente {
     public static int historiasClinicasPacientes=0;
@@ -17,7 +16,15 @@ public abstract class Paciente {
     private String telefono;
     private String direccion;
 
+    /**
+     * Almacena las consultas hechas al paciente
+     * Cada consulta contiene fecha y matricula del médico que lo atendió
+     */
     private ArrayList<Consulta> consultas = new ArrayList<Consulta>();
+    
+    /**
+     * Almacena todas las habitaciones por las que pasó el paciente en su internación
+     */
     private ArrayList<Consulta> habitaciones= new ArrayList<Consulta>();
 
     public Paciente(int DNI, String nombre, String apellido) {
@@ -60,6 +67,10 @@ public abstract class Paciente {
         return direccion;
     }
     
+    /** Carga la consulta hecha al paciente en un ArrayList de consultas (Atributo de la instancia)
+     * @param fecha: La fecha de la consulta, (GregorianCalendar).
+     * @param matricula La matricula del médico que lo atendió en esta consulta.
+     */
     public void agregaConsulta(GregorianCalendar fecha,int matricula) {
     	consultas.add(new Consulta(fecha,matricula));
     }

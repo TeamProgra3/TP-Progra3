@@ -1,7 +1,5 @@
 package PHabitaciones;
 
-import java.util.Date;
-
 public class DHabitacionCompartida extends HabitacionDecorator{
     private float costoHabitacion=120;
     public DHabitacionCompartida(IHabitacion habitacion){

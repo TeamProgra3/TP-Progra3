@@ -2,7 +2,6 @@ package PClinica;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import PHabitaciones.Habitacion;
 import PHabitaciones.IHabitacion;
 import PPersona.PMedico.IMedico;
 import PPersona.PPacientes.Paciente;

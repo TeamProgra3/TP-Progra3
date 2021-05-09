@@ -2,6 +2,11 @@ package PHabitaciones;
 
 import PException.FactoryHabitacionException;
 
+/**
+ * @author Los Cafeteros
+ * Esta clase tiene la responsabilidad de generar habitaciones <br>
+ * <b> Patrón aplicado:</b> Factory
+ */
 public class HabitacionFactory {
 
     public IHabitacion getHabitacion(String tipo) throws FactoryHabitacionException {
