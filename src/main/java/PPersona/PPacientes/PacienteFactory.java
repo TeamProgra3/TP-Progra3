@@ -1,5 +1,9 @@
 package PPersona.PPacientes;
 
+/**
+ * @author Los Cafeteros
+ * Clase encargada de de generar pacientes utilizando patrón Factory
+ */
 public class PacienteFactory {
 	public Paciente getPaciente(String nombre, String apellido, int DNI, String rangoEtario) {
 		Paciente aux = null;
