@@ -2,11 +2,13 @@ package PHabitaciones;
 
 
 
+/**
+ * Clase que representa las habitaciones donde se alojan los pacientes<br>
+ * @author Los cafeteros
+ *
+ */
 public class Habitacion implements IHabitacion{
     public static int numeroHabitaciones=0;
-    /*
-    *   Capacidad maxima???
-    * */
     protected int numeroHabitacion;
     protected float costoHabitacion=100;
     public Habitacion(){

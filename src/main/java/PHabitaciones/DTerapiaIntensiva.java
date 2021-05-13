@@ -1,6 +1,11 @@
 package PHabitaciones;
 
 
+/**
+ * Clase que representa una habitacion destinada a terapia intensiva
+ * @author Los cafeteros
+ *
+ */
 public class DTerapiaIntensiva  extends  HabitacionDecorator{
     float costoHabitacion=100;
     public  DTerapiaIntensiva(IHabitacion habitacion){

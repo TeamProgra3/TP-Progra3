@@ -5,9 +5,9 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import PPersona.PPacientes.Paciente;
 
-public abstract class Medico implements IMedico {
-	/*
-	 * Esta es la "Master Class" que controla a todos los medicos con sus
+	 /**
+ 	 * 
+   	 * Esta es la "Master Class" que controla a todos los medicos con sus
 	 * respectivos decorados.
 	 *
 	 * **La variable "matriculaMedicos" es una variable de clase, es decir todas las
@@ -19,9 +19,10 @@ public abstract class Medico implements IMedico {
 	 * cual es modificado por cada decorado que se le haga a las clases hijas de
 	 * medico
 	 *
-	 *
+	 * @author Los Cafeteros
 	 *
 	 */
+public abstract class Medico implements IMedico {
 	public static int matriculaMedicos = 0;
 	protected int matricula;
 	protected String nombre;
@@ -31,18 +32,12 @@ public abstract class Medico implements IMedico {
 	protected String ciudad;
 	protected String telefono;
 	protected ArrayList<Consulta> consultas = new ArrayList<Consulta>();
-
-	private String tipo = "medico";// esto se saca despues, solo es para pruebas
-
-	@Override
-	public String saludo() {// esta funcion se quita, es para probar el patron
-		return this.tipo;
+	
+	public String saludo() {// 
+		String tipo = "medico";
+		return tipo;
 	}
-	/*
-	 * para setear desde el main si cambia el basico para que nadie toque esta clase
-	 * UwU
-	 *
-	 */
+
 
 	@Override
 	public float getHonorario() {
@@ -59,6 +54,10 @@ public abstract class Medico implements IMedico {
 		this.matricula = Medico.matriculaMedicos;
 	}
 
+	/**
+	 * Metodo que añade a su array de consultas, una fecha e historia clinica de paciente a atender
+	 *
+	 */
 	@Override
 	public void atenderPaciente(GregorianCalendar fecha, int historiaClinica) {
 		consultas.add(new Consulta(fecha, historiaClinica));

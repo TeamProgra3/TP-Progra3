@@ -5,6 +5,11 @@ import java.util.GregorianCalendar;
 
 import PPersona.PMedico.Consulta;
 
+/**
+ * Clase que representa un paciente
+ * @author Los Cafeteros
+ *
+ */
 public abstract class Paciente {
     public static int historiasClinicasPacientes=0;
 
@@ -75,6 +80,10 @@ public abstract class Paciente {
     	consultas.add(new Consulta(fecha,matricula));
     }
 
+    public void agregaHabitacion(GregorianCalendar fecha,int idHabitacion) {
+    	habitaciones.add(new Consulta(fecha,idHabitacion));
+    }
+    
     public int getNroOrden() {
 		return nroOrden;
 	}

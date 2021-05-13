@@ -5,9 +5,15 @@ import java.util.GregorianCalendar;
 
 import PPersona.PPacientes.Paciente;
 
+/**
+ * Interface que contiene los metodos a implementar por los medicos
+ * @author Los cafeteros
+ *
+ */
 public interface IMedico {
     public static float sueldoBasico=2000;
 
+    @Deprecated
     String saludo();
 
     float getHonorario();

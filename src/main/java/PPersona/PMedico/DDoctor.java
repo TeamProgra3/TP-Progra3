@@ -5,6 +5,11 @@ import java.util.GregorianCalendar;
 
 import PPersona.PPacientes.Paciente;
 
+/**
+ * Clase que representa un doctor
+ * @author Los Cafeteros
+ *
+ */
 public class DDoctor extends DoctorDecorator{
 
     public DDoctor(IMedico medico) {
@@ -86,6 +91,10 @@ public class DDoctor extends DoctorDecorator{
         return medico.getHonorario()* bonificacion;
     }
 
+	/**
+	 *Metodo que añade al array de consultas del medico, un fecha y una historia clinica de un paciente a atender
+	 */
+    
 	@Override
 	public void atenderPaciente(GregorianCalendar fecha, int historiaClinica) {
 	    this.medico.atenderPaciente(fecha, historiaClinica);

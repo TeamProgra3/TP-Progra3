@@ -1,5 +1,10 @@
 package PHabitaciones;
 
+/**
+ * Clase que representa una habitacion compartida por los pacientes
+ * @author Los cafeteros
+ *
+ */
 public class DHabitacionCompartida extends HabitacionDecorator{
     private float costoHabitacion=120;
     public DHabitacionCompartida(IHabitacion habitacion){

@@ -3,6 +3,11 @@ package PPersona.PMedico;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+/**
+ * Clase que representa un residente
+ * @author Los Cafeteros
+ *
+ */
 public class DResidente extends DoctorDecorator{
     public DResidente(IMedico medico) {
         super(medico);
@@ -79,6 +84,9 @@ public class DResidente extends DoctorDecorator{
         float bonificacion = (float) 1.05;
         return medico.getHonorario()* bonificacion;
     }
+    /**
+     *Metodo que añade al array de consultas del medico, un fecha y una historia clinica de un paciente a atender
+     */
     @Override
     public void atenderPaciente(GregorianCalendar fecha, int historiaClinica) {
         this.medico.atenderPaciente(fecha, historiaClinica);

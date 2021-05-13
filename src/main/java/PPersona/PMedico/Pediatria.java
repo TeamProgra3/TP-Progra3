@@ -1,5 +1,10 @@
 package PPersona.PMedico;
 
+/**
+ * Clase que representa un pediatra
+ * @author Los Cafeteros
+ *
+ */
 public class Pediatria extends Medico{
 
     public Pediatria(String nombre,String apellido){

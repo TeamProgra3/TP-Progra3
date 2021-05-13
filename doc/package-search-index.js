@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"PClinica"},{"l":"PException"},{"l":"PHabitaciones"},{"l":"PModulos"},{"l":"PPersona.PMedico"},{"l":"PPersona.PPacientes"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"PClinica"},{"l":"PException"},{"l":"PHabitaciones"},{"l":"PModulos"},{"l":"PPersona.PMedico"},{"l":"PPersona.PPacientes"}];updateSearchResults();

@@ -1,7 +1,10 @@
 package PHabitaciones;
 
-import java.util.Date;
-
+/**
+ * Interfaz que declara los metodos a implementar por las habitaciones
+ * @author Los cafeteros
+ *
+ */
 public interface IHabitacion {
 
     public float getCosto(int dias);

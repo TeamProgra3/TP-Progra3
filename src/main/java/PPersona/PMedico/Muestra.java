@@ -9,11 +9,18 @@ import java.util.stream.Collectors;
 import PClinica.ClinicaSingleton;
 
 /**
+ * 
+ * Clase que tiene la responsabilidad de mostrar el reporte de actividad de un medico<br>
  * @author Los cafeteros
- * Clase que tiene la responsabilidad de mostrar el reporte de actividad de un medico
  */
 public class Muestra {
 	
+	/**
+	 * Metodo que muestra las consultas realizadas a un medico determinado en un intervalo de tiempo determinado por dos paramentros. Este metodo tambien muestra cuantas veces atendio a cada paciente en el intervalo de tiempo especificado.
+	 * @param matricula - Matricula del medico.
+	 * @param desde - Fecha desde donde se comienzan a mostrar las consultas
+	 * @param hasta - Fecha limite de muestra de consultas
+	 */
 	public void reporteActividadDiaria2(int matricula,GregorianCalendar desde,GregorianCalendar hasta) {
 		ArrayList<Consulta> aux = new ArrayList<Consulta>();
 		ClinicaSingleton clinica=ClinicaSingleton.getInstance();

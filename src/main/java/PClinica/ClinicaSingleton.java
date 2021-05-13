@@ -7,19 +7,23 @@ import PPersona.PMedico.IMedico;
 import PPersona.PPacientes.Paciente;
 
 /**
- * @author Los Cafeteros <br>
- * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones)
+ * 
+ * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones)<br>
  * <b> Patrón aplicado: </b> Singleton
+ * @author Los Cafeteros 
  *
  */
 public class ClinicaSingleton { 
 	private Paciente salaPrivada; //Un unico paciente   --------------------------------------
 	private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------
+	private ArrayList<Paciente> listaAtencion=new ArrayList<Paciente>();
     private HashMap<Integer,Paciente> pacientesRegistrados =new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos=new HashMap<Integer, IMedico>();
     private HashMap<Integer, IHabitacion> habitaciones =new HashMap<Integer, IHabitacion>();
 
-    public String nombre;
+
+
+	public String nombre;
     public String direccion;
     public String telefono; 
     public String ciudad;
@@ -79,5 +83,21 @@ public class ClinicaSingleton {
     public void addHabitacion(IHabitacion habitacion){
         this.habitaciones.put(habitacion.getId(),habitacion);
     }
+    
 
+    public ArrayList<Paciente> getListaAtencion() {
+		return listaAtencion;
+	}
+    
+    public void agregarPacienteListaAtencion(Paciente paciente) {
+    	this.listaAtencion.add(paciente);
+    }
+    
+    /**
+     * Retira paciente de lista de atencion
+     * @param dni dni del paciente
+     */
+    public void retiraPacienteListaAtencion(int dni) {
+        this.listaAtencion.remove(dni);
+    }
 }

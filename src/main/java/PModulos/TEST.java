@@ -10,6 +10,11 @@ import PPersona.PMedico.MedicoFactory;
 import PPersona.PPacientes.Paciente;
 import PPersona.PPacientes.PacienteFactory;
 
+/**
+ * Clase destinada a hacer pruebas con los modulos implementados
+ * @author Los Cafeteros
+ *
+ */
 public class TEST {
     ClinicaSingleton clinica;
     public TEST(){
@@ -48,7 +53,7 @@ public class TEST {
         clinica.addPacienteRegistrado(paciente);
         paciente=pacienteFactory.getPaciente("agusto","paleta",274266156,"joven");
         clinica.addPacienteRegistrado(paciente);
-        paciente=pacienteFactory.getPaciente("franquito","delalcon",321588956,"joven");
+        paciente=pacienteFactory.getPaciente("franquito","delhalcon",321588956,"joven");
         clinica.addPacienteRegistrado(paciente);
         paciente=pacienteFactory.getPaciente("guan jabriel","rrodrriges",321588956,"joven");
         clinica.addPacienteRegistrado(paciente);

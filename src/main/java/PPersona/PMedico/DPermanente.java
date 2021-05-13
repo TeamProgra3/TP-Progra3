@@ -3,6 +3,11 @@ package PPersona.PMedico;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+/**
+ * Clase que representa un permanente
+ * @author Los Cafeteros
+ *
+ */
 public class DPermanente extends DoctorDecorator{
     public DPermanente(IMedico medico) {
         super(medico);

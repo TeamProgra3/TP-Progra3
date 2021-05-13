@@ -8,8 +8,9 @@ import java.util.GregorianCalendar;
 import PPersona.PPacientes.Paciente;
 
 /**
- * @author Los cafeteros<br>
+ * 
  * Clase que almacena la fecha y el codigo que pueden pertenecer tanto a un paciente, como a un medico
+ * @author Los cafeteros
  */
 public class Consulta implements Comparable<Consulta>{
 	private GregorianCalendar fecha;

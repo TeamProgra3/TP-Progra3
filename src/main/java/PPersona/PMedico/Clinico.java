@@ -1,6 +1,11 @@
 package PPersona.PMedico;
 
 
+/**
+ * Clase que representa a un medico clinico
+ * @author Los Cafeteros
+ *
+ */
 public class Clinico extends Medico{
     public Clinico(String nombre,String apellido){
         this.nombre=nombre;

@@ -1,7 +1,10 @@
 package PException;
 
-import sun.java2d.loops.CustomComponent;
-
+/**
+ * Lanzada cuando no se pudo crear el medico solicitado
+ * @author Los Cafeteros
+ *
+ */
 public class FactoryMedicoException extends Exception{
 
     public  FactoryMedicoException(String mensaje){

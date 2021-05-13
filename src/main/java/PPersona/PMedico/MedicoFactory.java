@@ -4,9 +4,11 @@ package PPersona.PMedico;
 import PException.FactoryMedicoException;
 
 /**
- * @author Los Cafeteros <br>
- * Clase que aplica el patrón Factory para la creación de nuevas instancias de médicos
- * <b>Patrón aplicado:</b> Factory
+ * 
+ * Clase que aplica el patrón Factory para la creación de nuevas instancias de médicos<br>
+ * <b>Patrón aplicado:</b> Factory<br>
+ * 
+ * @author Los Cafeteros 
  */
 public class MedicoFactory {
 
@@ -19,7 +21,7 @@ public class MedicoFactory {
         if (profesion.equals("pediatra"))
             return new Pediatria(nombre,apellido);
         String aux="Profesion "+profesion+" no se reconoce como opcion valida";
-        throw new FactoryMedicoException(aux);// hay que crear una clase con errores para tirar errores como haberme anotado a arquitectura :D
+        throw new FactoryMedicoException(aux);
     }
 
     private IMedico setTipo(String tipo,IMedico loDecorado) throws FactoryMedicoException{

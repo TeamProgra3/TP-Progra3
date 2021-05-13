@@ -1,6 +1,11 @@
 package PHabitaciones;
 
 
+/**
+ * Clase que representa una habitacion privada
+ * @author Los cafeteros
+ *
+ */
 public class DHabitacionPrivada extends HabitacionDecorator{
     float costoHabitacion=100;
 
