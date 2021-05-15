@@ -27,7 +27,8 @@ public class MAIN {
       }
       test.muestraInformacion();
 
-     /* ClinicaSingleton clinica=ClinicaSingleton.getInstance();
+    	/*
+      ClinicaSingleton clinica=ClinicaSingleton.getInstance();
       MedicoFactory medicoFactory=new MedicoFactory();
       IMedico m1= null;
       try {
@@ -72,8 +73,8 @@ public class MAIN {
       clinica.addMedicos(m1);
       Muestra prueba=new Muestra();
       prueba.reporteActividadDiaria2(1, new GregorianCalendar(2020,Calendar.FEBRUARY,3), new GregorianCalendar(2021,Calendar.DECEMBER,5));
-     */
-
+     
+*/
 
     }
 }

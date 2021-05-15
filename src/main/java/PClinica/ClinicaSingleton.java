@@ -2,6 +2,9 @@ package PClinica;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
+
+import PException.NoHayPacienteException;
 import PHabitaciones.IHabitacion;
 import PPersona.PMedico.IMedico;
 import PPersona.PPacientes.Paciente;
@@ -66,6 +69,24 @@ public class ClinicaSingleton {
     public Paciente buscaPaciente(int DNI){ 
     	return this.pacientesRegistrados.get(DNI);     
     }
+    
+    /**
+     * Recibe un id de paciente como paramentro, y devuelve el paciente
+     * @param id - id de paciente
+     * @return Paciente
+     * @throws NoHayPacienteException
+     */
+    public Paciente buscaPacienteID(int id) throws NoHayPacienteException{
+        Set<Integer> keys=this.pacientesRegistrados.keySet();
+
+        for(Integer key:keys ){
+            Paciente paciente =this.pacientesRegistrados.get(key);
+            if (paciente.getHistoriaClinica()== id)
+                return paciente;
+        }
+        throw new NoHayPacienteException("Paciente no encontrado");
+    }
+    
 
     public IMedico buscaMedico(Integer num){
         return this.medicos.get(num);
@@ -100,4 +121,6 @@ public class ClinicaSingleton {
     public void retiraPacienteListaAtencion(int dni) {
         this.listaAtencion.remove(dni);
     }
+    
+    
 }
