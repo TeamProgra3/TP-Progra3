@@ -23,12 +23,12 @@ public abstract class Paciente {
 
     /**
      * Almacena las consultas hechas al paciente
-     * Cada consulta contiene fecha y matricula del médico que lo atendió
+     * Cada consulta contiene fecha y matricula del mï¿½dico que lo atendiï¿½
      */
     private ArrayList<Consulta> consultas = new ArrayList<Consulta>();
     
     /**
-     * Almacena todas las habitaciones por las que pasó el paciente en su internación
+     * Almacena todas las habitaciones por las que pasï¿½ el paciente en su internaciï¿½n
      */
     private ArrayList<Consulta> habitaciones= new ArrayList<Consulta>();
 
@@ -74,7 +74,7 @@ public abstract class Paciente {
     
     /** Carga la consulta hecha al paciente en un ArrayList de consultas (Atributo de la instancia)
      * @param fecha: La fecha de la consulta, (GregorianCalendar).
-     * @param matricula La matricula del médico que lo atendió en esta consulta.
+     * @param matricula La matricula del mï¿½dico que lo atendiï¿½ en esta consulta.
      */
     public void agregaConsulta(GregorianCalendar fecha,int matricula) {
     	consultas.add(new Consulta(fecha,matricula));
@@ -98,12 +98,10 @@ public abstract class Paciente {
     public ArrayList<Consulta> getHabitaciones(){
         return this.habitaciones;
     }
-    
     @Override
     public String toString() {
         return this.getApellido() + " " +this.getNombre();
     }
-    
     /**Resuelve la prioridad en la sala privada usando Double Dispatch
 
      * @param p: Paciente que se quiere verificar si tiene prioridad sobre el actual
