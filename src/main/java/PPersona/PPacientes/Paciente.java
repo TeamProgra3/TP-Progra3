@@ -98,6 +98,12 @@ public abstract class Paciente {
     public ArrayList<Consulta> getHabitaciones(){
         return this.habitaciones;
     }
+
+    @Override
+    public String toString() {
+        return this.getApellido() + " " +this.getNombre();
+    }
+
     /**Resuelve la prioridad en la sala privada usando Double Dispatch
 
      * @param p: Paciente que se quiere verificar si tiene prioridad sobre el actual
