@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import PClinica.ClinicaSingleton;
+import PException.EsperaVaciaException;
 import PException.FactoryHabitacionException;
 import PException.FactoryMedicoException;
 import PException.NoHayPacienteException;
@@ -25,8 +26,9 @@ public class TEST {
     public TEST(){
         this.clinica= ClinicaSingleton.getInstance();
     }
-
-    public void cargaDatos() throws FactoryMedicoException, FactoryHabitacionException {
+    ModuloAtencion moduloAtencion=new ModuloAtencion();
+    ModuloIngreso moduloIngreso=new ModuloIngreso();
+    public void cargaDatos() throws FactoryMedicoException, FactoryHabitacionException, EsperaVaciaException {
 
         MedicoFactory medicoFactory=new MedicoFactory();
         PacienteFactory pacienteFactory=new PacienteFactory();
@@ -54,14 +56,14 @@ public class TEST {
         clinica.addHabitacion(habitacion);
         habitacion=habitacionFactory.getHabitacion("compartida");
         clinica.addHabitacion(habitacion);
-        Paciente paciente=pacienteFactory.getPaciente("Nicolas","Casazola",221586156,"joven");
-        clinica.addPacienteRegistrado(paciente);
-        paciente=pacienteFactory.getPaciente("Agusto","Paleta",274266156,"joven");
-        clinica.addPacienteRegistrado(paciente);
-        paciente=pacienteFactory.getPaciente("franquito","delhalcon",321588956,"joven");
-        clinica.addPacienteRegistrado(paciente);
-        paciente=pacienteFactory.getPaciente("guan jabriel","rrodrriges",321588956,"joven");
-        clinica.addPacienteRegistrado(paciente);
+        moduloIngreso.ingresarPaciente("Nicolas","Casazola",221586156,"joven");
+        moduloAtencion.retiraPaciente();
+        moduloIngreso.ingresarPaciente("Agusto","Paleta",274266156,"joven");
+        moduloAtencion.retiraPaciente();
+        moduloIngreso.ingresarPaciente("franquito","delhalcon",321588956,"joven");
+        moduloAtencion.retiraPaciente();
+        moduloIngreso.ingresarPaciente("guan jabriel","rrodrriges",321588956,"joven");
+        moduloAtencion.retiraPaciente();
 
 
     }
@@ -78,10 +80,38 @@ public class TEST {
         System.out.println("deberia mostrar el tipo de la primera habitacion "+habitacion.getTipo());
         habitacion=clinica.buscaHabitacion(32);
         System.out.println("deberia mostrar null "+habitacion);
-
+        /*
+        * Paciente es atendidido por varios medicos
+        *
+        * */
         clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
-        clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021, Calendar.MARCH,4),3);
         clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021,Calendar.AUGUST,2), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),3);
+        clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),2);
+
+        clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),2);
+        clinica.buscaMedico(1).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),1);
+        clinica.buscaMedico(1).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),1);
+
+        clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
+        clinica.buscaPaciente(274266156).agregaConsulta(new GregorianCalendar(2021,Calendar.FEBRUARY,3),3);
+       /*
+       *
+       *
+       * */
+
+       clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1);
+
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),2);
+
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),5);
+
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),3);
         Muestra prueba=new Muestra();
         
         try {
@@ -89,6 +119,15 @@ public class TEST {
 		} catch (NoHayPacienteException e) {
 			System.out.println(e.getMessage());
 		}
+        System.out.println(clinica.buscaPaciente(221586156).toString());
+        this.creaFactura(clinica.buscaPaciente(221586156));
+    }
+
+
+    public void creaFactura(Paciente paciente){
+        ModuloFacturacion maduloFacturacion=new ModuloFacturacion();
+        maduloFacturacion.creaFacturapaciente(paciente.getDNI());
+
     }
 
 

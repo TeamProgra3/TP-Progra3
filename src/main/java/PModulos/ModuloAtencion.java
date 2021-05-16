@@ -25,7 +25,8 @@ public class ModuloAtencion {
 		
 		if( p==null && pacientes.get(0)==null ) 
 			throw new EsperaVaciaException("No hay gente para atender");
-		if(p!=null) { 
+		if(p!=null) {
+			if(pacientes.size()!=0)
 			if(pacientes.get(0)==null || p.getNroOrden()<pacientes.get(0).getNroOrden()) {
 				clinica.agregarPacienteListaAtencion(p);
 				clinica.setSalaPrivada(null);

@@ -1,20 +1,9 @@
 
 
+import PException.EsperaVaciaException;
 import PException.FactoryHabitacionException;
 import PException.FactoryMedicoException;
 import PModulos.TEST;
-import PPersona.PMedico.IMedico;
-import PPersona.PMedico.Medico;
-import PPersona.PMedico.MedicoFactory;
-import PPersona.PMedico.Muestra;
-import PPersona.PPacientes.Paciente;
-import PPersona.PPacientes.PacienteFactory;
-
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-import PClinica.ClinicaSingleton;
-
 
 public class MAIN {
     public static void main(String[] args)  {
@@ -22,7 +11,7 @@ public class MAIN {
     TEST test =new TEST();
       try {
         test.cargaDatos();
-      } catch (FactoryMedicoException | FactoryHabitacionException e) {
+      } catch (FactoryMedicoException | FactoryHabitacionException | EsperaVaciaException e) {
         e.printStackTrace();
       }
       test.muestraInformacion();
