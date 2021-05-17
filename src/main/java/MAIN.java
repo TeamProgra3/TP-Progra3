@@ -1,9 +1,9 @@
 
 
-import PException.EsperaVaciaException;
-import PException.FactoryHabitacionException;
-import PException.FactoryMedicoException;
-import PModulos.TEST;
+import exception.EsperaVaciaException;
+import exception.FactoryHabitacionException;
+import exception.FactoryMedicoException;
+import modulos.TEST;
 
 public class MAIN {
     public static void main(String[] args)  {
