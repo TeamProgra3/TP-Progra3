@@ -105,13 +105,13 @@ public class TEST {
        *
        * */
 
-       clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1);
+       clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1,3);
 
-        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),2);
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),2,4);
 
-        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),5);
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),5,1);
 
-        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),3);
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),3,3);
         Muestra prueba=new Muestra();
         
         try {

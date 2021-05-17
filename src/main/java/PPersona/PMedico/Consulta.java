@@ -15,11 +15,18 @@ import PPersona.PPacientes.Paciente;
 public class Consulta implements Comparable<Consulta>{
 	private GregorianCalendar fecha;
 	private int id;
-		
+	private int cantDias;
+
 	public Consulta(GregorianCalendar fecha, int id) {
 		super();
 		this.fecha = fecha;
 		this.id=id;
+	}
+	public Consulta(GregorianCalendar fecha, int id,int dias){
+		super();
+		this.fecha = fecha;
+		this.id=id;
+		this.cantDias=dias;
 	}
 
 	public int getId() {
@@ -40,6 +47,9 @@ public class Consulta implements Comparable<Consulta>{
 			return 1;
 	}
 
+	public int getDias(){
+		return this.cantDias;
+	}
 
 	//array del paciente -> [fecha | matricula medico ]
 	//array del medico -> [fech | id hist clinica del paciente]

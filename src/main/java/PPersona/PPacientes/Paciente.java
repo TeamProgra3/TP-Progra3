@@ -80,8 +80,8 @@ public abstract class Paciente {
     	consultas.add(new Consulta(fecha,matricula));
     }
 
-    public void agregaHabitacion(GregorianCalendar fecha,int idHabitacion) {
-    	habitaciones.add(new Consulta(fecha,idHabitacion));
+    public void agregaHabitacion(GregorianCalendar fecha,int idHabitacion,int dias) {
+    	habitaciones.add(new Consulta(fecha,idHabitacion,dias));
     }
     
     public int getNroOrden() {

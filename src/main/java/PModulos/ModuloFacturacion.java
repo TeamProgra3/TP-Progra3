@@ -31,6 +31,7 @@ public class ModuloFacturacion {
         float aux,total=0;
         IMedico medico;
         IHabitacion habitacion;
+        Consulta consulta=null;
         int dias=0;//hay que ver como resolver los dias que esta internado
         Paciente paciente= clinica.buscaPaciente(dni);
         ArrayList<Consulta> consultas=paciente.getConsultas();
@@ -48,9 +49,12 @@ public class ModuloFacturacion {
         Iterator<Consulta> it =habitaciones.iterator();
         aux=0;
         while(it.hasNext()){
-            habitacion=clinica.buscaHabitacion(it.next().getId());
+            consulta=it.next();
+            dias=consulta.getDias();
+            habitacion=clinica.buscaHabitacion(consulta.getId());
             total+=habitacion.getCosto(dias);
-            factura+=habitacion.getId()+" "+ habitacion.getCosto(dias)+" "+dias+ " "+"\n";
+            aux+=habitacion.getCosto(dias);
+            factura+=habitacion.getId()+"       "+ habitacion.getCosto(dias)+"        "+dias+ "      "+aux+"\n";
         }
         if(habitaciones.size()!=0)
             System.out.println("Habitacion |Costo por estadia| dias internado|Sub total");
