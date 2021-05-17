@@ -48,6 +48,6 @@ public class Muestra {
 		    }
 			
 		}else
-			System.out.println("Me cai xd");
+			System.out.println("No se realizaron consulta en el periodo de tiempo seleccionado");
 	}
 }
