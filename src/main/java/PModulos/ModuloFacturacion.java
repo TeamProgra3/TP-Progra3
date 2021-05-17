@@ -54,7 +54,7 @@ public class ModuloFacturacion {
             habitacion=clinica.buscaHabitacion(consulta.getId());
             total+=habitacion.getCosto(dias);
             aux+=habitacion.getCosto(dias);
-            factura+=habitacion.getId()+"       "+ habitacion.getCosto(dias)+"        "+dias+ "      "+aux+"\n";
+            factura+=habitacion.getId()+"           "+ habitacion.getCosto(dias)+"        "+dias+ "      "+aux+"\n";
         }
         if(habitaciones.size()!=0)
             System.out.println("Habitacion |Costo por estadia| dias internado|Sub total");

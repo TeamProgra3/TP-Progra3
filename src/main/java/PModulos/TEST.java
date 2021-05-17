@@ -83,44 +83,101 @@ public class TEST {
         /*
         * Paciente es atendidido por varios medicos
         *
+        * ¿Por que se llama muchas veces a buscapaciente y a busquedamedico?
+        *   para poder comprobar que funcionen bien las funciones
         * */
+
         clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
         clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021, Calendar.MARCH,4),3);
+
         clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021,Calendar.AUGUST,2), clinica.buscaPaciente(221586156).getHistoriaClinica());
         clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),3);
-        clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
-        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),2);
 
         clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
         clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),2);
-        clinica.buscaMedico(1).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
-        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),1);
+
+        clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),2);
+
+        clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021, Calendar.MARCH,4),3);
+
         clinica.buscaMedico(1).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
         clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),1);
 
-        clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
-        clinica.buscaPaciente(274266156).agregaConsulta(new GregorianCalendar(2021,Calendar.FEBRUARY,3),3);
-       /*
-       *
-       *
-       * */
+        clinica.buscaMedico(1).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021,Calendar.AUGUST,2),1);
 
-       clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1,3);
+        clinica.buscaMedico(3).atenderPaciente(new GregorianCalendar(2021, Calendar.MARCH,4), clinica.buscaPaciente(221586156).getHistoriaClinica());
+        clinica.buscaPaciente(221586156).agregaConsulta(new GregorianCalendar(2021, Calendar.MARCH,4),3);
+        /*********************************/
+
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1,3);
 
         clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),2,4);
 
         clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),5,1);
 
         clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),3,3);
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1,3);
+        clinica.buscaPaciente(221586156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),2,4);
+
+
+        /*
+        *
+        *
+        * */
+
+        clinica.buscaMedico(1).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
+        clinica.buscaPaciente(274266156).agregaConsulta(new GregorianCalendar(2021,Calendar.FEBRUARY,3),1);
+
+        clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
+        clinica.buscaPaciente(274266156).agregaConsulta(new GregorianCalendar(2021,Calendar.FEBRUARY,3),2);
+
+        clinica.buscaMedico(1).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
+        clinica.buscaPaciente(274266156).agregaConsulta(new GregorianCalendar(2021,Calendar.FEBRUARY,3),1);
+
+        clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
+        clinica.buscaPaciente(274266156).agregaConsulta(new GregorianCalendar(2021,Calendar.FEBRUARY,3),2);
+
+        clinica.buscaMedico(2).atenderPaciente(new GregorianCalendar(2021,Calendar.FEBRUARY,3), clinica.buscaPaciente(274266156).getHistoriaClinica());
+        clinica.buscaPaciente(274266156).agregaConsulta(new GregorianCalendar(2021,Calendar.FEBRUARY,3),2);
+        /***********************************************************************/
+
+        clinica.buscaPaciente(274266156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),3,1);
+
+        clinica.buscaPaciente(274266156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),2,1);
+
+        clinica.buscaPaciente(274266156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1,5);
+
+        clinica.buscaPaciente(274266156).agregaHabitacion(new GregorianCalendar(2021,Calendar.AUGUST,2),1,3);
+        /*
+       *
+       *
+       * */
+
+
+
+
+
+
+
         Muestra prueba=new Muestra();
         
         try {
 			prueba.reporteActividadDiaria2(3, new GregorianCalendar(2020,Calendar.FEBRUARY,3), new GregorianCalendar(2021,Calendar.DECEMBER,5));
-		} catch (NoHayPacienteException e) {
+            System.out.println("\n\n\n");
+            prueba.reporteActividadDiaria2(2,new GregorianCalendar(2020,Calendar.FEBRUARY,3), new GregorianCalendar(2021,Calendar.DECEMBER,5));
+            System.out.println("\n\n\n");
+
+        } catch (NoHayPacienteException e) {
 			System.out.println(e.getMessage());
 		}
         System.out.println(clinica.buscaPaciente(221586156).toString());
         this.creaFactura(clinica.buscaPaciente(221586156));
+        System.out.println("\n \n \n \n");
+        System.out.println(clinica.buscaPaciente(274266156).toString());
+        this.creaFactura(clinica.buscaPaciente(274266156));
     }
 
 
