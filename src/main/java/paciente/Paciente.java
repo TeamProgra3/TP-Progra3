@@ -1,5 +1,6 @@
 package paciente;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -10,7 +11,7 @@ import medico.Consulta;
  * @author Los Cafeteros
  *
  */
-public abstract class Paciente {
+public abstract class Paciente implements Serializable {
     public static int historiasClinicasPacientes=0;
 
     private int DNI;

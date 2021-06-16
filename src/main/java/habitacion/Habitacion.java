@@ -1,13 +1,14 @@
 package habitacion;
 
 
+import java.io.Serializable;
 
 /**
  * Clase que representa las habitaciones donde se alojan los pacientes<br>
  * @author Los cafeteros
  *
  */
-public class Habitacion implements IHabitacion{
+public class Habitacion implements IHabitacion, Serializable {
     public static int numeroHabitaciones=0;
     protected int numeroHabitacion;
     protected float costoHabitacion=100;

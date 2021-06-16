@@ -1,5 +1,6 @@
 package medico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
@@ -23,7 +24,7 @@ import paciente.Paciente;
 	 * @author Los Cafeteros
 	 *
 	 */
-public abstract class Medico implements IMedico {
+public abstract class Medico implements IMedico, Serializable {
 	public static int matriculaMedicos = 0;
 	protected int matricula;
 	protected String nombre;
@@ -56,7 +57,7 @@ public abstract class Medico implements IMedico {
 	}
 
 	/**
-	 * Metodo que añade a su array de consultas, una fecha e historia clinica de paciente a atender
+	 * Metodo que aï¿½ade a su array de consultas, una fecha e historia clinica de paciente a atender
 	 *
 	 */
 	@Override

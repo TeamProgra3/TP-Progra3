@@ -1,5 +1,6 @@
 package medico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -12,7 +13,7 @@ import paciente.Paciente;
  * Clase que almacena la fecha y el codigo que pueden pertenecer tanto a un paciente, como a un medico
  * @author Los cafeteros
  */
-public class Consulta implements Comparable<Consulta>{
+public class Consulta implements Comparable<Consulta>, Serializable {
 	private GregorianCalendar fecha;
 	private int id;
 	private int cantDias;

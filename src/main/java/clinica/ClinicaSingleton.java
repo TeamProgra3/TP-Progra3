@@ -22,8 +22,6 @@ public class ClinicaSingleton {
     private HashMap<Integer, Paciente> pacientesRegistrados = new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos = new HashMap<Integer, IMedico>();
     private HashMap<Integer, IHabitacion> habitaciones = new HashMap<Integer, IHabitacion>();
-
-
     public String nombre;
     public String direccion;
     public String telefono;
@@ -39,11 +37,14 @@ public class ClinicaSingleton {
         this.patio = new ArrayList<Paciente>();
     }
 
+
     public static ClinicaSingleton getInstance() {
         if (instanciaClinica == null)
             instanciaClinica = new ClinicaSingleton();
         return instanciaClinica;
     }
+
+
 
     public Paciente getSalaPrivada() {
         return salaPrivada;
@@ -78,7 +79,7 @@ public class ClinicaSingleton {
      */
     public Paciente buscaPacienteID(int id) throws NoHayPacienteException {
         Set<Integer> keys = this.pacientesRegistrados.keySet();
-
+        //modificar por favor
         for (Integer key : keys) {
             Paciente paciente = this.pacientesRegistrados.get(key);
             if (paciente.getHistoriaClinica() == id)

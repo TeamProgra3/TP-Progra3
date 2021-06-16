@@ -13,13 +13,11 @@ import exception.FactoryMedicoException;
 public class MedicoFactory {
 
 
-    private IMedico setprofesion(String profesion,String nombre,String apellido) throws FactoryMedicoException {
-        if(profesion.equals("cirujano"))
-            return new Cirugia(nombre,apellido);
-        if(profesion.equals("clinico"))
-            return  new Clinico(nombre,apellido);
-        if (profesion.equals("pediatra"))
-            return new Pediatria(nombre,apellido);
+
+    private IMedico setprofesion(String profesion, String nombre, String apellido) throws FactoryMedicoException {
+        if(profesion.equals("cirujano"))return new Cirugia(nombre,apellido);
+        if(profesion.equals("clinico"))return  new Clinico(nombre,apellido);
+        if(profesion.equals("pediatra"))return new Pediatria(nombre,apellido);
         String aux="Profesion "+profesion+" no se reconoce como opcion valida";
         throw new FactoryMedicoException(aux);
     }
