@@ -1,9 +1,14 @@
 package clinica;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+
+import clinica.serializacion.IPersistencia;
+import clinica.serializacion.PersistenciaBinaria;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
 import medico.IMedico;
@@ -16,6 +21,9 @@ import paciente.Paciente;
  * @author Los Cafeteros
  */
 public class ClinicaSingleton {
+
+    private IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
+
     private Paciente salaPrivada; //Un unico paciente   --------------------------------------
     private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------
     private ArrayList<Paciente> listaAtencion = new ArrayList<Paciente>();
@@ -131,7 +139,81 @@ public class ClinicaSingleton {
 
     }
 
+    /*
+    public String nombre;
+    public String direccion;
+    public String telefono;
+    public String ciudad;
+    *
+    *
+    * */
+    public void persisteDatos() throws IOException {
+        persistencia.abrirOutput("salaPrivada.bin");
+        persistencia.escribir(this.salaPrivada);
+        persistencia.cerrarOutput();
+        //
+        persistencia.abrirOutput("patio.bin");
+        persistencia.escribir(this.patio);
+        persistencia.cerrarOutput();
+        //
+        persistencia.abrirOutput("listaAtencion.bin");
+        persistencia.escribir(this.listaAtencion);
+        persistencia.cerrarOutput();
+        //
+        persistencia.abrirOutput("pacientesRegistrados.bin");
+        persistencia.escribir(this.pacientesRegistrados);
+        persistencia.cerrarOutput();
+        //
+        persistencia.abrirOutput("patio.bin");
+        persistencia.escribir(this.patio);
+        persistencia.cerrarOutput();
+        //
+        persistencia.abrirOutput("medicos.bin");
+        persistencia.escribir(this.medicos);
+        persistencia.cerrarOutput();
+        //
+        persistencia.abrirOutput("habitaciones.bin");
+        persistencia.escribir(this.habitaciones);
+        persistencia.cerrarOutput();
+        //
 
-}
+
+    }
+
+    public void levantarDatos() throws IOException, ClassNotFoundException {
+        persistencia.abrirInput("salaPrivada.bin");
+        this.salaPrivada = (Paciente) persistencia.leer();
+        persistencia.cerrarInput();
+        //
+        persistencia.abrirInput("patio.bin");
+        this.patio = (ArrayList<Paciente>) persistencia.leer();
+        persistencia.cerrarInput();
+        //
+        persistencia.abrirInput("listaAtencion.bin");
+        this.listaAtencion = (ArrayList<Paciente>) persistencia.leer();
+        persistencia.cerrarInput();
+        //
+        persistencia.abrirInput("pacientesRegistrados.bin");
+        this.pacientesRegistrados= (HashMap<Integer, Paciente>) persistencia.leer();
+        persistencia.cerrarInput();
+        //
+        persistencia.abrirInput("patio.bin");
+        this.patio= (ArrayList<Paciente>) persistencia.leer();
+        persistencia.cerrarInput();
+        //
+        persistencia.abrirInput("medicos.bin");
+        this.medicos= (HashMap<Integer, IMedico>) persistencia.leer();
+        persistencia.cerrarInput();
+        //
+        persistencia.abrirInput("habitaciones.bin");
+        this.habitaciones= (HashMap<Integer, IHabitacion>) persistencia.leer();
+        persistencia.cerrarInput();
+        //
+
+    }
+
+    }
+
+
     
     

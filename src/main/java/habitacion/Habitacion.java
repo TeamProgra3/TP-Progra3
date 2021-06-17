@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Los cafeteros
  *
  */
-public class Habitacion implements IHabitacion, Serializable {
+public class Habitacion implements IHabitacion{
     public static int numeroHabitaciones=0;
     protected int numeroHabitacion;
     protected float costoHabitacion=100;
