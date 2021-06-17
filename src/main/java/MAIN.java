@@ -1,6 +1,7 @@
 
 
 import clinica.ClinicaSingleton;
+import clinica.serializacion.BBDD;
 import exception.EsperaVaciaException;
 import exception.FactoryHabitacionException;
 import exception.FactoryMedicoException;
@@ -11,17 +12,19 @@ import java.io.IOException;
 public class MAIN {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ClinicaSingleton clinica =ClinicaSingleton.getInstance();
-    TEST test =new TEST();
-       clinica.levantarDatos();
-      /*try {
+        BBDD bbdd=new BBDD();
+        TEST test =new TEST();
+        bbdd.levantarDatos();
+        /*
+      try {
         test.cargaDatos();
 
       } catch (FactoryMedicoException | FactoryHabitacionException | EsperaVaciaException e) {
         e.printStackTrace();
       }
-      */
-      test.muestraInformacion();
-     // clinica.persisteDatos();
+        */
+        test.muestraInformacion();
+        //bbdd.persisteDatos();
 
     }
 }

@@ -22,18 +22,21 @@ import paciente.Paciente;
  */
 public class ClinicaSingleton {
 
-    private IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
+
 
     private Paciente salaPrivada; //Un unico paciente   --------------------------------------
     private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------
+
     private ArrayList<Paciente> listaAtencion = new ArrayList<Paciente>();
     private HashMap<Integer, Paciente> pacientesRegistrados = new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos = new HashMap<Integer, IMedico>();
     private HashMap<Integer, IHabitacion> habitaciones = new HashMap<Integer, IHabitacion>();
+
     public String nombre;
     public String direccion;
     public String telefono;
     public String ciudad;
+
     private static ClinicaSingleton instanciaClinica = null;
 
     private ClinicaSingleton() {
@@ -53,6 +56,65 @@ public class ClinicaSingleton {
     }
 
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public void setListaAtencion(ArrayList<Paciente> listaAtencion) {
+        this.listaAtencion = listaAtencion;
+    }
+
+    public HashMap<Integer, Paciente> getPacientesRegistrados() {
+        return pacientesRegistrados;
+    }
+
+    public void setPacientesRegistrados(HashMap<Integer, Paciente> pacientesRegistrados) {
+        this.pacientesRegistrados = pacientesRegistrados;
+    }
+
+    public HashMap<Integer, IMedico> getMedicos() {
+        return medicos;
+    }
+
+    public void setMedicos(HashMap<Integer, IMedico> medicos) {
+        this.medicos = medicos;
+    }
+
+    public HashMap<Integer, IHabitacion> getHabitaciones() {
+        return habitaciones;
+    }
+
+    public void setHabitaciones(HashMap<Integer, IHabitacion> habitaciones) {
+        this.habitaciones = habitaciones;
+    }
 
     public Paciente getSalaPrivada() {
         return salaPrivada;
@@ -68,6 +130,10 @@ public class ClinicaSingleton {
 
     public void addPatio(Paciente p) {
         this.patio.add(p);
+    }
+
+    public void setPatio(ArrayList<Paciente> patio) {
+        this.patio = patio;
     }
 
     public void addPacienteRegistrado(Paciente paciente) {
@@ -138,80 +204,6 @@ public class ClinicaSingleton {
         }
 
     }
-
-    /*
-    public String nombre;
-    public String direccion;
-    public String telefono;
-    public String ciudad;
-    *
-    *
-    * */
-    public void persisteDatos() throws IOException {
-        persistencia.abrirOutput("salaPrivada.bin");
-        persistencia.escribir(this.salaPrivada);
-        persistencia.cerrarOutput();
-        //
-        persistencia.abrirOutput("patio.bin");
-        persistencia.escribir(this.patio);
-        persistencia.cerrarOutput();
-        //
-        persistencia.abrirOutput("listaAtencion.bin");
-        persistencia.escribir(this.listaAtencion);
-        persistencia.cerrarOutput();
-        //
-        persistencia.abrirOutput("pacientesRegistrados.bin");
-        persistencia.escribir(this.pacientesRegistrados);
-        persistencia.cerrarOutput();
-        //
-        persistencia.abrirOutput("patio.bin");
-        persistencia.escribir(this.patio);
-        persistencia.cerrarOutput();
-        //
-        persistencia.abrirOutput("medicos.bin");
-        persistencia.escribir(this.medicos);
-        persistencia.cerrarOutput();
-        //
-        persistencia.abrirOutput("habitaciones.bin");
-        persistencia.escribir(this.habitaciones);
-        persistencia.cerrarOutput();
-        //
-
-
-    }
-
-    public void levantarDatos() throws IOException, ClassNotFoundException {
-        persistencia.abrirInput("salaPrivada.bin");
-        this.salaPrivada = (Paciente) persistencia.leer();
-        persistencia.cerrarInput();
-        //
-        persistencia.abrirInput("patio.bin");
-        this.patio = (ArrayList<Paciente>) persistencia.leer();
-        persistencia.cerrarInput();
-        //
-        persistencia.abrirInput("listaAtencion.bin");
-        this.listaAtencion = (ArrayList<Paciente>) persistencia.leer();
-        persistencia.cerrarInput();
-        //
-        persistencia.abrirInput("pacientesRegistrados.bin");
-        this.pacientesRegistrados= (HashMap<Integer, Paciente>) persistencia.leer();
-        persistencia.cerrarInput();
-        //
-        persistencia.abrirInput("patio.bin");
-        this.patio= (ArrayList<Paciente>) persistencia.leer();
-        persistencia.cerrarInput();
-        //
-        persistencia.abrirInput("medicos.bin");
-        this.medicos= (HashMap<Integer, IMedico>) persistencia.leer();
-        persistencia.cerrarInput();
-        //
-        persistencia.abrirInput("habitaciones.bin");
-        this.habitaciones= (HashMap<Integer, IHabitacion>) persistencia.leer();
-        persistencia.cerrarInput();
-        //
-
-    }
-
     }
 
 
