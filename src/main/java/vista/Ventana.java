@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,7 +18,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
+
+import paciente.Paciente;
+
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
 
 public class Ventana extends JFrame {
 
@@ -31,6 +37,8 @@ public class Ventana extends JFrame {
 	JButton btnAgregar = new JButton("AGREGAR");
 	JButton btnEliminar = new JButton("ELIMINAR");
 
+	JScrollPane scrollPane = new JScrollPane();
+	JList listAtencion;
 
 	/**
 	 * Create the frame.
@@ -50,6 +58,7 @@ public class Ventana extends JFrame {
 		panelIzq.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_1.setBackground(new Color(0, 250, 154));
 		panelIzq.add(panel_1, BorderLayout.SOUTH);
 		
@@ -58,13 +67,17 @@ public class Ventana extends JFrame {
 		btnFactura.setFont(new Font("Verdana", Font.PLAIN, 14));
 		panel_1.add(btnFactura);
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		panelIzq.add(scrollPane, BorderLayout.CENTER);
 		
-		JList list = new JList();
-		scrollPane.setViewportView(list);
+		listAtencion = new JList();
+		listAtencion.setBorder(new LineBorder(new Color(0, 0, 0)));
+		listAtencion.setBackground(UIManager.getColor("Button.light"));
+		listAtencion.setFont(new Font("Verdana", Font.PLAIN, 14));
+		scrollPane.setViewportView(listAtencion);
 		
 		JPanel panel_5 = new JPanel();
+		panel_5.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_5.setBackground(new Color(0, 250, 154));
 		panelIzq.add(panel_5, BorderLayout.NORTH);
 		
@@ -203,5 +216,14 @@ public class Ventana extends JFrame {
 		btnFactura.addActionListener(controlador);
 	}
 	
-
+	public void actualizarPacientesAtencion(ArrayList<Paciente> arrayList) {
+		this.listAtencion = new JList<Object>(arrayList.toArray());
+		scrollPane.setViewportView(listAtencion);
+	}
+	
+	public Paciente getPacienteSeleccionado() {
+		return (Paciente) listAtencion.getSelectedValue();
+		
+	}
+	
 }

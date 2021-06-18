@@ -101,7 +101,7 @@ public abstract class Paciente implements Serializable {
     }
     @Override
     public String toString() {
-        return this.getApellido() + " " +this.getNombre();
+        return this.getApellido() + " " +this.getNombre() + " "+ this.DNI;
     }
     /**Resuelve la prioridad en la sala privada usando Double Dispatch
 

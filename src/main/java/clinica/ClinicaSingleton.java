@@ -7,6 +7,7 @@ import java.util.Set;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
 import medico.IMedico;
+import modulos.ModuloFacturacion;
 import paciente.Paciente;
 
 /**
@@ -128,6 +129,12 @@ public class ClinicaSingleton {
             index = i;
             this.listaAtencion.remove(index);
         }
+
+    }
+    
+    public void creaFactura(Paciente paciente){
+        ModuloFacturacion maduloFacturacion=new ModuloFacturacion();
+        maduloFacturacion.creaFacturapaciente(paciente.getDNI());
 
     }
 

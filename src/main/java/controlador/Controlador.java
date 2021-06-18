@@ -3,6 +3,10 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
+import clinica.ClinicaSingleton;
+import paciente.Paciente;
 import vista.Ventana;
 
 public class Controlador implements ActionListener {
@@ -12,6 +16,7 @@ public class Controlador implements ActionListener {
 		ventana = new Ventana();
 		ventana.setVisible(true);
 		ventana.setListenerBotones(this);
+		ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
 	}
 
 	@Override
@@ -26,9 +31,15 @@ public class Controlador implements ActionListener {
 			// Codigo a hacer al eliminar asociado
 			// Verificar todo
 
-		} else if (e.getActionCommand().equals("GENERAR")) {
-			// Codigo a hacer al generar una factura
+		} else if (e.getActionCommand().equals("GENERARFACTURA")) {
+			Paciente auxiliar = ventana.getPacienteSeleccionado();
+			if(auxiliar == null)
+				JOptionPane.showMessageDialog(null, "Debe seleccionar un paciente!");
+			else {
+				ClinicaSingleton.getInstance().creaFactura(auxiliar);
+			}
+				
 		}
-
+		ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
 	}
 }
