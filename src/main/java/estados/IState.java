@@ -3,15 +3,17 @@ package estados;
 public interface IState {
 
 	
-	void solicitaAtencionDomicilio();
+	boolean solicitaAtencionDomicilio();
 
-	void solicitaTrasladoClinica();
+	boolean solicitaTrasladoClinica();
 	
-	void volverClinica();
+	boolean volverAClinica();
 	
-	void repararAmbulancia();
+	boolean repararAmbulancia();
 	
 	String estadoActual();
+
+	
 }
 
 

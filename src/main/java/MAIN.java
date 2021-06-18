@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-import clinica.ClinicaSingleton;
 import clinica.serializacion.Persistencia;
 import controlador.Controlador;
 import exception.EsperaVaciaException;
 import exception.FactoryHabitacionException;
 import exception.FactoryMedicoException;
+import modulos.ModuloAmbulancia;
 import modulos.TEST;
 import vista.Ventana;
 
@@ -50,8 +50,9 @@ public class MAIN {
 		}
 		
 		test.muestraInformacion();
-		controlador = new Controlador();
+		//controlador = new Controlador();
 		
+		ModuloAmbulancia moduloam = new ModuloAmbulancia();
 	
 	}
 }

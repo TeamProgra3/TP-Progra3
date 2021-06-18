@@ -1,4 +1,4 @@
-package estados;
+/*package estados;
 
 import concurrencia.Ambulancia;
 
@@ -6,25 +6,25 @@ public class RegresaTallerState implements IState{
 	Ambulancia ambulancia = Ambulancia.getInstance();
 	
 	@Override
-	public void solicitaAtencionDomicilio() {
+	public boolean solicitaAtencionDomicilio() {
 		System.out.println("No puedo atender, estoy volviendo del taller");
 		
 	}
 
 	@Override
-	public void solicitaTrasladoClinica() {
+	public boolean solicitaTrasladoClinica() {
 		System.out.println("No puedo atender, estoy volviendo del taller");
 	}
 
 	@Override
-	public void volverClinica() {
+	public boolean volverClinica() {
 		ambulancia.setEstado(new EnClinicaState());
 		System.out.println("Taller --> Clinica");
 		
 	}
 
 	@Override
-	public void repararAmbulancia() {
+	public boolean repararAmbulancia() {
 		System.out.println("No puedo atender, estoy volviendo del taller");
 	}
 
@@ -34,3 +34,4 @@ public class RegresaTallerState implements IState{
 	}
 
 }
+*/
