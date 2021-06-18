@@ -219,6 +219,6 @@ public class ClinicaSingleton {
         maduloFacturacion.creaFacturapaciente(paciente.getDNI());
     }
 
-
+}
     
     
