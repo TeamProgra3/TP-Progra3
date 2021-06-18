@@ -5,7 +5,7 @@ import clinica.ClinicaSingleton;
 import java.io.IOException;
 import java.io.Serializable;
 
-public class BBDD {
+public class Persistencia {
     ClinicaSingleton clinica=ClinicaSingleton.getInstance();
     private IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
     ClinicaDTO clinicaDTO=new ClinicaDTO();
