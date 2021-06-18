@@ -12,30 +12,30 @@ public class EnClinicaState implements IState {
 	}
 
 	@Override
-	public boolean solicitaAtencionDomicilio() {
+	public void solicitaAtencionDomicilio() {
 		Ambulancia.getInstance().setEstado(new AtendiendoPacienteState());
 		System.out.println("De la clinica --> Atender paciente domicilio");
-		return true;
+
 	}
 
 	@Override
-	public boolean solicitaTrasladoClinica() {
-		//ambulancia.setEstado(new TrasladoPacienteState()); TODO
+	public void solicitaTrasladoClinica() {
+		Ambulancia.getInstance().setEstado(new TrasladoPacienteState());
 		System.out.println("De la clinica --> Va a buscar un paciente para llevarlo a clinica");
-		return true;
+
 	}
 
 	@Override
-	public boolean volverAClinica() {
+	public void volverClinica() {
 		System.out.println("Se mantiene en la clinica");
-		return false; //TODO Revisar
+
 	}
 
 	@Override
-	public boolean repararAmbulancia() {
-		//ambulancia.setEstado(new EnTallerState()); TODO
+	public void repararAmbulancia() {
+		Ambulancia.getInstance().setEstado(new EnTallerState());
 		System.out.println("De la clinica --> Va al taller");
-		return true;
+
 
 	}
 

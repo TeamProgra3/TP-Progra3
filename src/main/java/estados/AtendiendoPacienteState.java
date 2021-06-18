@@ -5,28 +5,28 @@ import concurrencia.Ambulancia;
 public class AtendiendoPacienteState implements IState {
 	Ambulancia ambulancia = Ambulancia.getInstance();
 	@Override
-	public boolean solicitaAtencionDomicilio() {
+	public void solicitaAtencionDomicilio() {
 		System.out.println("No puedo, ya estoy atendiendo a otra persona");
-		return false;
+
 	}
 
 	@Override
-	public boolean solicitaTrasladoClinica() {
+	public void solicitaTrasladoClinica() {
 		System.out.println("No puedo, estoy atendiendo a otra persona en domicilio");
-		return false;
+
 	}
 
 	@Override
-	public boolean volverAClinica() { 
+	public void volverClinica() {
 		ambulancia.setEstado(new EnClinicaState()); //TODO DEBERIA SER REGRESA LIBRE
 		System.out.println("Domicilio --> Regresando a clinica (Libre)");
-		return true;
+
 	}
 	//TODO DESCOMENTAR
 	@Override
-	public boolean repararAmbulancia() {
+	public void repararAmbulancia() {
 		System.out.println("No puedo, estoy atendiendo a otra persona en domicilio");
-		return false;
+
 	}
 
 	@Override

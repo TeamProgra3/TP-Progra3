@@ -47,17 +47,52 @@ public class Ambulancia {
 	
 	public synchronized void volverAClinica(Asociado asociado) {
 		IState estadoAnterior = this.estado;
-		this.estado.volverAClinica();
+		this.estado.volverClinica();
 		while(estadoAnterior == this.estado) {
 			try {
 				wait();
 				estadoAnterior = this.estado;
-				this.estado.volverAClinica();
+				this.estado.volverClinica();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		notifyAll();
 		System.out.println("volvio a la clinica - pedido por: "+asociado.getNombre());
-	}	
+	}
+
+	public synchronized void trasladarAClinica(Asociado asociado) {
+		IState estadoAnterior = this.estado;
+		this.estado.solicitaTrasladoClinica();
+		while(estadoAnterior == this.estado) {
+			try {
+				wait();
+				estadoAnterior = this.estado;
+				this.estado.solicitaTrasladoClinica();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		notifyAll();
+		System.out.println("volvio a la clinica - pedido por: "+asociado.getNombre());
+	}
+
+	public synchronized void repararAmbulancia(Asociado asociado) {
+		IState estadoAnterior = this.estado;
+		this.estado.repararAmbulancia();
+		while(estadoAnterior == this.estado) {
+			try {
+				wait();
+				estadoAnterior = this.estado;
+				this.estado.repararAmbulancia();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		notifyAll();
+		System.out.println("volvio a la clinica - pedido por: "+asociado.getNombre());
+	}
+
+
+
 }
