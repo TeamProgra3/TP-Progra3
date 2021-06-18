@@ -1,5 +1,6 @@
 package medico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -10,7 +11,7 @@ import paciente.Paciente;
  * @author Los cafeteros
  *
  */
-public interface IMedico {
+public interface IMedico extends Serializable {
     public static float sueldoBasico=2000;
 
     @Deprecated

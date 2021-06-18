@@ -24,7 +24,7 @@ import paciente.Paciente;
 	 * @author Los Cafeteros
 	 *
 	 */
-public abstract class Medico implements IMedico, Serializable {
+public abstract class Medico implements IMedico {
 	public static int matriculaMedicos = 0;
 	protected int matricula;
 	protected String nombre;

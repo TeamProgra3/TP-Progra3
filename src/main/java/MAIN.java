@@ -1,5 +1,7 @@
 
-import controlador.Controlador;
+
+import clinica.ClinicaSingleton;
+import clinica.serializacion.BBDD;
 import exception.EsperaVaciaException;
 import exception.FactoryHabitacionException;
 import exception.FactoryMedicoException;
@@ -10,6 +12,7 @@ public class MAIN {
 	public static void main(String[] args) {
 		Ventana ventana;
 		Controlador controlador;
+    BBDD bbdd=new BBDD();
 		TEST test = new TEST();
 		try {
 			test.cargaDatos();
@@ -17,10 +20,6 @@ public class MAIN {
 			e.printStackTrace();
 		}
 		test.muestraInformacion();
-
 		controlador = new Controlador();
-		
-		
-
 	}
 }

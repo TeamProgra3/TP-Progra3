@@ -1,9 +1,15 @@
 package clinica;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Set;
 
+
+import clinica.serializacion.IPersistencia;
+import clinica.serializacion.PersistenciaBinaria;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
 import medico.IMedico;
@@ -17,16 +23,22 @@ import paciente.Paciente;
  * @author Los Cafeteros
  */
 public class ClinicaSingleton {
+
+
+
     private Paciente salaPrivada; //Un unico paciente   --------------------------------------
     private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------
+
     private ArrayList<Paciente> listaAtencion = new ArrayList<Paciente>();
     private HashMap<Integer, Paciente> pacientesRegistrados = new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos = new HashMap<Integer, IMedico>();
     private HashMap<Integer, IHabitacion> habitaciones = new HashMap<Integer, IHabitacion>();
+
     public String nombre;
     public String direccion;
     public String telefono;
     public String ciudad;
+
     private static ClinicaSingleton instanciaClinica = null;
 
     private ClinicaSingleton() {
@@ -46,6 +58,65 @@ public class ClinicaSingleton {
     }
 
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public void setListaAtencion(ArrayList<Paciente> listaAtencion) {
+        this.listaAtencion = listaAtencion;
+    }
+
+    public HashMap<Integer, Paciente> getPacientesRegistrados() {
+        return pacientesRegistrados;
+    }
+
+    public void setPacientesRegistrados(HashMap<Integer, Paciente> pacientesRegistrados) {
+        this.pacientesRegistrados = pacientesRegistrados;
+    }
+
+    public HashMap<Integer, IMedico> getMedicos() {
+        return medicos;
+    }
+
+    public void setMedicos(HashMap<Integer, IMedico> medicos) {
+        this.medicos = medicos;
+    }
+
+    public HashMap<Integer, IHabitacion> getHabitaciones() {
+        return habitaciones;
+    }
+
+    public void setHabitaciones(HashMap<Integer, IHabitacion> habitaciones) {
+        this.habitaciones = habitaciones;
+    }
 
     public Paciente getSalaPrivada() {
         return salaPrivada;
@@ -61,6 +132,10 @@ public class ClinicaSingleton {
 
     public void addPatio(Paciente p) {
         this.patio.add(p);
+    }
+
+    public void setPatio(ArrayList<Paciente> patio) {
+        this.patio = patio;
     }
 
     public void addPacienteRegistrado(Paciente paciente) {
@@ -79,14 +154,20 @@ public class ClinicaSingleton {
      * @throws NoHayPacienteException
      */
     public Paciente buscaPacienteID(int id) throws NoHayPacienteException {
-        Set<Integer> keys = this.pacientesRegistrados.keySet();
-        //modificar por favor
-        for (Integer key : keys) {
-            Paciente paciente = this.pacientesRegistrados.get(key);
-            if (paciente.getHistoriaClinica() == id)
-                return paciente;
-        }
-        throw new NoHayPacienteException("Paciente no encontrado");
+    	Iterator<Paciente> it = null;
+		Paciente aux=null;
+
+		if (!this.pacientesRegistrados.isEmpty()) {
+			it = this.pacientesRegistrados.values().iterator();
+			aux = it.next();
+			while (it.hasNext() && aux.getHistoriaClinica() != id)
+				aux = it.next();
+
+		}
+		if (!this.pacientesRegistrados.isEmpty() && aux.getHistoriaClinica() == id) // Fue encontrado?
+			return aux;
+		else
+			throw new NoHayPacienteException("Paciente no encontrado: " + id);
     }
 
 
@@ -131,14 +212,13 @@ public class ClinicaSingleton {
         }
 
     }
+
     
     public void creaFactura(Paciente paciente){
         ModuloFacturacion maduloFacturacion=new ModuloFacturacion();
         maduloFacturacion.creaFacturapaciente(paciente.getDNI());
-
     }
 
 
-}
     
     
