@@ -60,9 +60,9 @@ public class TEST {
         moduloAtencion.retiraPaciente();
         moduloIngreso.ingresarPaciente("Agusto","Paleta",274266156,"joven");
         moduloAtencion.retiraPaciente();
-        moduloIngreso.ingresarPaciente("franquito","delhalcon",321588956,"joven");
+        moduloIngreso.ingresarPaciente("Franquito","Del'Halcon",321588956,"joven");
         moduloAtencion.retiraPaciente();
-        moduloIngreso.ingresarPaciente("guan jabriel","rrodrriges",321588956,"joven");
+        moduloIngreso.ingresarPaciente("Guan Jabriel","Rrodrriges",321588956,"joven");
         moduloAtencion.retiraPaciente();
 
 
@@ -173,20 +173,13 @@ public class TEST {
         } catch (NoHayPacienteException e) {
 			System.out.println(e.getMessage());
 		}
+       /*  //CREACION DE FACTURAS, DESCOMENTAR SI SE QUIERE MOSTRAR POR CONSOLA
         System.out.println(clinica.buscaPaciente(221586156).toString());
-        this.creaFactura(clinica.buscaPaciente(221586156));
+        ClinicaSingleton.getInstance().creaFactura(clinica.buscaPaciente(221586156));
         System.out.println("\n \n \n \n");
         System.out.println(clinica.buscaPaciente(274266156).toString());
-        this.creaFactura(clinica.buscaPaciente(274266156));
+        ClinicaSingleton.getInstance().creaFactura(clinica.buscaPaciente(274266156));
+        */
     }
-
-
-    public void creaFactura(Paciente paciente){
-        ModuloFacturacion maduloFacturacion=new ModuloFacturacion();
-        maduloFacturacion.creaFacturapaciente(paciente.getDNI());
-
-    }
-
-
 
 }

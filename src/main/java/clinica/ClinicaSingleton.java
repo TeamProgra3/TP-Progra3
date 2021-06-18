@@ -13,6 +13,7 @@ import clinica.serializacion.PersistenciaBinaria;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
 import medico.IMedico;
+import modulos.ModuloFacturacion;
 import paciente.Paciente;
 
 /**
@@ -211,6 +212,11 @@ public class ClinicaSingleton {
         }
 
     }
+
+    
+    public void creaFactura(Paciente paciente){
+        ModuloFacturacion maduloFacturacion=new ModuloFacturacion();
+        maduloFacturacion.creaFacturapaciente(paciente.getDNI());
     }
 
 
