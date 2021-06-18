@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Set;
 
 
@@ -152,14 +153,20 @@ public class ClinicaSingleton {
      * @throws NoHayPacienteException
      */
     public Paciente buscaPacienteID(int id) throws NoHayPacienteException {
-        Set<Integer> keys = this.pacientesRegistrados.keySet();
-        //modificar por favor
-        for (Integer key : keys) {
-            Paciente paciente = this.pacientesRegistrados.get(key);
-            if (paciente.getHistoriaClinica() == id)
-                return paciente;
-        }
-        throw new NoHayPacienteException("Paciente no encontrado");
+    	Iterator<Paciente> it = null;
+		Paciente aux=null;
+
+		if (!this.pacientesRegistrados.isEmpty()) {
+			it = this.pacientesRegistrados.values().iterator();
+			aux = it.next();
+			while (it.hasNext() && aux.getHistoriaClinica() != id)
+				aux = it.next();
+
+		}
+		if (!this.pacientesRegistrados.isEmpty() && aux.getHistoriaClinica() == id) // Fue encontrado?
+			return aux;
+		else
+			throw new NoHayPacienteException("Paciente no encontrado: " + id);
     }
 
 
