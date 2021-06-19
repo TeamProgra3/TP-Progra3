@@ -19,7 +19,7 @@ public class Controlador implements ActionListener {
 		ventana.setVisible(true);
 		ventana.setListenerBotones(this);
 		ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
-		ventana.setEstadoAmbulancia("Hola!");
+		ventana.setEstadoAmbulancia("En la clinica");
 	}
 
 	@Override

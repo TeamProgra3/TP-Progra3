@@ -44,11 +44,16 @@ public class Asociado extends Thread {
 
 	@Override
 	public void run() {
+		int accion;
 		super.run();
 		Random r=new Random();
 		try {
 			Thread.sleep(r.nextInt(4000));
-			Ambulancia.getInstance().atenderPacienteDomicilio(this);
+			accion = r.nextInt()%2;
+			if (accion == 0)
+				Ambulancia.getInstance().atenderPacienteDomicilio(this);
+			else 
+				Ambulancia.getInstance().trasladarAClinica(this);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.SystemColor;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
@@ -14,19 +15,16 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
-
-import paciente.Paciente;
-
-import java.awt.event.ActionEvent;
-import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
 import concurrencia.Asociado;
-import javax.swing.JTextArea;
+import paciente.Paciente;
 
 public class Ventana extends JFrame {
 
@@ -53,13 +51,13 @@ public class Ventana extends JFrame {
 	
 	JTextArea textEstadoAmb = new JTextArea();
 
-	/**
-	 * Create the frame.
-	 */
+
 	public Ventana() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img/cruzroja.png"));
+		setIconImage(getIconImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 787, 637);
-		setTitle("Clinica");
+		setBounds(100, 100, 987, 637);
+		setTitle("Clinica Locolope");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
