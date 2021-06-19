@@ -4,7 +4,9 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
+import clinica.ClinicaSingleton;
 import clinica.serializacion.Persistencia;
+import concurrencia.Asociado;
 import controlador.Controlador;
 import exception.EsperaVaciaException;
 import exception.FactoryHabitacionException;

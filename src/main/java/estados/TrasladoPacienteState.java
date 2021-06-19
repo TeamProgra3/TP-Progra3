@@ -1,28 +1,29 @@
 package estados;
 
 import concurrencia.Ambulancia;
+import controlador.Controlador;
 
 public class TrasladoPacienteState implements IState {
 	Ambulancia ambulancia = Ambulancia.getInstance();
 	@Override
 	public void solicitaAtencionDomicilio() {
-		System.out.println("No puedo atender, estoy trasladando paciente");
+		Controlador.agregarSuceso("No puedo atender, estoy trasladando paciente");
 	}
 
 	@Override
 	public void solicitaTrasladoClinica() {
-		System.out.println("No puedo atender, estoy trasladando paciente");
+		Controlador.agregarSuceso("No puedo atender, estoy trasladando paciente");
 	}
 
 	@Override
 	public void volverClinica() {
 		ambulancia.setEstado(new EnClinicaState());
-		System.out.println("Traslado --> Lleg� a clinica");
+		Controlador.agregarSuceso("Traslado --> Lleg� a clinica");
 	}
 
 	@Override
 	public void repararAmbulancia() {
-		System.out.println("No puedo atender, estoy trasladando paciente");
+		Controlador.agregarSuceso("No puedo atender, estoy trasladando paciente");
 	}
 
 	@Override

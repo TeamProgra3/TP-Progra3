@@ -26,6 +26,7 @@ import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
 import concurrencia.Asociado;
+import javax.swing.JTextArea;
 
 public class Ventana extends JFrame {
 
@@ -38,15 +39,19 @@ public class Ventana extends JFrame {
 	JButton btnFactura = new JButton("GENERAR FACTURA");
 	JButton btnAgregar = new JButton("AGREGAR");
 	JButton btnEliminar = new JButton("ELIMINAR");
-
+	JButton btnSimulacion;
+	JTextArea textArea = new JTextArea();
 	JScrollPane scrollPane = new JScrollPane();
 	JList listAtencion;
 	
+	JScrollPane scrollPane_1 = new JScrollPane();
 	JScrollPane scrollPaneAsociados = new JScrollPane();
 	JList listAsociados;
 	
 	JScrollPane scrollPane_2 = new JScrollPane();
 	JList list_2;
+	
+	JTextArea textEstadoAmb = new JTextArea();
 
 	/**
 	 * Create the frame.
@@ -196,9 +201,10 @@ public class Ventana extends JFrame {
 		panel_12.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_11.add(panel_12, BorderLayout.SOUTH);
 		
-		JButton btnNewButton = new JButton("INICIAR SIMULACION");
-		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 14));
-		panel_12.add(btnNewButton);
+		btnSimulacion = new JButton("INICIAR SIMULACION");
+		btnSimulacion.setActionCommand("INICIARSIMULACION");
+		btnSimulacion.setFont(new Font("Verdana", Font.PLAIN, 14));
+		panel_12.add(btnSimulacion);
 		
 		scrollPaneAsociados = new JScrollPane();
 		panel_11.add(scrollPaneAsociados, BorderLayout.CENTER);
@@ -220,17 +226,31 @@ public class Ventana extends JFrame {
 		lblAmbulancia.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel_6.add(lblAmbulancia);
 		
-		scrollPane_2 = new JScrollPane();
-		panelDer.add(scrollPane_2, BorderLayout.CENTER);
+		JPanel panel_13 = new JPanel();
+		panelDer.add(panel_13, BorderLayout.CENTER);
+		panel_13.setLayout(new BorderLayout(0, 0));
 		
-		JList list_2 = new JList();
-		scrollPane_2.setViewportView(list_2);
+		JPanel panelEstadoAmb = new JPanel();
+		panel_13.add(panelEstadoAmb, BorderLayout.NORTH);
+		textEstadoAmb.setBackground(UIManager.getColor("CheckBox.light"));
+		textEstadoAmb.setText("Estado");
+		textEstadoAmb.setFont(new Font("Verdana", Font.BOLD, 16));
+		
+		
+		panelEstadoAmb.add(textEstadoAmb);
+		
+		
+		panel_13.add(scrollPane_1, BorderLayout.CENTER);
+		
+		
+		scrollPane_1.setViewportView(textArea);
 	}
 	
 	public void setListenerBotones(ActionListener controlador) {
 		btnAgregar.addActionListener(controlador);
 		btnEliminar.addActionListener(controlador);
 		btnFactura.addActionListener(controlador);
+		btnSimulacion.addActionListener(controlador);
 	}
 	
 	public void actualizarPacientesAtencion(ArrayList<Paciente> arrayList) {
@@ -269,6 +289,14 @@ public class Ventana extends JFrame {
 
 	public String getDomicilio() {
 		return tfDomicilio.getText();
+	}
+	
+	public void setEstadoAmbulancia(String texto) {
+		this.textEstadoAmb.setText(texto);
+	}
+	
+	public void nuevoSuceso(String suceso) {
+		this.textArea.append(suceso);
 	}
 	
 }

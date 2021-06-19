@@ -7,17 +7,19 @@ import javax.swing.JOptionPane;
 
 import clinica.ClinicaSingleton;
 import concurrencia.Asociado;
+import modulos.ModuloAmbulancia;
 import paciente.Paciente;
 import vista.Ventana;
 
 public class Controlador implements ActionListener {
-	Ventana ventana;
+	static Ventana ventana;
 
 	public Controlador() {
 		ventana = new Ventana();
 		ventana.setVisible(true);
 		ventana.setListenerBotones(this);
 		ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
+		ventana.setEstadoAmbulancia("Hola!");
 	}
 
 	@Override
@@ -31,7 +33,6 @@ public class Controlador implements ActionListener {
 				String DNI = ventana.getDNI();
 				String telefono = ventana.getDNI();
 				String domicilio = ventana.getDNI();
-				System.out.println("hizo new");
 				ClinicaSingleton.getInstance().addAsociado(new Asociado(nombre,apellido,DNI,telefono,domicilio));
 			} else {
 				JOptionPane.showMessageDialog(null, "Debe completar los datos del asociado! DNI y Nombre son obligatorios");
@@ -54,8 +55,21 @@ public class Controlador implements ActionListener {
 				ClinicaSingleton.getInstance().creaFactura(auxiliar);
 			}
 				
+		} else if (comando.equals("INICIARSIMULACION")) {
+			if (ClinicaSingleton.getInstance().getListaAsociados().isEmpty())
+				ModuloAmbulancia.cargaRapida();
+			ClinicaSingleton.getInstance().iniciarSimulacion();
 		}
 		ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
 		ventana.actualizarAsociados(ClinicaSingleton.getInstance().getListaAsociados());
+	}
+	
+	public static void actualizarEstadoAmbulancia(String estadoActual) {
+		ventana.setEstadoAmbulancia(estadoActual);
+	}
+	
+	public static void agregarSuceso(String suceso) {
+		ventana.nuevoSuceso(suceso);
+		ventana.nuevoSuceso("\n");
 	}
 }

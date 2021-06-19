@@ -1,18 +1,31 @@
 package modulos;
 
+import java.util.ArrayList;
+
+import clinica.ClinicaSingleton;
 import concurrencia.Asociado;
+import concurrencia.Operario;
 
 public class ModuloAmbulancia {
-	Asociado a1,a2,a3;
+
+	public static void iniciarSimulacion() {
+		int cantidad=0;
+		Operario operario;
+		ArrayList<Asociado> lista = ClinicaSingleton.getInstance().getListaAsociados();
+		for (Asociado asociado : lista) {
+			cantidad++;
+			asociado.start();
+		}
+		operario = new Operario("Operario",cantidad);
+		operario.start();
+	}
 	
-	
-	public ModuloAmbulancia() {
-		a1 = new Asociado("Juan");
-		a2 = new Asociado("PEPE");
-		a3 = new Asociado("roberto");
+	public static void cargaRapida() {
+
+		ClinicaSingleton.getInstance().addAsociado(new Asociado("Leonel","Guccione","1","",""));
+		ClinicaSingleton.getInstance().addAsociado(new Asociado("Guillermo","Lazurri","2","",""));
+		ClinicaSingleton.getInstance().addAsociado(new Asociado("Ivonne","Gellon","3","",""));
+		ClinicaSingleton.getInstance().addAsociado(new Asociado("Ximena","","1","",""));
 		
-		a1.start();
-		a2.start();
-		a3.start();
 	}
 }

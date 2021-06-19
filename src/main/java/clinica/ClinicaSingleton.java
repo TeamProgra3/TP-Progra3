@@ -14,6 +14,7 @@ import concurrencia.Asociado;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
 import medico.IMedico;
+import modulos.ModuloAmbulancia;
 import modulos.ModuloFacturacion;
 import paciente.Paciente;
 
@@ -234,6 +235,10 @@ public class ClinicaSingleton {
     public void creaFactura(Paciente paciente){
         ModuloFacturacion maduloFacturacion=new ModuloFacturacion();
         maduloFacturacion.creaFacturapaciente(paciente.getDNI());
+    }
+    
+    public void iniciarSimulacion() {
+    	ModuloAmbulancia.iniciarSimulacion();
     }
 
 }
