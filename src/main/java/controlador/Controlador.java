@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import clinica.ClinicaSingleton;
+import concurrencia.Asociado;
 import paciente.Paciente;
 import vista.Ventana;
 
@@ -21,17 +22,31 @@ public class Controlador implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println(e.getActionCommand());
+		String comando = e.getActionCommand();
 
-		if (e.getActionCommand().equals("AGREGAR")) {
-			// Codigo a hacer al agregar asociado
-			// Verificar que los cmapos esten completos
+		if (comando.equals("AGREGAR")) {
+			if (!ventana.getDNI().isBlank() && !ventana.getNombre().isBlank()) {
+				String nombre = ventana.getNombre();
+				String apellido = ventana.getApellido();
+				String DNI = ventana.getDNI();
+				String telefono = ventana.getDNI();
+				String domicilio = ventana.getDNI();
+				System.out.println("hizo new");
+				ClinicaSingleton.getInstance().addAsociado(new Asociado(nombre,apellido,DNI,telefono,domicilio));
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe completar los datos del asociado! DNI y Nombre son obligatorios");
+			}
+				
 
-		} else if (e.getActionCommand().equals("ELIMINAR")) {
-			// Codigo a hacer al eliminar asociado
-			// Verificar todo
+		} else if (comando.equals("ELIMINAR")) {
+			Asociado asoc = ventana.getAsociadoSeleccionado();
+			if(asoc == null)
+				JOptionPane.showMessageDialog(null, "Debe seleccionar un asociado para eliminarlo!");
+			else {
+				ClinicaSingleton.getInstance().eliminaAsociado(asoc);;
+			}
 
-		} else if (e.getActionCommand().equals("GENERARFACTURA")) {
+		} else if (comando.equals("GENERARFACTURA")) {
 			Paciente auxiliar = ventana.getPacienteSeleccionado();
 			if(auxiliar == null)
 				JOptionPane.showMessageDialog(null, "Debe seleccionar un paciente!");
@@ -41,5 +56,6 @@ public class Controlador implements ActionListener {
 				
 		}
 		ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
+		ventana.actualizarAsociados(ClinicaSingleton.getInstance().getListaAsociados());
 	}
 }

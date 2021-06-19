@@ -10,6 +10,7 @@ import java.util.Set;
 
 import clinica.serializacion.IPersistencia;
 import clinica.serializacion.PersistenciaBinaria;
+import concurrencia.Asociado;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
 import medico.IMedico;
@@ -33,6 +34,9 @@ public class ClinicaSingleton {
     private HashMap<Integer, Paciente> pacientesRegistrados = new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos = new HashMap<Integer, IMedico>();
     private HashMap<Integer, IHabitacion> habitaciones = new HashMap<Integer, IHabitacion>();
+    
+    private ArrayList<Asociado> listaAsociados = new ArrayList<Asociado>();
+    
 
     public String nombre;
     public String direccion;
@@ -187,6 +191,10 @@ public class ClinicaSingleton {
     public void addHabitacion(IHabitacion habitacion) {
         this.habitaciones.put(habitacion.getId(), habitacion);
     }
+    
+    public void addAsociado(Asociado a) {
+    	this.listaAsociados.add(a);
+    }
 
 
     public ArrayList<Paciente> getListaAtencion() {
@@ -196,8 +204,17 @@ public class ClinicaSingleton {
     public void agregarPacienteListaAtencion(Paciente paciente) {
         this.listaAtencion.add(paciente);
     }
+    
+    public void eliminaAsociado(Asociado as) {
+        this.listaAsociados.remove(as);
+    }
 
-    /**
+    public ArrayList<Asociado> getListaAsociados() {
+		return listaAsociados;
+	}
+
+
+	/**
      * Retira paciente de lista de atencion
      *
      * @param dni dni del paciente

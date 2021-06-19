@@ -50,7 +50,7 @@ public class MAIN {
 		}
 		
 		test.muestraInformacion();
-		//controlador = new Controlador();
+		controlador = new Controlador();
 		
 		ModuloAmbulancia moduloam = new ModuloAmbulancia();
 	

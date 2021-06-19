@@ -2,16 +2,14 @@ package concurrencia;
 
 import java.util.Random;
 
+
+
 public class Asociado extends Thread {
 	private String nombre;
 	private String apellido;
 	private String domicilio;
 	private String telefono;
 	private String DNI;
-	private String estadoActual;
-	
-	
-	
 	
 	
 	
@@ -19,16 +17,27 @@ public class Asociado extends Thread {
 		this.nombre = nombre;
 	}
 
+	
 
 
-
-
-
+	public Asociado(String nombre, String apellido, String domicilio, String telefono, String dNI) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.domicilio = domicilio;
+		this.telefono = telefono;
+		DNI = dNI;
+	}
 	public String getNombre() {
 		return nombre;
 	}
 
 
+
+	@Override
+	public String toString() {
+		return nombre+ " "+ apellido+" " +  DNI;
+	}
 
 
 

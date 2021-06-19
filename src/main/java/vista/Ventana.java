@@ -25,6 +25,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
+import concurrencia.Asociado;
+
 public class Ventana extends JFrame {
 
 	private JPanel contentPane;
@@ -39,6 +41,12 @@ public class Ventana extends JFrame {
 
 	JScrollPane scrollPane = new JScrollPane();
 	JList listAtencion;
+	
+	JScrollPane scrollPaneAsociados = new JScrollPane();
+	JList listAsociados;
+	
+	JScrollPane scrollPane_2 = new JScrollPane();
+	JList list_2;
 
 	/**
 	 * Create the frame.
@@ -82,7 +90,7 @@ public class Ventana extends JFrame {
 		panelIzq.add(panel_5, BorderLayout.NORTH);
 		
 		JLabel lblPacientesEnAtencion = new JLabel("PACIENTES EN ATENCION");
-		lblPacientesEnAtencion.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lblPacientesEnAtencion.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel_5.add(lblPacientesEnAtencion);
 		
 		JPanel panelCentral = new JPanel();
@@ -99,7 +107,7 @@ public class Ventana extends JFrame {
 		grilla.add(panel_2, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel = new JLabel("ASOCIADOS");
-		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel_2.add(lblNewLabel);
 		
 		JPanel panel_3 = new JPanel();
@@ -175,20 +183,29 @@ public class Ventana extends JFrame {
 		btnAgregar.setFont(new Font("Verdana", Font.BOLD, 12));
 		panel_4.add(btnAgregar);
 		
-		
-		btnEliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnEliminar.setBackground(new Color(255, 0, 0));
 		btnEliminar.setFont(new Font("Verdana", Font.BOLD, 12));
 		panel_4.add(btnEliminar);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		panel_3.add(scrollPane_1);
+		JPanel panel_11 = new JPanel();
+		panel_3.add(panel_11);
+		panel_11.setLayout(new BorderLayout(0, 0));
 		
-		JList list_1 = new JList();
-		scrollPane_1.setViewportView(list_1);
+		JPanel panel_12 = new JPanel();
+		panel_12.setBackground(SystemColor.activeCaption);
+		panel_12.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_11.add(panel_12, BorderLayout.SOUTH);
+		
+		JButton btnNewButton = new JButton("INICIAR SIMULACION");
+		btnNewButton.setFont(new Font("Verdana", Font.PLAIN, 14));
+		panel_12.add(btnNewButton);
+		
+		scrollPaneAsociados = new JScrollPane();
+		panel_11.add(scrollPaneAsociados, BorderLayout.CENTER);
+		
+		listAsociados = new JList();
+		listAsociados.setFont(new Font("Tahoma", Font.PLAIN, 58));
+		scrollPaneAsociados.setViewportView(listAsociados);
 		
 		JPanel panelDer = new JPanel();
 		panelDer.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -200,10 +217,10 @@ public class Ventana extends JFrame {
 		panelDer.add(panel_6, BorderLayout.NORTH);
 		
 		JLabel lblAmbulancia = new JLabel("AMBULANCIA");
-		lblAmbulancia.setFont(new Font("Verdana", Font.PLAIN, 14));
+		lblAmbulancia.setFont(new Font("Verdana", Font.BOLD, 14));
 		panel_6.add(lblAmbulancia);
 		
-		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2 = new JScrollPane();
 		panelDer.add(scrollPane_2, BorderLayout.CENTER);
 		
 		JList list_2 = new JList();
@@ -221,9 +238,37 @@ public class Ventana extends JFrame {
 		scrollPane.setViewportView(listAtencion);
 	}
 	
+	public void actualizarAsociados(ArrayList<Asociado> arrayList) {
+		this.listAsociados = new JList<Object>(arrayList.toArray());
+		scrollPaneAsociados.setViewportView(listAsociados);
+	}
+	
 	public Paciente getPacienteSeleccionado() {
 		return (Paciente) listAtencion.getSelectedValue();
-		
+	}
+	
+	public Asociado getAsociadoSeleccionado() {
+		return (Asociado) listAsociados.getSelectedValue();
+	}
+
+	public String getNombre() {
+		return tfNombre.getText();
+	}
+
+	public String getApellido() {
+		return tfApellido.getText();
+	}
+
+	public String getDNI() {
+		return tfDNI.getText();
+	}
+
+	public String getTelefono() {
+		return tfTelefono.getText();
+	}
+
+	public String getDomicilio() {
+		return tfDomicilio.getText();
 	}
 	
 }
