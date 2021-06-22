@@ -45,10 +45,11 @@ public class ModuloFacturacion {
         Map<Integer, Long> map= consultas.stream().collect(Collectors.groupingBy(Consulta::getId,Collectors.counting()));
 
         Document document= new Document();
-        String ruta=System.getProperty("user.home");
+        String ruta=System.getProperty("user.dir");
+        ruta+="\\facturas\\";
 
         try {
-            PdfWriter.getInstance(document,new FileOutputStream(ruta+"/Desktop/"+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
+            PdfWriter.getInstance(document,new FileOutputStream(ruta+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
             document.open();
             PdfPTable tabla =new PdfPTable(4);
             tabla.addCell("nombre y apellido medico");
