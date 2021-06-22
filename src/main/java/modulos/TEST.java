@@ -175,13 +175,13 @@ public class TEST {
         } catch (NoHayPacienteException e) {
 			System.out.println(e.getMessage());
 		}
-       /*  //CREACION DE FACTURAS, DESCOMENTAR SI SE QUIERE MOSTRAR POR CONSOLA
+        //CREACION DE FACTURAS, DESCOMENTAR SI SE QUIERE MOSTRAR POR CONSOLA
         System.out.println(clinica.buscaPaciente(221586156).toString());
         ClinicaSingleton.getInstance().creaFactura(clinica.buscaPaciente(221586156));
         System.out.println("\n \n \n \n");
         System.out.println(clinica.buscaPaciente(274266156).toString());
         ClinicaSingleton.getInstance().creaFactura(clinica.buscaPaciente(274266156));
-        */
+
     }
 
 }

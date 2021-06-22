@@ -27,7 +27,7 @@ public class Controlador implements ActionListener {
 		String comando = e.getActionCommand();
 
 		if (comando.equals("AGREGAR")) {
-			if (!ventana.getDNI().isBlank() && !ventana.getNombre().isBlank()) {
+			if (!ventana.getDNI().isEmpty() && !ventana.getNombre().isEmpty()) {
 				String nombre = ventana.getNombre();
 				String apellido = ventana.getApellido();
 				String DNI = ventana.getDNI();
