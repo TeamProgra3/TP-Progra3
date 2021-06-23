@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TP-Progra3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TP_Progra3_jar</output-path>
+    <root id="archive" name="TP-Progra3.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="TP-Progra3" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/21.0.1/annotations-21.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/driverpdf/itext5-itextpdf-5.5.12.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,22 +1,25 @@
 package modulos;
 
+import java.lang.management.OperatingSystemMXBean;
 import java.util.ArrayList;
 
 import clinica.ClinicaSingleton;
 import concurrencia.Asociado;
+import concurrencia.ChoferAmbulancia;
 import concurrencia.Operario;
 
 public class ModuloAmbulancia {
 
 	public static void iniciarSimulacion() {
 		int cantidad=0;
-		Operario operario;
+		Operario operario =new Operario("Operario");
 		ArrayList<Asociado> lista = ClinicaSingleton.getInstance().getListaAsociados();
 		for (Asociado asociado : lista) {
 			cantidad++;
 			asociado.start();
 		}
-		operario = new Operario("Operario",cantidad);
+		ChoferAmbulancia choferAmbulancia= new ChoferAmbulancia("Chofer",cantidad);
+		choferAmbulancia.start();
 		operario.start();
 	}
 	

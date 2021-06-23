@@ -31,6 +31,7 @@ public class Ambulancia {
 	public synchronized void atenderPacienteDomicilio(Asociado asociado) {
 		System.out.println(asociado.getNombre() +" solicita atención en su domicilio");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita atención en su domicilio");
+
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaAtencionDomicilio();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
@@ -41,10 +42,12 @@ public class Ambulancia {
 				estadoAnterior = this.estado;
 				this.estado.solicitaAtencionDomicilio();
 				Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+
 		notifyAll();
 		Controlador.agregarSuceso(asociado.getNombre() +" deja de esperar ");
 		System.out.println(asociado.getNombre() +" deja de esperar ");
