@@ -6,6 +6,7 @@ import medico.Consulta;
 import medico.IMedico;
 import paciente.Paciente;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.*;
@@ -16,6 +17,8 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import javax.swing.*;
+
 /**
  * Clase dedicada a tomar los datos de un paciente de la clinica para generar su factura correspondiente<br>
  * Retira de la lista de atencion a los pacientes atendidos<br>
@@ -23,6 +26,8 @@ import com.itextpdf.text.pdf.PdfWriter;
  */
 public class ModuloFacturacion {
     ClinicaSingleton clinica;
+    File facturas= new File("Facturas");
+
     public ModuloFacturacion(){
         this.clinica=ClinicaSingleton.getInstance();
     }
@@ -33,6 +38,8 @@ public class ModuloFacturacion {
      * @param dni DNI del paciente
      */
     public void creaFacturapaciente(Integer dni){
+
+        /**/
         String factura="";
         float aux,total=0;
         IMedico medico;
@@ -46,7 +53,7 @@ public class ModuloFacturacion {
 
         Document document= new Document();
         String ruta=System.getProperty("user.dir");
-        ruta+="\\facturas\\";
+        //ruta+="\\facturas\\";
 
         try {
             PdfWriter.getInstance(document,new FileOutputStream(ruta+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
