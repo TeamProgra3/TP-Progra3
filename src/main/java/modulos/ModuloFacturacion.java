@@ -29,10 +29,22 @@ import javax.swing.*;
  */
 public class ModuloFacturacion {
     ClinicaSingleton clinica;
-    File facturas= new File("Facturas");
+    String ruta;
+    File directorio;
+
 
     public ModuloFacturacion(){
+
         this.clinica=ClinicaSingleton.getInstance();
+        this.ruta=System.getProperty("user.dir");
+        this.ruta+="/facturas";
+        this.directorio=new File(this.ruta);
+        if(!directorio.exists()){
+            if(directorio.mkdir())
+                System.out.println("Directorio 'facturas' creado");
+            else
+                System.out.println("Error al crear el archivo");
+    }
     }
 
     /**
@@ -55,11 +67,13 @@ public class ModuloFacturacion {
         Map<Integer, Long> map= consultas.stream().collect(Collectors.groupingBy(Consulta::getId,Collectors.counting()));
 
         Document document= new Document();
-        String ruta=System.getProperty("user.dir");
-        ruta+="\\facturas\\";
+
+
+
+
 
         try {
-            PdfWriter.getInstance(document,new FileOutputStream(ruta+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
+            PdfWriter.getInstance(document,new FileOutputStream(directorio.getAbsolutePath()+"\\"+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
             document.open();
             PdfPTable tabla =new PdfPTable(4);
             tabla.addCell("Medico");
