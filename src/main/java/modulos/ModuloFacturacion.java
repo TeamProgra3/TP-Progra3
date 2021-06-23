@@ -12,8 +12,11 @@ import java.io.FileOutputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.ElementListener;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -59,10 +62,10 @@ public class ModuloFacturacion {
             PdfWriter.getInstance(document,new FileOutputStream(ruta+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
             document.open();
             PdfPTable tabla =new PdfPTable(4);
-            tabla.addCell("nombre y apellido medico");
+            tabla.addCell("Medico");
             tabla.addCell("Honorario");
-            tabla.addCell("cantidad  de consultas");
-            tabla.addCell("costo total mas honorarios: ");
+            tabla.addCell("Cantidad  de consultas");
+            tabla.addCell("Costo total:");
 
 
             for (Map.Entry<Integer,Long> entry : map.entrySet()) {
@@ -75,6 +78,7 @@ public class ModuloFacturacion {
                 tabla.addCell(String.valueOf(aux));
             }
             document.add(tabla);
+
             Iterator<Consulta> it =habitaciones.iterator();
             aux=0;
             if(habitaciones.size()!=0){
