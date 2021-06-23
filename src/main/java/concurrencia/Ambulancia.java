@@ -31,7 +31,6 @@ public class Ambulancia {
 	public synchronized void atenderPacienteDomicilio(Asociado asociado) {
 		System.out.println(asociado.getNombre() +" solicita atención en su domicilio");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita atención en su domicilio");
-
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaAtencionDomicilio();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
@@ -51,6 +50,7 @@ public class Ambulancia {
 		notifyAll();
 		Controlador.agregarSuceso(asociado.getNombre() +" deja de esperar ");
 		System.out.println(asociado.getNombre() +" deja de esperar ");
+		Controlador.actualizaAsociados();
 	}	
 	
 	
@@ -73,6 +73,7 @@ public class Ambulancia {
 		notifyAll();
 		Controlador.agregarSuceso("Ambulancia volvió a la clinica - pedido por: "+asociado.getNombre());
 		System.out.println("Ambulancia volvió a la clinica - pedido por: "+asociado.getNombre());
+		Controlador.actualizaAsociados();
 	}
 
 	public synchronized void trasladarAClinica(Asociado asociado) {
@@ -94,6 +95,7 @@ public class Ambulancia {
 		notifyAll();
 		Controlador.agregarSuceso(asociado.getNombre()+" fue trasladado con éxito a la clínica");
 		System.out.println(asociado.getNombre()+" fue trasladado con éxito a la clínica");
+		Controlador.actualizaAsociados();
 	}
 
 	public synchronized void repararAmbulancia(Asociado asociado) {
@@ -115,8 +117,7 @@ public class Ambulancia {
 		notifyAll();
 		Controlador.agregarSuceso("Ambulancia reparada con éxito - pedido por: "+asociado.getNombre());
 		System.out.println("Ambulancia reparada con éxito - pedido por: "+asociado.getNombre());
+		Controlador.actualizaAsociados();
 	}
-
-
 
 }

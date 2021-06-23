@@ -158,6 +158,7 @@ public class Ventana extends JFrame {
 		tfDNI.setColumns(10);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Telefono");
+		lblNewLabel_1_3.setForeground(Color.BLACK);
 		lblNewLabel_1_3.setFont(new Font("Verdana", Font.PLAIN, 12));
 		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblNewLabel_1_3);

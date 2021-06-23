@@ -18,7 +18,7 @@ public class TrasladoPacienteState implements IState {
 	@Override
 	public void volverClinica() {
 		ambulancia.setEstado(new EnClinicaState());
-		Controlador.agregarSuceso("Traslado --> Lleg� a clinica");
+		Controlador.agregarSuceso("Traslado --> Llego a clinica");
 	}
 
 	@Override

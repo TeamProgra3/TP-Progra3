@@ -13,7 +13,10 @@ public class ModuloAmbulancia {
 
 	public static void iniciarSimulacion() {
 		int cantidad=0;
+		
 		Operario operario =new Operario("Operario");
+		operario.start();
+		
 		ArrayList<Asociado> lista = ClinicaSingleton.getInstance().getListaAsociados();
 		for (Asociado asociado : lista) {
 			cantidad++;
@@ -21,7 +24,7 @@ public class ModuloAmbulancia {
 		}
 		ChoferAmbulancia choferAmbulancia= new ChoferAmbulancia("Chofer",cantidad);
 		choferAmbulancia.start();
-		operario.start();
+		
 	}
 	
 	public static void cargaRapida() {

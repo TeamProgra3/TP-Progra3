@@ -77,7 +77,10 @@ public class Controlador implements ActionListener {
 	}
 	
 	public static void agregarSuceso(String suceso) {
-		ventana.nuevoSuceso(suceso);
-		ventana.nuevoSuceso("\n");
+		ventana.nuevoSuceso(suceso + "\n");
+	}
+	
+	public static void actualizaAsociados() {
+		ventana.actualizarAsociados(ClinicaSingleton.getInstance().getListaAsociados());
 	}
 }
