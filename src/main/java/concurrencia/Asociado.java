@@ -48,7 +48,7 @@ public class Asociado extends Thread {
 		super.run();
 		Random r=new Random();
 		try {
-			Thread.sleep(r.nextInt(4000));
+			Thread.sleep(r.nextInt(400));
 			accion = r.nextInt()%2;
 			if (accion == 0)
 				Ambulancia.getInstance().atenderPacienteDomicilio(this);
