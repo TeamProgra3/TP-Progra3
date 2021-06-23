@@ -53,7 +53,7 @@ public class ModuloFacturacion {
 
         Document document= new Document();
         String ruta=System.getProperty("user.dir");
-        //ruta+="\\facturas\\";
+        ruta+="\\facturas\\";
 
         try {
             PdfWriter.getInstance(document,new FileOutputStream(ruta+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
