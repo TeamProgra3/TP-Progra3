@@ -7,6 +7,7 @@ import clinica.ClinicaSingleton;
 import concurrencia.Asociado;
 import concurrencia.ChoferAmbulancia;
 import concurrencia.Operario;
+import exception.AsociadoExistenteException;
 
 public class ModuloAmbulancia {
 
@@ -25,10 +26,14 @@ public class ModuloAmbulancia {
 	
 	public static void cargaRapida() {
 
-		ClinicaSingleton.getInstance().addAsociado(new Asociado("Leonel","Guccione","1","",""));
-		ClinicaSingleton.getInstance().addAsociado(new Asociado("Guillermo","Lazurri","2","",""));
-		ClinicaSingleton.getInstance().addAsociado(new Asociado("Ivonne","Gellon","3","",""));
-		ClinicaSingleton.getInstance().addAsociado(new Asociado("Ximena","","1","",""));
-		
+		try {
+			ClinicaSingleton.getInstance().addAsociado(new Asociado("Leonel","Guccione","1","","1"));
+			ClinicaSingleton.getInstance().addAsociado(new Asociado("Guillermo","Lazurri","2","","2"));
+			ClinicaSingleton.getInstance().addAsociado(new Asociado("Ivonne","Gellon","3","","3"));
+			ClinicaSingleton.getInstance().addAsociado(new Asociado("Ximena","","1","","4"));
+		} catch (AsociadoExistenteException e) {
+			e.printStackTrace();
+		}
+
 	}
 }

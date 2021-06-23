@@ -15,7 +15,7 @@ public class Operario extends Asociado {
 			try {
 
 				Ambulancia.getInstance().repararAmbulancia(this);
-				Thread.sleep(r.nextInt(800));
+				Thread.sleep(r.nextInt(5000));
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

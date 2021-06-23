@@ -1,5 +1,6 @@
 package concurrencia;
 
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -33,6 +34,18 @@ public class Asociado extends Thread {
 	}
 
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Asociado asociado = (Asociado) o;
+		return DNI.equals(asociado.DNI);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(DNI);
+	}
 
 	@Override
 	public String toString() {
@@ -48,7 +61,7 @@ public class Asociado extends Thread {
 		super.run();
 		Random r=new Random();
 		try {
-			Thread.sleep(r.nextInt(400));
+			Thread.sleep(r.nextInt(4000));
 			accion = r.nextInt()%2;
 			if (accion == 0)
 				Ambulancia.getInstance().atenderPacienteDomicilio(this);

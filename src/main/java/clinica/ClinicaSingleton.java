@@ -11,6 +11,7 @@ import java.util.Set;
 import clinica.serializacion.IPersistencia;
 import clinica.serializacion.PersistenciaBinaria;
 import concurrencia.Asociado;
+import exception.AsociadoExistenteException;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
 import medico.IMedico;
@@ -62,6 +63,17 @@ public class ClinicaSingleton {
         return instanciaClinica;
     }
 
+
+    public boolean existeAsociado(Asociado asociado){
+        if(!this.listaAsociados.isEmpty()){
+           int i=0;
+            while(this.listaAsociados.size()> i && !this.listaAsociados.get(i).equals(asociado) ){
+                i++;
+            }
+            return i != this.listaAsociados.size();
+        }
+        return false;
+    }
 
     public String getNombre() {
         return nombre;
@@ -193,7 +205,9 @@ public class ClinicaSingleton {
         this.habitaciones.put(habitacion.getId(), habitacion);
     }
     
-    public void addAsociado(Asociado a) {
+    public void addAsociado(Asociado a) throws AsociadoExistenteException {
+    	if (this.existeAsociado(a))
+    	    throw new AsociadoExistenteException("Asociado ya creado");
     	this.listaAsociados.add(a);
     }
 

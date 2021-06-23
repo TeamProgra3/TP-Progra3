@@ -1,5 +1,7 @@
 package concurrencia;
 
+import java.util.Random;
+
 public class ChoferAmbulancia extends Asociado {
     private int cantidadSolicitudes ;
     public ChoferAmbulancia(String nombre,int cant) {
@@ -15,13 +17,13 @@ public class ChoferAmbulancia extends Asociado {
 
     @Override
     public void run() {
-
+        Random r=new Random();
 
         while(true){
             try {
 
                 Ambulancia.getInstance().volverAClinica(this);
-                Thread.sleep(1000);
+                Thread.sleep(r.nextInt(5000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import clinica.ClinicaSingleton;
 import concurrencia.Asociado;
+import exception.AsociadoExistenteException;
 import modulos.ModuloAmbulancia;
 import paciente.Paciente;
 import vista.Ventana;
@@ -28,12 +29,19 @@ public class Controlador implements ActionListener {
 
 		if (comando.equals("AGREGAR")) {
 			if (!ventana.getDNI().isEmpty() && !ventana.getNombre().isEmpty()) {
+				Asociado aux=null;
 				String nombre = ventana.getNombre();
 				String apellido = ventana.getApellido();
 				String DNI = ventana.getDNI();
 				String telefono = ventana.getDNI();
 				String domicilio = ventana.getDNI();
-				ClinicaSingleton.getInstance().addAsociado(new Asociado(nombre,apellido,DNI,telefono,domicilio));
+				aux=new Asociado(nombre,apellido,DNI,telefono,domicilio);
+
+				try {
+					ClinicaSingleton.getInstance().addAsociado(new Asociado(nombre,apellido,DNI,telefono,domicilio));
+				} catch (AsociadoExistenteException asociadoExistenteException) {
+					JOptionPane.showMessageDialog(null, "El asociado ya existe");
+				}
 			} else {
 				JOptionPane.showMessageDialog(null, "Debe completar los datos del asociado! DNI y Nombre son obligatorios");
 			}
