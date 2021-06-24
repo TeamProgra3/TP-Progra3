@@ -46,6 +46,7 @@ public class Ambulancia {
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaAtencionDomicilio();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
+
 		while(estadoAnterior == this.estado) {
 			try {
 				wait();
