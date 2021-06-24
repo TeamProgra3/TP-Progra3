@@ -1,7 +1,7 @@
 package exception;
 
 /**
- * Lanzada cuando no se pudo ingresar el paciente a la habitacion
+ * Lanzada cuando no se pudo ingresar el persona.paciente a la habitacion
  * @author Los Cafeteros
  *
  */

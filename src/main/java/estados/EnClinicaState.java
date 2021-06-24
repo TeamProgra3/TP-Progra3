@@ -15,14 +15,12 @@ public class EnClinicaState implements IState {
 	@Override
 	public void solicitaAtencionDomicilio() {
 		Ambulancia.getInstance().setEstado(new AtendiendoPacienteState());
-		Controlador.agregarSuceso("De la clinica --> Atender paciente domicilio");
-
+		Controlador.agregarSuceso("De la clinica --> Atender persona.paciente domicilio");
 	}
-
 	@Override
 	public void solicitaTrasladoClinica() {
 		Ambulancia.getInstance().setEstado(new TrasladoPacienteState());
-		Controlador.agregarSuceso("De la clinica --> Va a buscar un paciente para llevarlo a clinica");
+		Controlador.agregarSuceso("De la clinica --> Va a buscar un persona.paciente para llevarlo a clinica");
 
 	}
 

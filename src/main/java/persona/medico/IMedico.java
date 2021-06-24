@@ -1,10 +1,8 @@
-package medico;
+package persona.medico;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
-
-import paciente.Paciente;
 
 /**
  * Interface que contiene los metodos a implementar por los medicos

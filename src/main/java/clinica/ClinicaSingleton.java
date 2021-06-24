@@ -1,23 +1,18 @@
 package clinica;
 
-import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
 
 
-import clinica.serializacion.IPersistencia;
-import clinica.serializacion.PersistenciaBinaria;
 import concurrencia.Asociado;
 import exception.AsociadoExistenteException;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
-import medico.IMedico;
+import persona.medico.IMedico;
 import modulos.ModuloAmbulancia;
 import modulos.ModuloFacturacion;
-import paciente.Paciente;
+import persona.paciente.Paciente;
 
 /**
  * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones)<br>
@@ -29,7 +24,7 @@ public class ClinicaSingleton {
 
 
 
-    private Paciente salaPrivada; //Un unico paciente   --------------------------------------
+    private Paciente salaPrivada; //Un unico persona.paciente   --------------------------------------
     private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------
 
     private ArrayList<Paciente> listaAtencion = new ArrayList<Paciente>();
@@ -168,9 +163,9 @@ public class ClinicaSingleton {
     }
 
     /**
-     * Recibe un id de paciente como paramentro, y devuelve el paciente
+     * Recibe un id de persona.paciente como paramentro, y devuelve el persona.paciente
      *
-     * @param id - id de paciente
+     * @param id - id de persona.paciente
      * @return Paciente
      * @throws NoHayPacienteException
      */
@@ -234,9 +229,9 @@ public class ClinicaSingleton {
 
 
 	/**
-     * Retira paciente de lista de atencion
+     * Retira persona.paciente de lista de atencion
      *
-     * @param dni dni del paciente
+     * @param dni dni del persona.paciente
      */
     public void retiraPacienteListaAtencion(int dni) {
         int index = -1;

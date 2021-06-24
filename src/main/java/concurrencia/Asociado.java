@@ -77,7 +77,6 @@ public class Asociado extends Thread implements Serializable {
 			e.printStackTrace();
 		}
 		this.setFinalizado();
-		System.out.println("Terminó de ejecutar: " + nombre);
 	}
 
 }

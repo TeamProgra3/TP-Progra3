@@ -1,26 +1,26 @@
 package modulos;
 
 import clinica.ClinicaSingleton;
-import paciente.Paciente;
-import paciente.PacienteFactory;
+import persona.paciente.Paciente;
+import persona.paciente.PacienteFactory;
 
 /**
  * 
- *         Este modulo se encarga de ingresar al paciente, sus responsabilidades<br>
+ *         Este modulo se encarga de ingresar al persona.paciente, sus responsabilidades<br>
  *         son: <br>
- *         Asignar numero de orden al paciente <br>
+ *         Asignar numero de orden al persona.paciente <br>
  *         Resolver conflictos en la sala de espera privada y el patio <br>
- *         Cargar al paciente en los registros de la clinica <br>
+ *         Cargar al persona.paciente en los registros de la clinica <br>
  *         @author Los Cafeteros 
  */
 public class ModuloIngreso {
 	private static int nroOrden=0;
 
 	/**
-	 * Coloca un paciente en espera,resuelve conflictos del lugar de espera
-	 * @param nombre: Nombre del paciente
-	 * @param apellido: Apellido del paciente
-	 * @param DNI: DNI del paciente
+	 * Coloca un persona.paciente en espera,resuelve conflictos del lugar de espera
+	 * @param nombre: Nombre del persona.paciente
+	 * @param apellido: Apellido del persona.paciente
+	 * @param DNI: DNI del persona.paciente
 	 * @param rangoEtario: Rango etario del pacientes
 	 */
 	public void ingresarPaciente(String nombre, String apellido, int DNI, String rangoEtario) {

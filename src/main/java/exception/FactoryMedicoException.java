@@ -1,7 +1,7 @@
 package exception;
 
 /**
- * Lanzada cuando no se pudo crear el medico solicitado
+ * Lanzada cuando no se pudo crear el persona.medico solicitado
  * @author Los Cafeteros
  *
  */

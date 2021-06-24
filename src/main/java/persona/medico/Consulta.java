@@ -1,16 +1,15 @@
-package medico;
+package persona.medico;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.GregorianCalendar;
 
-import paciente.Paciente;
+
 
 /**
  * 
- * Clase que almacena la fecha y el codigo que pueden pertenecer tanto a un paciente, como a un medico
+ * Clase que almacena la fecha y el codigo que pueden pertenecer tanto a un persona.paciente, como a un persona.medico
  * @author Los cafeteros
  */
 public class Consulta implements Comparable<Consulta>, Serializable {
@@ -52,8 +51,8 @@ public class Consulta implements Comparable<Consulta>, Serializable {
 		return this.cantDias;
 	}
 
-	//array del paciente -> [fecha | matricula medico ]
-	//array del medico -> [fech | id hist clinica del paciente]
+	//array del persona.paciente -> [fecha | matricula persona.medico ]
+	//array del persona.medico -> [fech | id hist clinica del persona.paciente]
 
 	public void algo(){
 	ArrayList<Consulta> aux=new ArrayList<>();

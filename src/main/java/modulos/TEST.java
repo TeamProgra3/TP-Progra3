@@ -10,11 +10,10 @@ import exception.FactoryMedicoException;
 import exception.NoHayPacienteException;
 import habitacion.HabitacionFactory;
 import habitacion.IHabitacion;
-import medico.IMedico;
-import medico.MedicoFactory;
-import medico.Muestra;
-import paciente.Paciente;
-import paciente.PacienteFactory;
+import persona.medico.IMedico;
+import persona.medico.MedicoFactory;
+import persona.medico.Muestra;
+import persona.paciente.PacienteFactory;
 
 /**
  * Clase destinada a hacer pruebas con los modulos implementados
@@ -69,18 +68,7 @@ public class TEST {
 
     }
     public void muestraInformacion(){
-        Paciente paciente = clinica.buscaPaciente(221586156);
-        System.out.println("Deberia mostrar al paciente nicolas "+paciente.getNombre());
-        paciente=clinica.buscaPaciente(75421342);
-        System.out.println("Deberia mostrar null "+paciente);
-        IMedico medico =clinica.buscaMedico(1);
-        System.out.println("Deberia mostrar al primer medico "+ medico.saludo());
-        medico =clinica.buscaMedico(7);
-        System.out.println("deberia mostrar null"+medico);
-        IHabitacion habitacion=clinica.buscaHabitacion(1);
-        System.out.println("deberia mostrar el tipo de la primera habitacion "+habitacion.getTipo());
-        habitacion=clinica.buscaHabitacion(32);
-        System.out.println("deberia mostrar null "+habitacion);
+
         /*
         * Paciente es atendidido por varios medicos
         *
@@ -156,11 +144,6 @@ public class TEST {
        *
        *
        * */
-
-
-
-
-
 
 
         Muestra prueba=new Muestra();

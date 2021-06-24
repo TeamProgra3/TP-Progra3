@@ -21,7 +21,7 @@ public class AtendiendoPacienteState implements IState {
 
 	@Override
 	public void volverClinica() {
-		ambulancia.setEstado(new RegresaLibreState()); //TODO DEBERIA SER REGRESA LIBRE
+		ambulancia.setEstado(new RegresaLibreState());
 		Controlador.agregarSuceso("Domicilio --> Regresando a clinica (Libre)");
 
 	}
@@ -33,7 +33,7 @@ public class AtendiendoPacienteState implements IState {
 
 	@Override
 	public String estadoActual() {
-		return "Atendiendo un paciente en domicilio";
+		return "Atendiendo un persona.paciente en domicilio";
 	}
 
 }

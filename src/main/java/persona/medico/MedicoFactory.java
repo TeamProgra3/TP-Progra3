@@ -1,4 +1,4 @@
-package medico;
+package persona.medico;
 
 import exception.FactoryMedicoException;
 

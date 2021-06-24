@@ -1,4 +1,4 @@
-package medico;
+package persona.medico;
 
 /**
  * Clase padre destinada a aplicar el Patron Decorator a los distintos medicos

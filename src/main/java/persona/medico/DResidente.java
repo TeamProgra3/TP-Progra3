@@ -1,29 +1,22 @@
-package medico;
+package persona.medico;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-import paciente.Paciente;
-
 /**
- * Clase que representa un Magister
+ * Clase que representa un residente
  * @author Los Cafeteros
  *
  */
-public class DMagister extends DoctorDecorator{
-
-    public DMagister(IMedico medico) {
+public class DResidente extends DoctorDecorator{
+    public DResidente(IMedico medico) {
         super(medico);
     }
-
-
 
     @Override
     public String getNombre() {
         return medico.getNombre();
     }
-
-
 
     @Override
     public String getApellido() {
@@ -73,7 +66,7 @@ public class DMagister extends DoctorDecorator{
 
     @Override
     public String saludo() {
-        return super.saludo()+" Magister";
+        return super.saludo()+ " Residente";
     }
 
     @Override
@@ -91,20 +84,17 @@ public class DMagister extends DoctorDecorator{
         float bonificacion = (float) 1.05;
         return medico.getHonorario()* bonificacion;
     }
-
-
     /**
-     *Metodo que añade al array de consultas del medico, un fecha y una historia clinica de un paciente a atender
+     *Metodo que aï¿½ade al array de consultas del persona.medico, un fecha y una historia clinica de un persona.paciente a atender
      */
     @Override
     public void atenderPaciente(GregorianCalendar fecha, int historiaClinica) {
         this.medico.atenderPaciente(fecha, historiaClinica);
     }
 
+
     @Override
     public ArrayList<Consulta> getConsultas() {
         return medico.getConsultas();
     }
-
-
 }

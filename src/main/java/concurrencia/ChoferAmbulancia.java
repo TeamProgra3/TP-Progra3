@@ -25,7 +25,6 @@ public class ChoferAmbulancia extends Asociado {
 		}
         while(true){
             try {
-            	
                 Ambulancia.getInstance().volverAClinica(this);
                 Thread.sleep(r.nextInt(5000));
             } catch (InterruptedException e) {

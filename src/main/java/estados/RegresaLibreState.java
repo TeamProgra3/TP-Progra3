@@ -7,14 +7,14 @@ public class RegresaLibreState implements IState {
 	@Override
 	public void solicitaAtencionDomicilio() {
         Ambulancia.getInstance().setEstado(new AtendiendoPacienteState());
-		Controlador.agregarSuceso("Regresando --> Atender al domicilio paciente");
+		Controlador.agregarSuceso("Regresando --> Atender al domicilio persona.paciente");
 		
 	}
 
 	@Override
 	public void solicitaTrasladoClinica() {
 		Ambulancia.getInstance().setEstado(new TrasladoPacienteState());
-		Controlador.agregarSuceso("Regresando --> Pasa a buscar paciente");
+		Controlador.agregarSuceso("Regresando --> Pasa a buscar persona.paciente");
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class RegresaLibreState implements IState {
 
 	@Override
 	public String estadoActual() {
-		return "Regresando a la clinica sin paciente";
+		return "Regresando a la clinica sin persona.paciente";
 	}
 
 }

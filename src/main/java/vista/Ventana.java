@@ -13,7 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -25,10 +24,9 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
 
 import concurrencia.Asociado;
-import paciente.Paciente;
+import persona.paciente.Paciente;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
-import javax.swing.JToolBar;
 
 public class Ventana extends JFrame implements IVista{
 

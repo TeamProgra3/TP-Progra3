@@ -1,8 +1,8 @@
-package paciente;
+package persona.paciente;
 
 /**
  * 
- * Clase encargada de de generar pacientes utilizando patrón Factory
+ * Clase encargada de de generar pacientes utilizando patrï¿½n Factory
  * @author Los Cafeteros
  */
 public class PacienteFactory {

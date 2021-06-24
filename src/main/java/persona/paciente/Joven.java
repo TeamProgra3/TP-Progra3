@@ -1,9 +1,9 @@
-package paciente;
+package persona.paciente;
 
 /**
  * 
  * Esta clase hereda de la clase abstract Paciente, su implementacion corresponde a uno de los grupos etarios <br>
- * <b> Patrón aplicado: </b> Double Dispatch.
+ * <b> Patrï¿½n aplicado: </b> Double Dispatch.
  * @author Los Cafeteros
  *
  */

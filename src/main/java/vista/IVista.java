@@ -3,10 +3,8 @@ package vista;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JList;
-
 import concurrencia.Asociado;
-import paciente.Paciente;
+import persona.paciente.Paciente;
 
 interface IVista {
 

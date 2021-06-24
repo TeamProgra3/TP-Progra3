@@ -1,13 +1,12 @@
-package medico;
-
+package persona.medico;
 
 /**
- * Clase que representa a un medico clinico
+ * Clase que representa un cirujano
  * @author Los Cafeteros
  *
  */
-public class Clinico extends Medico{
-    public Clinico(String nombre,String apellido){
+public class Cirugia extends Medico{
+    public Cirugia(String nombre,String apellido){
         this.nombre=nombre;
         this.apellido=apellido;
         iniciaMatricula();
@@ -15,14 +14,13 @@ public class Clinico extends Medico{
 
     @Override
     public String saludo() {
-        return super.saludo()+" Clinico";
+        return super.saludo() +" Cirujano";
     }
-
 
     @Override
     public float getHonorario() {
-
-        float bonificacion = (float) 1.05;
+        float bonificacion = (float) 1.10;
         return super.getHonorario()* bonificacion;
     }
+
 }

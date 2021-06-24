@@ -2,8 +2,8 @@ package clinica.serializacion;
 
 import concurrencia.Asociado;
 import habitacion.IHabitacion;
-import medico.IMedico;
-import paciente.Paciente;
+import persona.medico.IMedico;
+import persona.paciente.Paciente;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.HashMap;
  * @author Los Cafeteros
  */
 public class ClinicaDTO implements Serializable {
-    private Paciente salaPrivada; //Un unico paciente   --------------------------------------
+    private Paciente salaPrivada; //Un unico persona.paciente   --------------------------------------
     private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------
     private ArrayList<Paciente> listaAtencion = new ArrayList<Paciente>();
     private HashMap<Integer, Paciente> pacientesRegistrados = new HashMap<Integer, Paciente>();

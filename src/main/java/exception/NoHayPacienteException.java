@@ -1,7 +1,7 @@
 package exception;
 
 /**
- * Lanzada cuando no se encontro paciente atendido por un medico en un tiempo determinado
+ * Lanzada cuando no se encontro persona.paciente atendido por un persona.medico en un tiempo determinado
  * @author Los Cafeteros
  *
  */

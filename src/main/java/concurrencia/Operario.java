@@ -20,7 +20,6 @@ public class Operario extends Asociado {
 	@Override
 	public void run() {
 		Random r=new Random();
-		
 			try {
 				Thread.sleep(r.nextInt(6000));
 				Ambulancia.getInstance().repararAmbulancia(this);
@@ -28,6 +27,6 @@ public class Operario extends Asociado {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		System.out.println("El operario terminó de ejecutar");
+
 	}
 }

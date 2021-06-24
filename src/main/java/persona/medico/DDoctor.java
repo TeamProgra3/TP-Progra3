@@ -1,9 +1,9 @@
-package medico;
+package persona.medico;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-import paciente.Paciente;
+
 
 /**
  * Clase que representa un doctor
@@ -92,7 +92,7 @@ public class DDoctor extends DoctorDecorator{
     }
 
 	/**
-	 *Metodo que añade al array de consultas del medico, un fecha y una historia clinica de un paciente a atender
+	 *Metodo que aï¿½ade al array de consultas del persona.medico, un fecha y una historia clinica de un persona.paciente a atender
 	 */
     
 	@Override

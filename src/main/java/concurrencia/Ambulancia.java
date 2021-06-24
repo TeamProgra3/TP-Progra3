@@ -37,11 +37,10 @@ public class Ambulancia {
 	/**
 	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
 	 *
-	 * @param asociado - id de paciente
+	 * @param asociado - id de persona.paciente
 	 * <b>Pre-condicion:</b> asociado no NULL<br>
 	 */
 	public synchronized void atenderPacienteDomicilio(Asociado asociado) {
-		System.out.println(asociado.getNombre() +" solicita atención en su domicilio");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita atención en su domicilio");
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaAtencionDomicilio();
@@ -62,17 +61,16 @@ public class Ambulancia {
 
 		notifyAll();
 		Controlador.agregarSuceso(asociado.getNombre() +" deja de esperar ");
-		System.out.println(asociado.getNombre() +" deja de esperar ");
+
 		Controlador.actualizaAsociados();
 	}
 	/**
 	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
 	 *
-	 * @param asociado - id de paciente
+	 * @param asociado - id de persona.paciente
 	 * <b>Pre-condicion:</b> asociado no NULL<br>
 	 */
 	public synchronized void volverAClinica(Asociado asociado) {
-		System.out.println(asociado.getNombre() +" solicita que la ambulancia vuelva a clinica");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita que la ambulancia vuelva a clinica");
 		IState estadoAnterior = this.estado;
 		this.estado.volverClinica();
@@ -89,18 +87,17 @@ public class Ambulancia {
 		}
 		notifyAll();
 		Controlador.agregarSuceso("Ambulancia volvió a la clinica - pedido por: "+asociado.getNombre());
-		System.out.println("Ambulancia volvió a la clinica - pedido por: "+asociado.getNombre());
+
 		Controlador.actualizaAsociados();
 	}
 	/**
 	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
 	 *
-	 * @param asociado - id de paciente
+	 * @param asociado - id de persona.paciente
 	 * <b>Pre-condicion:</b> asociado no NULL<br>
 	 */
 
 	public synchronized void trasladarAClinica(Asociado asociado) {
-		System.out.println(asociado.getNombre() +" solicita traslado a la clinica");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita traslado a la clinica");
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaTrasladoClinica();
@@ -117,18 +114,16 @@ public class Ambulancia {
 		}
 		notifyAll();
 		Controlador.agregarSuceso(asociado.getNombre()+" esta siendo trasladado a la clinica");
-		System.out.println(asociado.getNombre()+" esta siendo trasladado a la clinica");
 		Controlador.actualizaAsociados();
 	}
 
 	/**
 	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
 	 *
-	 * @param asociado - id de paciente
+	 * @param asociado - id de persona.paciente
 	 * <b>Pre-condicion:</b> asociado no NULL<br>
 	 */
 	public synchronized void repararAmbulancia(Asociado asociado) {
-		System.out.println(asociado.getNombre() +" solicita reparacion de la ambulancia en taller");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita reparacion de la ambulancia en taller");
 		IState estadoAnterior = this.estado;
 		this.estado.repararAmbulancia();
@@ -145,7 +140,6 @@ public class Ambulancia {
 		}
 		notifyAll();
 		Controlador.agregarSuceso("Ambulancia reparada con éxito - pedido por: "+asociado.getNombre());
-		System.out.println("Ambulancia reparada con éxito - pedido por: "+asociado.getNombre());
 		Controlador.actualizaAsociados();
 	}
 

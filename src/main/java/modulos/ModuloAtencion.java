@@ -1,13 +1,12 @@
 package modulos;
 
 import java.util.ArrayList;
-
 import clinica.ClinicaSingleton;
 import exception.EsperaVaciaException;
-import paciente.Paciente;
+import persona.paciente.Paciente;
 
 /**
- * Modulo que se encarga de atender paciente retirandolo del lugar de espera y
+ * Modulo que se encarga de atender persona.paciente retirandolo del lugar de espera y
  * ubicandolo en atencion
  * 
  * @author Los cafeteros
@@ -19,7 +18,7 @@ public class ModuloAtencion {
 	/**
 	 * Ejecuta la funcion del modulo considerando excepciones
 	 * 
-	 * @throws EsperaVaciaException Excepcion lanzada cuando no hay paciente para
+	 * @throws EsperaVaciaException Excepcion lanzada cuando no hay persona.paciente para
 	 *                              atender
 	 */
 	public void retiraPaciente() throws EsperaVaciaException {
