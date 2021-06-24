@@ -2,10 +2,13 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PersistenceDelegate;
+import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
 import clinica.ClinicaSingleton;
+import clinica.serializacion.Persistencia;
 import concurrencia.Asociado;
 import exception.AsociadoExistenteException;
 import modulos.ModuloAmbulancia;
@@ -63,7 +66,14 @@ public class Controlador implements ActionListener {
 			else {
 				ClinicaSingleton.getInstance().creaFactura(auxiliar);
 			}
-				
+		} else if (comando.equals("SERIALIZAR")) {
+			try {
+				Persistencia.persisteDatos();
+			} catch (IOException e1) {
+				JOptionPane.showMessageDialog(null, "Hubo un error, no se pudo persistir los datos! (IOException)");
+				e1.printStackTrace();
+			}
+			
 		} else if (comando.equals("INICIARSIMULACION")) {
 			if (ClinicaSingleton.getInstance().getListaAsociados().isEmpty())
 				ModuloAmbulancia.cargaRapida();

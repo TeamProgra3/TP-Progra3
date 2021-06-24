@@ -64,7 +64,6 @@ public class TEST {
         moduloAtencion.retiraPaciente();
         moduloIngreso.ingresarPaciente("Guan Jabriel","Rrodrriges",377588956,"joven");
         moduloAtencion.retiraPaciente();
-
       
 
 

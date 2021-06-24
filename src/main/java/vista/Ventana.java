@@ -28,8 +28,9 @@ import concurrencia.Asociado;
 import paciente.Paciente;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import javax.swing.JToolBar;
 
-public class Ventana extends JFrame {
+public class Ventana extends JFrame implements IVista{
 
 	private JPanel contentPane;
 	private JTextField tfNombre;
@@ -40,6 +41,7 @@ public class Ventana extends JFrame {
 	JButton btnFactura = new JButton("GENERAR FACTURA");
 	JButton btnAgregar = new JButton("AGREGAR");
 	JButton btnEliminar = new JButton("ELIMINAR");
+	JButton btnSerializar;
 	JButton btnSimulacion;
 	JTextArea textArea = new JTextArea();
 	JScrollPane scrollPane = new JScrollPane();
@@ -258,6 +260,14 @@ public class Ventana extends JFrame {
 		panel_13.add(scrollPane_1, BorderLayout.CENTER);
 
 		scrollPane_1.setViewportView(textArea);
+		
+		JPanel panel_14 = new JPanel();
+		panel_14.setBackground(new Color(70, 130, 180));
+		panelDer.add(panel_14, BorderLayout.SOUTH);
+		
+		btnSerializar = new JButton("SERIALIZAR");
+		btnSerializar.setFont(new Font("Verdana", Font.PLAIN, 12));
+		panel_14.add(btnSerializar);
 	}
 
 	public void setListenerBotones(ActionListener controlador) {
@@ -265,6 +275,7 @@ public class Ventana extends JFrame {
 		btnEliminar.addActionListener(controlador);
 		btnFactura.addActionListener(controlador);
 		btnSimulacion.addActionListener(controlador);
+		btnSerializar.addActionListener(controlador);
 	}
 
 	public void actualizarPacientesAtencion(ArrayList<Paciente> arrayList) {
