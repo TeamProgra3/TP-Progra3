@@ -10,16 +10,9 @@ import java.util.Random;
  */
 
 public class ChoferAmbulancia extends Asociado {
-    private int cantidadSolicitudes ;
-    public ChoferAmbulancia(String nombre,int cant) {
 
-        super(nombre);
-        this.cantidadSolicitudes = cant;
-    }
-
-    public ChoferAmbulancia(String nombre, String apellido, String domicilio, String telefono, String dNI,int cant) {
+    public ChoferAmbulancia(String nombre, String apellido, String domicilio, String telefono, String dNI) {
         super(nombre, apellido, domicilio, telefono, dNI,"");
-        this.cantidadSolicitudes = cant;
     }
 
     @Override
