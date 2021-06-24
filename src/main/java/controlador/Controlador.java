@@ -2,10 +2,13 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PersistenceDelegate;
+import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
 import clinica.ClinicaSingleton;
+import clinica.serializacion.Persistencia;
 import concurrencia.Asociado;
 import exception.AsociadoExistenteException;
 import modulos.ModuloAmbulancia;
@@ -35,10 +38,11 @@ public class Controlador implements ActionListener {
 				String DNI = ventana.getDNI();
 				String telefono = ventana.getDNI();
 				String domicilio = ventana.getDNI();
-				aux=new Asociado(nombre,apellido,DNI,telefono,domicilio);
+				String actividad = ventana.getActividad();
+				aux=new Asociado(nombre,apellido,DNI,telefono,domicilio,actividad);
 
 				try {
-					ClinicaSingleton.getInstance().addAsociado(new Asociado(nombre,apellido,DNI,telefono,domicilio));
+					ClinicaSingleton.getInstance().addAsociado(aux);
 				} catch (AsociadoExistenteException asociadoExistenteException) {
 					JOptionPane.showMessageDialog(null, "El asociado ya existe");
 				}
@@ -62,7 +66,14 @@ public class Controlador implements ActionListener {
 			else {
 				ClinicaSingleton.getInstance().creaFactura(auxiliar);
 			}
-				
+		} else if (comando.equals("SERIALIZAR")) {
+			try {
+				Persistencia.persisteDatos();
+			} catch (IOException e1) {
+				JOptionPane.showMessageDialog(null, "Hubo un error, no se pudo persistir los datos! (IOException)");
+				e1.printStackTrace();
+			}
+			
 		} else if (comando.equals("INICIARSIMULACION")) {
 			if (ClinicaSingleton.getInstance().getListaAsociados().isEmpty())
 				ModuloAmbulancia.cargaRapida();
@@ -76,7 +87,7 @@ public class Controlador implements ActionListener {
 		ventana.setEstadoAmbulancia(estadoActual);
 	}
 	
-	public static void agregarSuceso(String suceso) {
+	public static synchronized void agregarSuceso(String suceso) {
 		ventana.nuevoSuceso(suceso + "\n");
 	}
 	

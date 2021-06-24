@@ -116,8 +116,8 @@ public class Ambulancia {
 			}
 		}
 		notifyAll();
-		Controlador.agregarSuceso(asociado.getNombre()+" fue trasladado con éxito a la clínica");
-		System.out.println(asociado.getNombre()+" fue trasladado con éxito a la clínica");
+		Controlador.agregarSuceso(asociado.getNombre()+" esta siendo trasladado a la clinica");
+		System.out.println(asociado.getNombre()+" esta siendo trasladado a la clinica");
 		Controlador.actualizaAsociados();
 	}
 

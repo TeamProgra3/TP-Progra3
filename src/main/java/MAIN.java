@@ -34,9 +34,10 @@ public class MAIN {
 			Persistencia.levantarDatos();
 			System.out.println("levanto de ARCHIVO");
 		} catch (ClassNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "Error al cargar datos! "+e.getMessage());;
+			JOptionPane.showMessageDialog(null, "Datos incorrectos ClassNotFoundException "+e.getMessage());
 		} catch (IOException ex) {
 			try {
+				JOptionPane.showMessageDialog(null, "Advertencia: Los datos no se cargaron del archivo "+ex.getMessage());
 				test.cargaDatos();
 				System.out.println("Levanto de test");
 			} catch (FactoryMedicoException | FactoryHabitacionException | EsperaVaciaException e) {
@@ -45,12 +46,6 @@ public class MAIN {
 			}
 		}
 		
-		try {
-			Persistencia.persisteDatos();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		test.muestraInformacion();
 		controlador = new Controlador();

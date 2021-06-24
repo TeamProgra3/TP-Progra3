@@ -17,6 +17,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.ElementListener;
+import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -59,6 +60,7 @@ public class ModuloFacturacion {
         float aux,total=0;
         IMedico medico;
         IHabitacion habitacion;
+        Paragraph parrafo;
         Consulta consulta=null;
         int dias=0;//hay que ver como resolver los dias que esta internado
         Paciente paciente= clinica.buscaPaciente(dni);
@@ -69,12 +71,13 @@ public class ModuloFacturacion {
         Document document= new Document();
 
 
-
-
-
         try {
             PdfWriter.getInstance(document,new FileOutputStream(directorio.getAbsolutePath()+"\\"+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
             document.open();
+            
+            parrafo = new Paragraph("Clinica Los Cafeteros: \"Lo importante es lucrar\" \nFactura del paciente " + paciente.getNombre()+" "+paciente.getApellido()+"\n \n");
+            document.add(parrafo);
+            
             PdfPTable tabla =new PdfPTable(4);
             tabla.addCell("Medico");
             tabla.addCell("Honorario");
@@ -92,6 +95,9 @@ public class ModuloFacturacion {
                 tabla.addCell(String.valueOf(aux));
             }
             document.add(tabla);
+            parrafo = new Paragraph("\n\n\n");
+            document.add(parrafo);
+           
 
             Iterator<Consulta> it =habitaciones.iterator();
             aux=0;
