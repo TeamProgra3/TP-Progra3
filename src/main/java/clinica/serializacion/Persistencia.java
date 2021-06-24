@@ -29,7 +29,7 @@ public class Persistencia {
         persistencia.cerrarOutput();
 
     }
-    public void levantarDatos() throws IOException, ClassNotFoundException {
+    public static void levantarDatos() throws IOException, ClassNotFoundException {
         ClinicaDTO clinicaDTO=new ClinicaDTO();
         IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
 

@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.time.Period;
 
 import javax.swing.JOptionPane;
 
@@ -19,7 +20,7 @@ public class MAIN {
 	public static void main(String[] args) {
 		Ventana ventana;
 		Controlador controlador;
-		Persistencia bbdd=new Persistencia();
+
 		TEST test = new TEST();
 		
 		/*try {
@@ -30,7 +31,7 @@ public class MAIN {
 		
 		
 		try {
-			bbdd.levantarDatos();
+			Persistencia.levantarDatos();
 			System.out.println("levanto de ARCHIVO");
 		} catch (ClassNotFoundException e) {
 			JOptionPane.showMessageDialog(null, "Error al cargar datos! "+e.getMessage());;
@@ -45,7 +46,7 @@ public class MAIN {
 		}
 		
 		try {
-			bbdd.persisteDatos();
+			Persistencia.persisteDatos();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
