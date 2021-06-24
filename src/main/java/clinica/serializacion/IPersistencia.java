@@ -1,5 +1,9 @@
 package clinica.serializacion;
-
+/**
+ * Interface grafica que determina el comportamiento de la/s persistencias<br>
+ *
+ * @author Los Cafeteros
+ */
 
 import java.io.IOException;
 

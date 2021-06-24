@@ -1,6 +1,12 @@
 package clinica.serializacion;
 
 import java.io.*;
+/**
+ * Esta clase se encarga de utilizar el metodo binario para persistir datos<br>
+ *
+ *
+ * @author Los Cafeteros
+ */
 
 public class PersistenciaBinaria implements IPersistencia <Serializable>{
 
