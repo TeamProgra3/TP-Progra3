@@ -1,5 +1,12 @@
 package estados;
 
+/**
+ * En esta interface se encarga de modelar los estados de la ambulancia<br>
+ * <b> Patrón aplicado: </b> State
+ *
+ * @author Los Cafeteros
+ */
+
 public interface IState {
 
 	

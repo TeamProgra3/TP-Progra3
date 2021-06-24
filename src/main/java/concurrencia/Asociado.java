@@ -2,6 +2,12 @@ package concurrencia;
 
 import java.util.Objects;
 import java.util.Random;
+/**
+ * Esta clase simula ser un asociado de la clinica, el cual le hace peticiones al objeto compartido<br>
+ *
+ *
+ * @author Los Cafeteros
+ */
 
 public class Asociado extends Thread {
 	private String nombre;

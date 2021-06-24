@@ -3,6 +3,14 @@ package concurrencia;
 import controlador.Controlador;
 import estados.EnClinicaState;
 import estados.IState;
+import exception.NoHayPacienteException;
+
+/**
+ * La clase "Ambulancia" tiene la intencion de simular un recurso compartido (una ambulancia) la cual recibe peticiones de varias personas (Hilos) <br>
+ * <b> Patrón aplicado: </b> Singleton
+ *
+ * @author Los Cafeteros
+ */
 
 
 public class Ambulancia {
@@ -26,8 +34,12 @@ public class Ambulancia {
 	public void setEstado(IState estado) {
 		this.estado = estado;
 	}
-	
-	
+	/**
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 *
+	 * @param asociado - id de paciente
+	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 */
 	public synchronized void atenderPacienteDomicilio(Asociado asociado) {
 		System.out.println(asociado.getNombre() +" solicita atención en su domicilio");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita atención en su domicilio");
@@ -51,9 +63,13 @@ public class Ambulancia {
 		Controlador.agregarSuceso(asociado.getNombre() +" deja de esperar ");
 		System.out.println(asociado.getNombre() +" deja de esperar ");
 		Controlador.actualizaAsociados();
-	}	
-	
-	
+	}
+	/**
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 *
+	 * @param asociado - id de paciente
+	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 */
 	public synchronized void volverAClinica(Asociado asociado) {
 		System.out.println(asociado.getNombre() +" solicita que la ambulancia vuelva a clinica");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita que la ambulancia vuelva a clinica");
@@ -75,6 +91,12 @@ public class Ambulancia {
 		System.out.println("Ambulancia volvió a la clinica - pedido por: "+asociado.getNombre());
 		Controlador.actualizaAsociados();
 	}
+	/**
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 *
+	 * @param asociado - id de paciente
+	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 */
 
 	public synchronized void trasladarAClinica(Asociado asociado) {
 		System.out.println(asociado.getNombre() +" solicita traslado a la clinica");
@@ -98,6 +120,12 @@ public class Ambulancia {
 		Controlador.actualizaAsociados();
 	}
 
+	/**
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 *
+	 * @param asociado - id de paciente
+	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 */
 	public synchronized void repararAmbulancia(Asociado asociado) {
 		System.out.println(asociado.getNombre() +" solicita reparacion de la ambulancia en taller");
 		Controlador.agregarSuceso(asociado.getNombre() +" solicita reparacion de la ambulancia en taller");

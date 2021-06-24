@@ -8,6 +8,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Esta clase contiene se encarga de transferir datos desde la clase ClinicaSingleton hacia el archivo y viceversa <br>
+ * <b> Patrón aplicado: </b> DTO
+ *
+ * @author Los Cafeteros
+ */
 public class ClinicaDTO implements Serializable {
     private Paciente salaPrivada; //Un unico paciente   --------------------------------------
     private ArrayList<Paciente> patio; //Muchos pacientes------------------------------------

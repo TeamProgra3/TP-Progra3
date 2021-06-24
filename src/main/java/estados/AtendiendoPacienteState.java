@@ -3,6 +3,7 @@ package estados;
 import concurrencia.Ambulancia;
 import controlador.Controlador;
 
+
 public class AtendiendoPacienteState implements IState {
 	Ambulancia ambulancia = Ambulancia.getInstance();
 	@Override

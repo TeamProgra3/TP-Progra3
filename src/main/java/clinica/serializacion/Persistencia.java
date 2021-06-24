@@ -6,7 +6,11 @@ import java.io.IOException;
 import java.io.Serializable;
 
 public class Persistencia {
-
+    /**
+     * La clase Persistencia se encarga de persistir los datos en disco como tambien levantar la los datos del mismo<br>
+     *
+     * @author Los Cafeteros
+     */
    
     public static void persisteDatos() throws IOException {
         ClinicaDTO clinicaDTO=new ClinicaDTO();
