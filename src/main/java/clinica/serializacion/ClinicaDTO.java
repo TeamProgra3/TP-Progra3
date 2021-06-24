@@ -1,5 +1,6 @@
 package clinica.serializacion;
 
+import concurrencia.Asociado;
 import habitacion.IHabitacion;
 import medico.IMedico;
 import paciente.Paciente;
@@ -21,6 +22,7 @@ public class ClinicaDTO implements Serializable {
     private HashMap<Integer, Paciente> pacientesRegistrados = new HashMap<Integer, Paciente>();
     private HashMap<Integer, IMedico> medicos = new HashMap<Integer, IMedico>();
     private HashMap<Integer, IHabitacion> habitaciones = new HashMap<Integer, IHabitacion>();
+    private ArrayList<Asociado> listaAsociados = new ArrayList<Asociado>();
     private String nombre;
     private String direccion;
     private String telefono;
@@ -122,5 +124,11 @@ public class ClinicaDTO implements Serializable {
         this.ciudad = ciudad;
     }
 
+    public ArrayList<Asociado> getListaAsociados() {
+        return listaAsociados;
+    }
 
+    public void setListaAsociados(ArrayList<Asociado> listaAsociados) {
+        this.listaAsociados = listaAsociados;
+    }
 }

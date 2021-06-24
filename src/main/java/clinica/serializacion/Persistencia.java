@@ -27,6 +27,7 @@ public class Persistencia {
 
         clinicaDTO.setPatio(ClinicaSingleton.getInstance().getPatio());
         clinicaDTO.setSalaPrivada(ClinicaSingleton.getInstance().getSalaPrivada());
+        clinicaDTO.setListaAsociados(ClinicaSingleton.getInstance().getListaAsociados());
 
         persistencia.abrirOutput("clinica.bin");
         persistencia.escribir(clinicaDTO);
@@ -54,6 +55,7 @@ public class Persistencia {
 
         ClinicaSingleton.getInstance().setPatio(clinicaDTO.getPatio());
         ClinicaSingleton.getInstance().setSalaPrivada(clinicaDTO.getSalaPrivada());
+        ClinicaSingleton.getInstance().setListaAsociados(clinicaDTO.getListaAsociados());
 
 
     }

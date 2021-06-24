@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 import java.time.Period;
+import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
@@ -48,7 +49,8 @@ public class MAIN {
 		
 		
 		test.muestraInformacion();
-		controlador = new Controlador();
+		Ventana vista=new Ventana();
+		controlador = new Controlador(vista);
 		
 		ModuloAmbulancia moduloam = new ModuloAmbulancia();
 	

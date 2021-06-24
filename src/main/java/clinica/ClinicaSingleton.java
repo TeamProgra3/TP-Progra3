@@ -163,6 +163,10 @@ public class ClinicaSingleton {
         return this.pacientesRegistrados.get(DNI);
     }
 
+    public void setListaAsociados(ArrayList<Asociado> listaAsociados) {
+        this.listaAsociados = listaAsociados;
+    }
+
     /**
      * Recibe un id de paciente como paramentro, y devuelve el paciente
      *

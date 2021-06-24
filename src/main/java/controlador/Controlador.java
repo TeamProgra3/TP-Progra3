@@ -18,13 +18,16 @@ import vista.Ventana;
 public class Controlador implements ActionListener {
 	static Ventana ventana;
 
-	public Controlador() {
-		ventana = new Ventana();
+	public Controlador(Ventana v) {
+		ventana = v;
 		ventana.setVisible(true);
 		ventana.setListenerBotones(this);
 		ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
+		ventana.actualizarAsociados(ClinicaSingleton.getInstance().getListaAsociados());
 		ventana.setEstadoAmbulancia("En la clinica");
 	}
+
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

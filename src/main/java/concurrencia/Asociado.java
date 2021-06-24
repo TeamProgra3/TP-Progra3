@@ -1,5 +1,6 @@
 package concurrencia;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Random;
 /**
@@ -9,7 +10,7 @@ import java.util.Random;
  * @author Los Cafeteros
  */
 
-public class Asociado extends Thread {
+public class Asociado extends Thread implements Serializable {
 	private String nombre;
 	private String apellido;
 	private String domicilio;
@@ -53,7 +54,7 @@ public class Asociado extends Thread {
 
 	@Override
 	public String toString() {
-		return nombre + " " + apellido + " " + DNI + " " + finalizado;
+		return nombre + " " + apellido + " " + finalizado;
 	}
 
 	public void setFinalizado() {
