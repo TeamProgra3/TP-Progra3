@@ -6,24 +6,23 @@ import java.io.IOException;
 import java.io.Serializable;
 
 public class Persistencia {
-    ClinicaSingleton clinica=ClinicaSingleton.getInstance();
-    private IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
-    ClinicaDTO clinicaDTO=new ClinicaDTO();
-    public void persisteDatos() throws IOException {
 
+   
+    public static void persisteDatos() throws IOException {
+        ClinicaDTO clinicaDTO=new ClinicaDTO();
+        IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
+        clinicaDTO.setCiudad(ClinicaSingleton.getInstance().getCiudad());
+        clinicaDTO.setDireccion(ClinicaSingleton.getInstance().getDireccion());
+        clinicaDTO.setNombre(ClinicaSingleton.getInstance().getNombre());
+        clinicaDTO.setTelefono(ClinicaSingleton.getInstance().getTelefono());
 
-        clinicaDTO.setCiudad(clinica.getCiudad());
-        clinicaDTO.setDireccion(clinica.getDireccion());
-        clinicaDTO.setNombre(clinica.getNombre());
-        clinicaDTO.setTelefono(clinica.getTelefono());
+        clinicaDTO.setHabitaciones(ClinicaSingleton.getInstance().getHabitaciones());
+        clinicaDTO.setMedicos(ClinicaSingleton.getInstance().getMedicos());
+        clinicaDTO.setListaAtencion(ClinicaSingleton.getInstance().getListaAtencion());
+        clinicaDTO.setPacientesRegistrados(ClinicaSingleton.getInstance().getPacientesRegistrados());
 
-        clinicaDTO.setHabitaciones(clinica.getHabitaciones());
-        clinicaDTO.setMedicos(clinica.getMedicos());
-        clinicaDTO.setListaAtencion(clinica.getListaAtencion());
-        clinicaDTO.setPacientesRegistrados(clinica.getPacientesRegistrados());
-
-        clinicaDTO.setPatio(clinica.getPatio());
-        clinicaDTO.setSalaPrivada(clinica.getSalaPrivada());
+        clinicaDTO.setPatio(ClinicaSingleton.getInstance().getPatio());
+        clinicaDTO.setSalaPrivada(ClinicaSingleton.getInstance().getSalaPrivada());
 
         persistencia.abrirOutput("clinica.bin");
         persistencia.escribir(clinicaDTO);
@@ -31,23 +30,26 @@ public class Persistencia {
 
     }
     public void levantarDatos() throws IOException, ClassNotFoundException {
+        ClinicaDTO clinicaDTO=new ClinicaDTO();
+        IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
+
         persistencia.abrirInput("clinica.bin");
-        this.clinicaDTO= (ClinicaDTO) persistencia.leer();
+        clinicaDTO= (ClinicaDTO) persistencia.leer();
         persistencia.cerrarInput();
 
 
-        clinica.setCiudad(clinicaDTO.getCiudad());
-        clinica.setDireccion(clinicaDTO.getDireccion());
-        clinica.setNombre(clinicaDTO.getNombre());
-        clinica.setTelefono(clinicaDTO.getTelefono());
+        ClinicaSingleton.getInstance().setCiudad(clinicaDTO.getCiudad());
+        ClinicaSingleton.getInstance().setDireccion(clinicaDTO.getDireccion());
+        ClinicaSingleton.getInstance().setNombre(clinicaDTO.getNombre());
+        ClinicaSingleton.getInstance().setTelefono(clinicaDTO.getTelefono());
 
-        clinica.setHabitaciones(clinicaDTO.getHabitaciones());
-        clinica.setMedicos(clinicaDTO.getMedicos());
-        clinica.setListaAtencion(clinicaDTO.getListaAtencion());
-        clinica.setPacientesRegistrados(clinicaDTO.getPacientesRegistrados());
+        ClinicaSingleton.getInstance().setHabitaciones(clinicaDTO.getHabitaciones());
+        ClinicaSingleton.getInstance().setMedicos(clinicaDTO.getMedicos());
+        ClinicaSingleton.getInstance().setListaAtencion(clinicaDTO.getListaAtencion());
+        ClinicaSingleton.getInstance().setPacientesRegistrados(clinicaDTO.getPacientesRegistrados());
 
-        clinica.setPatio(clinicaDTO.getPatio());
-        clinica.setSalaPrivada(clinicaDTO.getSalaPrivada());
+        ClinicaSingleton.getInstance().setPatio(clinicaDTO.getPatio());
+        ClinicaSingleton.getInstance().setSalaPrivada(clinicaDTO.getSalaPrivada());
 
 
     }

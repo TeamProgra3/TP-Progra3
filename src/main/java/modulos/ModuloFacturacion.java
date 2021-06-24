@@ -44,7 +44,7 @@ public class ModuloFacturacion {
                 System.out.println("Directorio 'facturas' creado");
             else
                 System.out.println("Error al crear el archivo");
-    }
+        }
     }
 
     /**
