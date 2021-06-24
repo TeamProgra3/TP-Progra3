@@ -9,18 +9,20 @@ public class Asociado extends Thread {
 	private String domicilio;
 	private String telefono;
 	private String DNI;
+	private String actividad;
 	private String finalizado = "";
 
 	public Asociado(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public Asociado(String nombre, String apellido, String domicilio, String telefono, String dNI) {
+	public Asociado(String nombre, String apellido, String domicilio, String telefono, String dNI, String actividad) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.domicilio = domicilio;
 		this.telefono = telefono;
+		this.actividad = actividad;
 		DNI = dNI;
 	}
 

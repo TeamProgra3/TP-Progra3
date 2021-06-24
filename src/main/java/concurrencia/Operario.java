@@ -12,8 +12,9 @@ public class Operario extends Asociado {
 	@Override
 	public void run() {
 		Random r=new Random();
+		
 			try {
-
+				Thread.sleep(r.nextInt(6000));
 				Ambulancia.getInstance().repararAmbulancia(this);
 				Thread.sleep(r.nextInt(5000));
 			} catch (InterruptedException e) {

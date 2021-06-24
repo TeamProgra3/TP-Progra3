@@ -35,10 +35,11 @@ public class Controlador implements ActionListener {
 				String DNI = ventana.getDNI();
 				String telefono = ventana.getDNI();
 				String domicilio = ventana.getDNI();
-				aux=new Asociado(nombre,apellido,DNI,telefono,domicilio);
+				String actividad = ventana.getActividad();
+				aux=new Asociado(nombre,apellido,DNI,telefono,domicilio,actividad);
 
 				try {
-					ClinicaSingleton.getInstance().addAsociado(new Asociado(nombre,apellido,DNI,telefono,domicilio));
+					ClinicaSingleton.getInstance().addAsociado(aux);
 				} catch (AsociadoExistenteException asociadoExistenteException) {
 					JOptionPane.showMessageDialog(null, "El asociado ya existe");
 				}
@@ -76,7 +77,7 @@ public class Controlador implements ActionListener {
 		ventana.setEstadoAmbulancia(estadoActual);
 	}
 	
-	public static void agregarSuceso(String suceso) {
+	public static synchronized void agregarSuceso(String suceso) {
 		ventana.nuevoSuceso(suceso + "\n");
 	}
 	
