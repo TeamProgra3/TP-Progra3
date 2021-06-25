@@ -36,4 +36,6 @@ interface IVista {
 	void nuevoSuceso(String suceso);
 
 	String getActividad();
+	
+	String getCantidadConsultas();
 }
