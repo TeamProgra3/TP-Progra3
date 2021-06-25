@@ -63,13 +63,11 @@ public class Asociado extends Thread implements Serializable {
 
 	@Override
 	public void run() {
-		int accion;
 		super.run();
 		Random r = new Random();
 		try {
 			Thread.sleep(r.nextInt(4000));
-			accion = r.nextInt() % 2;
-			if (accion == 0)
+			if (this.actividad.equals("DOMICILIO"))
 				Ambulancia.getInstance().atenderPacienteDomicilio(this);
 			else
 				Ambulancia.getInstance().trasladarAClinica(this);
