@@ -1,6 +1,8 @@
 package persona;
 
-public abstract class Persona {
+import java.io.Serializable;
+
+public abstract class Persona implements Serializable {
     protected int DNI;
     protected String nombre;
     protected String apellido;

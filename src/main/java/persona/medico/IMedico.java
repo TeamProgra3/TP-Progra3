@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author Los cafeteros
  *
  */
-public interface IMedico extends Serializable {
+public interface IMedico extends Serializable{
     public static float sueldoBasico=2000;
 
     @Deprecated

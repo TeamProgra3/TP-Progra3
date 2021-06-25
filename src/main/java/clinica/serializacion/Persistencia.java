@@ -14,7 +14,7 @@ public class Persistencia {
    
     public static void persisteDatos() throws IOException {
         ClinicaDTO clinicaDTO=new ClinicaDTO();
-        IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
+        IPersistencia<Serializable> persistenciaBinaria= new PersistenciaBinaria();
         clinicaDTO.setCiudad(ClinicaSingleton.getInstance().getCiudad());
         clinicaDTO.setDireccion(ClinicaSingleton.getInstance().getDireccion());
         clinicaDTO.setNombre(ClinicaSingleton.getInstance().getNombre());
@@ -29,21 +29,22 @@ public class Persistencia {
         clinicaDTO.setSalaPrivada(ClinicaSingleton.getInstance().getSalaPrivada());
         clinicaDTO.setListaAsociados(ClinicaSingleton.getInstance().getListaAsociados());
 
-        persistencia.abrirOutput("clinica.bin");
-        persistencia.escribir(clinicaDTO);
-        persistencia.cerrarOutput();
+        persistenciaBinaria.abrirOutput("clinica.bin");
+        persistenciaBinaria.escribir(clinicaDTO);
+        persistenciaBinaria.cerrarOutput();
 
     }
     public static void levantarDatos() throws IOException, ClassNotFoundException {
         ClinicaDTO clinicaDTO=new ClinicaDTO();
-        IPersistencia<Serializable> persistencia= new PersistenciaBinaria();
+        IPersistencia<Serializable> persistenciaBinaria= new PersistenciaBinaria();
 
-        persistencia.abrirInput("clinica.bin");
-        clinicaDTO= (ClinicaDTO) persistencia.leer();
-        persistencia.cerrarInput();
-
+        persistenciaBinaria.abrirInput("clinica.bin");
+        clinicaDTO= (ClinicaDTO) persistenciaBinaria.leer();
+        persistenciaBinaria.cerrarInput();
+        System.out.println("Levanto datos de archivo");
 
         ClinicaSingleton.getInstance().setCiudad(clinicaDTO.getCiudad());
+
         ClinicaSingleton.getInstance().setDireccion(clinicaDTO.getDireccion());
         ClinicaSingleton.getInstance().setNombre(clinicaDTO.getNombre());
         ClinicaSingleton.getInstance().setTelefono(clinicaDTO.getTelefono());
@@ -52,7 +53,6 @@ public class Persistencia {
         ClinicaSingleton.getInstance().setMedicos(clinicaDTO.getMedicos());
         ClinicaSingleton.getInstance().setListaAtencion(clinicaDTO.getListaAtencion());
         ClinicaSingleton.getInstance().setPacientesRegistrados(clinicaDTO.getPacientesRegistrados());
-
         ClinicaSingleton.getInstance().setPatio(clinicaDTO.getPatio());
         ClinicaSingleton.getInstance().setSalaPrivada(clinicaDTO.getSalaPrivada());
         ClinicaSingleton.getInstance().setListaAsociados(clinicaDTO.getListaAsociados());

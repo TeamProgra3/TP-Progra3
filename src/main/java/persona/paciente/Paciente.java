@@ -12,7 +12,7 @@ import persona.medico.Consulta;
  * @author Los Cafeteros
  *
  */
-public abstract class Paciente extends Persona implements Serializable {
+public abstract class Paciente extends Persona {
 
     public static int historiasClinicasPacientes=0;
     private int historiaClinica;

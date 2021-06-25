@@ -21,16 +21,19 @@ public class MAIN {
 	public static void main(String[] args) {
 		Ventana ventana;
 		Controlador controlador;
+		ClinicaSingleton clinica=ClinicaSingleton.getInstance();
 
 		TEST test = new TEST();
-		
-		/*try {
+		/*
+		try {
 			test.cargaDatos();
 		} catch (FactoryMedicoException | FactoryHabitacionException | EsperaVaciaException e) {
 			e.printStackTrace();
-		}*/
+		}
+		*/
+
 		
-		
+
 		try {
 			Persistencia.levantarDatos();
 			System.out.println("levanto de ARCHIVO");
@@ -46,7 +49,8 @@ public class MAIN {
 				e.printStackTrace();
 			}
 		}
-		
+
+		//test.muestra_datos_clinica();
 		
 		test.muestraInformacion();
 		Ventana vista=new Ventana();
