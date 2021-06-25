@@ -2,6 +2,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
@@ -14,7 +16,7 @@ import modulos.ModuloAmbulancia;
 import persona.paciente.Paciente;
 import vista.Ventana;
 
-public class Controlador implements ActionListener {
+public class Controlador implements ActionListener, WindowListener {
     static Ventana ventana;
 
     public Controlador(Ventana v) {
@@ -24,12 +26,15 @@ public class Controlador implements ActionListener {
         ventana.actualizarPacientesAtencion(ClinicaSingleton.getInstance().getListaAtencion());
         ventana.actualizarAsociados(ClinicaSingleton.getInstance().getListaAsociados());
         ventana.setEstadoAmbulancia("En la clinica");
+
+        ventana.setWindowListener(this);
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
         String comando = e.getActionCommand();
+
 
         if (comando.equals("AGREGAR")) {
             if (!ventana.getDNI().isEmpty() && !ventana.getNombre().isEmpty()) {
@@ -84,6 +89,7 @@ public class Controlador implements ActionListener {
         ventana.actualizarAsociados(ClinicaSingleton.getInstance().getListaAsociados());
     }
 
+
     public static void actualizarEstadoAmbulancia(String estadoActual) {
         ventana.setEstadoAmbulancia(estadoActual);
     }
@@ -94,5 +100,46 @@ public class Controlador implements ActionListener {
 
     public static void actualizaAsociados() {
         ventana.actualizarAsociados(ClinicaSingleton.getInstance().getListaAsociados());
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        try {
+            Persistencia.persisteDatos();
+            System.out.println("Se guardo los datos al cerrar");
+        } catch (IOException e1) {
+            JOptionPane.showMessageDialog(null, "Hubo un error, no se pudo persistir los datos! (IOException)");
+            e1.printStackTrace();
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }

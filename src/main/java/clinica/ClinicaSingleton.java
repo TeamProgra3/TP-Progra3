@@ -172,7 +172,6 @@ public class ClinicaSingleton {
     public Paciente buscaPacienteID(int id) throws NoHayPacienteException {
     	Iterator<Paciente> it = null;
 		Paciente aux=null;
-
 		if (!this.pacientesRegistrados.isEmpty()) {
 			it = this.pacientesRegistrados.values().iterator();
 			aux = it.next();

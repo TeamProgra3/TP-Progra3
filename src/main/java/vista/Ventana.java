@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -59,6 +60,7 @@ public class Ventana extends JFrame implements IVista{
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	public Ventana() {
+
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img/cruzroja.png"));
 		setIconImage(getIconImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -274,6 +276,11 @@ public class Ventana extends JFrame implements IVista{
 		btnFactura.addActionListener(controlador);
 		btnSimulacion.addActionListener(controlador);
 		btnSerializar.addActionListener(controlador);
+	}
+
+	@Override
+	public void setWindowListener(WindowListener windowListener) {
+		this.addWindowListener(windowListener);
 	}
 
 	public void actualizarPacientesAtencion(ArrayList<Paciente> arrayList) {

@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
 import concurrencia.Asociado;
@@ -9,6 +10,8 @@ import persona.paciente.Paciente;
 interface IVista {
 
 	void setListenerBotones(ActionListener controlador);
+
+	void setWindowListener(WindowListener windowListener);
 
 	void actualizarPacientesAtencion(ArrayList<Paciente> arrayList);
 
