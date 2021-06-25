@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 public interface IHabitacion extends Serializable {
 
-    public float getCosto(int dias);
-    public int getId();
-    public String getTipo();
+    float getCosto(int dias);
+    int getId();
+    String getTipo();
 }

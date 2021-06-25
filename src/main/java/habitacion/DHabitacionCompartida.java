@@ -6,7 +6,6 @@ package habitacion;
  *
  */
 public class DHabitacionCompartida extends HabitacionDecorator{
-    private float costoHabitacion=120;
     public DHabitacionCompartida(IHabitacion habitacion){
         super(habitacion);
     }
@@ -14,7 +13,8 @@ public class DHabitacionCompartida extends HabitacionDecorator{
 
     @Override
     public float getCosto(int dias) {
-        return habitacion.getCosto(dias)+costoHabitacion*dias;
+        float costoHabitacion = 120;
+        return habitacion.getCosto(dias)+ costoHabitacion *dias;
     }
     @Override
     public int getId() {
