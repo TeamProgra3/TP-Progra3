@@ -1,6 +1,11 @@
 package modulos;
 
 import clinica.ClinicaSingleton;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import habitacion.IHabitacion;
 import persona.medico.Consulta;
 import persona.medico.IMedico;
@@ -9,14 +14,10 @@ import persona.paciente.Paciente;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.stream.Collectors;
-
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
 
 /**
  * Clase dedicada a tomar los datos de un paciente de la clinica para generar su factura correspondiente<br>

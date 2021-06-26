@@ -1,35 +1,16 @@
 package vista;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.SystemColor;
-import java.awt.Toolkit;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowListener;
-import java.util.ArrayList;
+import concurrencia.Asociado;
+import persona.paciente.Paciente;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
-
-import concurrencia.Asociado;
-import persona.paciente.Paciente;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
-import javax.swing.JSlider;
-import javax.swing.JProgressBar;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
+import java.util.ArrayList;
 
 /**
  * Esta clase es la encargada de mostrar informacion por pantalla como tambien de determinar la valides del formato de los datos que el usuario ingresa<br>

@@ -1,11 +1,11 @@
 package vista;
 
+import concurrencia.Asociado;
+import persona.paciente.Paciente;
+
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
-
-import concurrencia.Asociado;
-import persona.paciente.Paciente;
 /**
  * Interface que determina el comportamineto de la ventana<br>
  *

@@ -3,7 +3,6 @@ package concurrencia;
 import controlador.Controlador;
 import estados.EnClinicaState;
 import estados.IState;
-import exception.NoHayPacienteException;
 
 /**
  * La clase "Ambulancia" tiene la intencion de simular un recurso compartido

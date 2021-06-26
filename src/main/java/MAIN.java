@@ -1,12 +1,3 @@
-
-
-import java.io.IOException;
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.Vector;
-
-import javax.swing.JOptionPane;
-
 import clinica.ClinicaSingleton;
 import clinica.serializacion.Persistencia;
 import concurrencia.Asociado;
@@ -17,6 +8,10 @@ import exception.FactoryMedicoException;
 import modulos.ModuloAmbulancia;
 import modulos.TEST;
 import vista.Ventana;
+
+import javax.swing.*;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class MAIN {
 	public static void main(String[] args) {
@@ -53,7 +48,7 @@ public class MAIN {
 
 		//test.muestra_datos_clinica();
 		
-		test.muestraInformacion();
+		//test.muestraInformacion();
 		Ventana vista=new Ventana();
 		controlador = new Controlador(vista);
 		

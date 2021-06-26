@@ -1,18 +1,17 @@
 package clinica;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-
-
 import concurrencia.Asociado;
 import exception.AsociadoExistenteException;
 import exception.NoHayPacienteException;
 import habitacion.IHabitacion;
-import persona.medico.IMedico;
 import modulos.ModuloAmbulancia;
 import modulos.ModuloFacturacion;
+import persona.medico.IMedico;
 import persona.paciente.Paciente;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones, asociados)<br>

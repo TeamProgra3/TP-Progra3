@@ -1,12 +1,12 @@
 package modulos;
 
-import java.util.ArrayList;
-
 import clinica.ClinicaSingleton;
 import concurrencia.Asociado;
 import concurrencia.ChoferAmbulancia;
 import concurrencia.Operario;
 import exception.AsociadoExistenteException;
+
+import java.util.ArrayList;
 
 /**
  * Esta clase es el encargado de manejar la simulacion, da inicio a todos los hilos (asociados,operario y chofer)<br>

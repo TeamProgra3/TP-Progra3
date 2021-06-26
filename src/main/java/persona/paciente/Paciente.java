@@ -1,11 +1,10 @@
 package persona.paciente;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
-
 import persona.Persona;
 import persona.medico.Consulta;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 /**
  * Clase que representa un persona.paciente

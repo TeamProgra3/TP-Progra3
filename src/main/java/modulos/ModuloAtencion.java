@@ -1,9 +1,10 @@
 package modulos;
 
-import java.util.ArrayList;
 import clinica.ClinicaSingleton;
 import exception.EsperaVaciaException;
 import persona.paciente.Paciente;
+
+import java.util.ArrayList;
 
 /**
  * Modulo que se encarga de atender paciente retirandolo del lugar de espera y

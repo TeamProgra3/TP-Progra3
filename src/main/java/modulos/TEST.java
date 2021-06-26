@@ -1,10 +1,5 @@
 package modulos;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-
 import clinica.ClinicaSingleton;
 import concurrencia.Asociado;
 import exception.EsperaVaciaException;
@@ -18,6 +13,11 @@ import persona.medico.MedicoFactory;
 import persona.medico.Muestra;
 import persona.paciente.Paciente;
 import persona.paciente.PacienteFactory;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
 
 /**
  * Clase destinada a hacer pruebas con los modulos implementados
@@ -170,44 +170,6 @@ public class TEST {
         ClinicaSingleton.getInstance().creaFactura(clinica.buscaPaciente(274266156));
         */
     }
-    public void muestra_datos_clinica(){
-        ClinicaSingleton clinica=ClinicaSingleton.getInstance();
-        int i = 0;
 
-        ArrayList<Paciente>pacientes=clinica.getListaAtencion();
-        while(pacientes.size()>i  ){
-
-            System.out.println(pacientes.get(i).toString());
-            i++;
-        }
-        i = 0;
-        HashMap<Integer, Paciente> pacientesRegistrados = clinica.getPacientesRegistrados();
-        while(pacientesRegistrados.size()>i  ){
-            System.out.println(pacientesRegistrados.get(i).toString());
-            i++;
-        }
-        i = 0;
-        HashMap<Integer, IMedico> medicos=clinica.getMedicos();
-        while(medicos.size()>i  ){
-
-            System.out.println(medicos.get(i).toString());
-            i++;
-        }
-        i = 0;
-        HashMap<Integer, IHabitacion> habitaciones=clinica.getHabitaciones();
-        while(habitaciones.size()>i  ) {
-
-            System.out.println(habitaciones.get(i).toString());
-            i++;
-        }
-
-        i = 0;
-        ArrayList<Asociado> listaAsociados= clinica.getListaAsociados();
-        while(listaAsociados.size()>i  ){
-
-            System.out.println(listaAsociados.get(i).toString());
-            i++;
-        }
-    }
 
 }
