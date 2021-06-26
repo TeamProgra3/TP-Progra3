@@ -6,21 +6,21 @@ import estados.IState;
 import exception.NoHayPacienteException;
 
 /**
- * La clase "Ambulancia" tiene la intencion de simular un recurso compartido (una ambulancia) la cual recibe peticiones de varias personas (Hilos) <br>
+ * La clase "Ambulancia" tiene la intencion de simular un recurso compartido
+ * (una ambulancia) la cual recibe peticiones de varias personas (Hilos) <br>
  * <b> Patrón aplicado: </b> Singleton
  *
  * @author Los Cafeteros
  */
 
-
 public class Ambulancia {
-	private static Ambulancia instance=null;
+	private static Ambulancia instance = null;
 	IState estado;
-	
-	private Ambulancia () {
+
+	private Ambulancia() {
 		estado = new EnClinicaState();
 	}
-	
+
 	public static Ambulancia getInstance() {
 		if (instance == null)
 			instance = new Ambulancia();
@@ -34,22 +34,23 @@ public class Ambulancia {
 	public void setEstado(IState estado) {
 		this.estado = estado;
 	}
+
 	/**
-	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la
+	 * ambulancia
 	 *
-	 * @param asociado - id de persona.paciente
-	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 * @param asociado - id de persona.paciente <b>Pre-condicion:</b> asociado no
+	 *                 NULL<br>
 	 */
 	public synchronized void atenderPacienteDomicilio(Asociado asociado) {
-		Controlador.agregarSuceso(asociado.getNombre() +" solicita atención en su domicilio");
+		Controlador.agregarSuceso(asociado.getNombre() + " solicita atención en su domicilio");
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaAtencionDomicilio();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
 
-		while(estadoAnterior == this.estado) {
+		while (estadoAnterior == this.estado) {
 			try {
 				wait();
-				System.out.println(asociado.getNombre() + " despertado");
 				estadoAnterior = this.estado;
 				this.estado.solicitaAtencionDomicilio();
 				Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
@@ -60,22 +61,24 @@ public class Ambulancia {
 		}
 
 		notifyAll();
-		Controlador.agregarSuceso(asociado.getNombre() +" deja de esperar ");
+		Controlador.agregarSuceso(asociado.getNombre() + " deja de esperar ");
 
 		Controlador.actualizaAsociados();
 	}
+
 	/**
-	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la
+	 * ambulancia
 	 *
-	 * @param asociado - id de persona.paciente
-	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 * @param asociado - id de persona.paciente <b>Pre-condicion:</b> asociado no
+	 *                 NULL<br>
 	 */
 	public synchronized void volverAClinica(Asociado asociado) {
-		Controlador.agregarSuceso(asociado.getNombre() +" solicita que la ambulancia vuelva a clinica");
+		Controlador.agregarSuceso(asociado.getNombre() + " solicita que la ambulancia vuelva a clinica");
 		IState estadoAnterior = this.estado;
 		this.estado.volverClinica();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
-		while(estadoAnterior == this.estado) {
+		while (estadoAnterior == this.estado) {
 			try {
 				wait();
 				estadoAnterior = this.estado;
@@ -86,23 +89,25 @@ public class Ambulancia {
 			}
 		}
 		notifyAll();
-		Controlador.agregarSuceso("Ambulancia volvió a la clinica - pedido por: "+asociado.getNombre());
+		Controlador.agregarSuceso("Ambulancia está llegando a la clinica - pedido por: " + asociado.getNombre());
 
 		Controlador.actualizaAsociados();
 	}
+
 	/**
-	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la
+	 * ambulancia
 	 *
-	 * @param asociado - id de persona.paciente
-	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 * @param asociado - id de persona.paciente <b>Pre-condicion:</b> asociado no
+	 *                 NULL<br>
 	 */
 
 	public synchronized void trasladarAClinica(Asociado asociado) {
-		Controlador.agregarSuceso(asociado.getNombre() +" solicita traslado a la clinica");
+		Controlador.agregarSuceso(asociado.getNombre() + " solicita traslado a la clinica");
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaTrasladoClinica();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
-		while(estadoAnterior == this.estado) {
+		while (estadoAnterior == this.estado) {
 			try {
 				wait();
 				estadoAnterior = this.estado;
@@ -113,22 +118,23 @@ public class Ambulancia {
 			}
 		}
 		notifyAll();
-		Controlador.agregarSuceso(asociado.getNombre()+" esta siendo trasladado a la clinica");
+		Controlador.agregarSuceso(asociado.getNombre() + " esta siendo trasladado a la clinica");
 		Controlador.actualizaAsociados();
 	}
 
 	/**
-	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la ambulancia
+	 * Recibe un Asociado por parametro eh intenta cambiar el estado de la
+	 * ambulancia
 	 *
-	 * @param asociado - id de persona.paciente
-	 * <b>Pre-condicion:</b> asociado no NULL<br>
+	 * @param asociado - id de persona.paciente <b>Pre-condicion:</b> asociado no
+	 *                 NULL<br>
 	 */
 	public synchronized void repararAmbulancia(Asociado asociado) {
-		Controlador.agregarSuceso(asociado.getNombre() +" solicita reparacion de la ambulancia en taller");
+		Controlador.agregarSuceso(asociado.getNombre() + " solicita reparacion de la ambulancia en taller");
 		IState estadoAnterior = this.estado;
 		this.estado.repararAmbulancia();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());
-		while(estadoAnterior == this.estado) {
+		while (estadoAnterior == this.estado) {
 			try {
 				wait();
 				estadoAnterior = this.estado;
@@ -139,7 +145,7 @@ public class Ambulancia {
 			}
 		}
 		notifyAll();
-		Controlador.agregarSuceso("Ambulancia reparada con éxito - pedido por: "+asociado.getNombre());
+		Controlador.agregarSuceso("Ambulancia reparada con éxito - pedido por: " + asociado.getNombre());
 		Controlador.actualizaAsociados();
 	}
 

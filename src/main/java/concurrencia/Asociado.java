@@ -3,8 +3,10 @@ package concurrencia;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Random;
+
 /**
- * Esta clase simula ser un asociado de la clinica, el cual le hace peticiones al objeto compartido<br>
+ * Esta clase simula ser un asociado de la clinica, el cual le hace peticiones
+ * al objeto compartido<br>
  *
  *
  * @author Los Cafeteros
@@ -18,19 +20,22 @@ public class Asociado extends Thread implements Serializable {
 	private String DNI;
 	private String actividad;
 	private String finalizado = "";
+	private int cantConsultas;
 
 	public Asociado(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public Asociado(String nombre, String apellido, String domicilio, String telefono, String dNI, String actividad) {
+	public Asociado(String nombre, String apellido, String domicilio, String telefono, String DNI, String actividad,
+			int cantConsultas) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.domicilio = domicilio;
 		this.telefono = telefono;
 		this.actividad = actividad;
-		DNI = dNI;
+		this.cantConsultas = cantConsultas;
+		this.DNI = DNI;
 	}
 
 	public String getNombre() {
@@ -57,24 +62,25 @@ public class Asociado extends Thread implements Serializable {
 		return nombre + " " + apellido + " " + finalizado;
 	}
 
-	public void setFinalizado() {
-		this.finalizado = " [FINALIZADO]";
+	public void setFinalizado(boolean b) {
+		this.finalizado = b?" [FINALIZADO]":"";
 	}
 
 	@Override
 	public void run() {
 		super.run();
 		Random r = new Random();
-		try {
-			Thread.sleep(r.nextInt(4000));
-			if (this.actividad.equals("DOMICILIO"))
-				Ambulancia.getInstance().atenderPacienteDomicilio(this);
-			else
-				Ambulancia.getInstance().trasladarAClinica(this);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		for (int k = 0; k < cantConsultas; k++) {
+			try {
+				Thread.sleep(r.nextInt(4000));
+				if (this.actividad.equals("DOMICILIO"))
+					Ambulancia.getInstance().atenderPacienteDomicilio(this);
+				else
+					Ambulancia.getInstance().trasladarAClinica(this);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
-		this.setFinalizado();
+		this.setFinalizado(true);
 	}
-
 }

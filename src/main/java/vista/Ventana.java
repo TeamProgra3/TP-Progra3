@@ -28,6 +28,8 @@ import concurrencia.Asociado;
 import persona.paciente.Paciente;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import javax.swing.JSlider;
+import javax.swing.JProgressBar;
 
 /**
  * Esta clase es la encargada de mostrar informacion por pantalla como tambien de determinar la valides del formato de los datos que el usuario ingresa<br>
@@ -65,13 +67,14 @@ public class Ventana extends JFrame implements IVista{
 	JRadioButton rdbtnDomicilio;
 	JRadioButton rdbtnTraslado;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField tfCantidadConsultas;
 
 	public Ventana() {
 
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img/cruzroja.png"));
 		setIconImage(getIconImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 987, 637);
+		setBounds(100, 100, 1000, 690);
 		setTitle("Clinica Los Cafeteros");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -133,7 +136,7 @@ public class Ventana extends JFrame implements IVista{
 
 		JPanel panel_4 = new JPanel();
 		panel_3.add(panel_4);
-		panel_4.setLayout(new GridLayout(7, 2, 0, 15));
+		panel_4.setLayout(new GridLayout(8, 2, 0, 15));
 
 		JLabel lblNewLabel_1 = new JLabel("Nombre");
 		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
@@ -144,6 +147,8 @@ public class Ventana extends JFrame implements IVista{
 		panel_4.add(panel);
 
 		tfNombre = new JTextField();
+		tfNombre.setFont(new Font("Verdana", Font.PLAIN, 12));
+		tfNombre.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(tfNombre);
 		tfNombre.setColumns(10);
 
@@ -156,6 +161,8 @@ public class Ventana extends JFrame implements IVista{
 		panel_4.add(panel_7);
 
 		tfApellido = new JTextField();
+		tfApellido.setFont(new Font("Verdana", Font.PLAIN, 12));
+		tfApellido.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_7.add(tfApellido);
 		tfApellido.setColumns(10);
 
@@ -168,6 +175,8 @@ public class Ventana extends JFrame implements IVista{
 		panel_4.add(panel_8);
 
 		tfDNI = new JTextField();
+		tfDNI.setFont(new Font("Verdana", Font.PLAIN, 12));
+		tfDNI.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_8.add(tfDNI);
 		tfDNI.setColumns(10);
 
@@ -181,6 +190,8 @@ public class Ventana extends JFrame implements IVista{
 		panel_4.add(panel_9);
 
 		tfTelefono = new JTextField();
+		tfTelefono.setFont(new Font("Verdana", Font.PLAIN, 12));
+		tfTelefono.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_9.add(tfTelefono);
 		tfTelefono.setColumns(10);
 
@@ -193,6 +204,8 @@ public class Ventana extends JFrame implements IVista{
 		panel_4.add(panel_10);
 
 		tfDomicilio = new JTextField();
+		tfDomicilio.setFont(new Font("Verdana", Font.PLAIN, 12));
+		tfDomicilio.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_10.add(tfDomicilio);
 		tfDomicilio.setColumns(10);
 
@@ -209,6 +222,21 @@ public class Ventana extends JFrame implements IVista{
 		rdbtnTraslado.setFont(new Font("Verdana", Font.PLAIN, 12));
 		rdbtnTraslado.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(rdbtnTraslado);
+		
+		JLabel lblNewLabel_2 = new JLabel("Cantidad de consultas");
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_4.add(lblNewLabel_2);
+		
+		JPanel panel_15 = new JPanel();
+		panel_4.add(panel_15);
+		
+		tfCantidadConsultas = new JTextField();
+		panel_15.add(tfCantidadConsultas);
+		tfCantidadConsultas.setText("1");
+		tfCantidadConsultas.setHorizontalAlignment(SwingConstants.CENTER);
+		tfCantidadConsultas.setFont(new Font("Verdana", Font.PLAIN, 12));
+		tfCantidadConsultas.setColumns(10);
 
 		btnAgregar.setBackground(new Color(0, 128, 0));
 		btnAgregar.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -342,5 +370,9 @@ public class Ventana extends JFrame implements IVista{
 		else if (rdbtnTraslado.isSelected())
 			return "TRASLADO";
 		else return null; //No pasa nunca, solo hay dos botones
+	}
+	public String getCantidadConsultas() {
+		return tfCantidadConsultas.getText();
+		
 	}
 }
