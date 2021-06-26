@@ -50,7 +50,7 @@ public class Controlador implements ActionListener, WindowListener {
 					if (cantConsultas <= 0)
 						throw new NumberFormatException();
 
-					aux = new Asociado(nombre, apellido, DNI, telefono, domicilio, actividad);
+					aux = new Asociado(nombre, apellido, DNI, telefono, domicilio, actividad,cantConsultas);
 					try {
 						ClinicaSingleton.getInstance().addAsociado(aux);
 					} catch (AsociadoExistenteException asociadoExistenteException) {

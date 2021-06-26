@@ -33,7 +33,7 @@ public class AtendiendoPacienteState implements IState {
 
 	@Override
 	public String estadoActual() {
-		return "Atendiendo un persona.paciente en domicilio";
+		return "Atendiendo un paciente en domicilio";
 	}
 
 }

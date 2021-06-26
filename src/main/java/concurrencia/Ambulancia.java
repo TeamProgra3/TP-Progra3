@@ -89,7 +89,7 @@ public class Ambulancia {
 			}
 		}
 		notifyAll();
-		Controlador.agregarSuceso("Ambulancia volvió a la clinica - pedido por: " + asociado.getNombre());
+		Controlador.agregarSuceso("Ambulancia está llegando a la clinica - pedido por: " + asociado.getNombre());
 
 		Controlador.actualizaAsociados();
 	}

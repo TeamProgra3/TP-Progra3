@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.JOptionPane;
@@ -41,7 +42,7 @@ public class MAIN {
 			JOptionPane.showMessageDialog(null, "Datos incorrectos ClassNotFoundException "+e.getMessage());
 		} catch (IOException ex) {
 			try {
-				JOptionPane.showMessageDialog(null, "Advertencia: Los datos no se cargaron del archivo "+ex.getMessage());
+				JOptionPane.showMessageDialog(null, "Advertencia: Los datos no se cargaron del archivo, se cargan datos por defecto");
 				test.cargaDatos();
 				System.out.println("Levanto de test");
 			} catch (FactoryMedicoException | FactoryHabitacionException | EsperaVaciaException e) {
@@ -56,6 +57,11 @@ public class MAIN {
 		Ventana vista=new Ventana();
 		controlador = new Controlador(vista);
 		
+		ArrayList<Asociado> lista = ClinicaSingleton.getInstance().getListaAsociados();
+		for (int j=0;j<lista.size();j++) {
+			lista.get(j).setFinalizado(false);
+		}
+			
 		ModuloAmbulancia moduloam = new ModuloAmbulancia();
 	
 	}

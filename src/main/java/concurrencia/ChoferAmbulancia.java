@@ -12,7 +12,7 @@ import java.util.Random;
 public class ChoferAmbulancia extends Asociado {
 
     public ChoferAmbulancia(String nombre, String apellido, String domicilio, String telefono, String dNI) {
-        super(nombre, apellido, domicilio, telefono, dNI,"");
+        super(nombre, apellido, domicilio, telefono, dNI,"",1);
     }
 
     @Override
