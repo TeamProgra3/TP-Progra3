@@ -6,11 +6,11 @@ import persona.paciente.PacienteFactory;
 
 /**
  * 
- *         Este modulo se encarga de ingresar al persona.paciente, sus responsabilidades<br>
+ *         Este modulo se encarga de ingresar al paciente, sus responsabilidades<br>
  *         son: <br>
- *         Asignar numero de orden al persona.paciente <br>
+ *         Asignar numero de orden al paciente <br>
  *         Resolver conflictos en la sala de espera privada y el patio <br>
- *         Cargar al persona.paciente en los registros de la clinica <br>
+ *         Cargar alpaciente en los registros de la clinica <br>
  *         @author Los Cafeteros 
  */
 public class ModuloIngreso {
@@ -18,9 +18,9 @@ public class ModuloIngreso {
 
 	/**
 	 * Coloca un persona.paciente en espera,resuelve conflictos del lugar de espera
-	 * @param nombre: Nombre del persona.paciente
-	 * @param apellido: Apellido del persona.paciente
-	 * @param DNI: DNI del persona.paciente
+	 * @param nombre: Nombre del paciente
+	 * @param apellido: Apellido del paciente
+	 * @param DNI: DNI del paciente
 	 * @param rangoEtario: Rango etario del pacientes
 	 */
 	public void ingresarPaciente(String nombre, String apellido, int DNI, String rangoEtario) {

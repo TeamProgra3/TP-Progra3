@@ -29,6 +29,13 @@ import persona.paciente.Paciente;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 
+/**
+ * Esta clase es la encargada de mostrar informacion por pantalla como tambien de determinar la valides del formato de los datos que el usuario ingresa<br>
+ * <b> Patrón aplicado: </b> MVC
+ *
+ * @author Los Cafeteros
+ */
+
 public class Ventana extends JFrame implements IVista{
 
 	private JPanel contentPane;

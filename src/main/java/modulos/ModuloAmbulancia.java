@@ -8,6 +8,14 @@ import concurrencia.ChoferAmbulancia;
 import concurrencia.Operario;
 import exception.AsociadoExistenteException;
 
+/**
+ * Esta clase es el encargado de manejar la simulacion, da inicio a todos los hilos (asociados,operario y chofer)<br>
+ *
+ *
+ * @author Los Cafeteros
+ */
+
+
 public class ModuloAmbulancia {
 
 	public static void iniciarSimulacion() {

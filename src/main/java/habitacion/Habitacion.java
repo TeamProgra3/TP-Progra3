@@ -1,7 +1,7 @@
 package habitacion;
 
 
-import java.io.Serializable;
+
 
 /**
  * Clase que representa las habitaciones donde se alojan los pacientes<br>

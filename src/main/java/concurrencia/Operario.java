@@ -2,8 +2,8 @@ package concurrencia;
 
 import java.util.Random;
 /**
- * Esta clase simula ser el chofer de la ambulancia, el cual le hace peticiones al objeto compartido
- * de repararce<br>
+ * Esta clase simula ser el operario de la ambulancia, el cual le hace peticiones al objeto compartido
+ * de ir al taller<br>
  *
  *
  * @author Los Cafeteros

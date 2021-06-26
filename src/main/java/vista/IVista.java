@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 import concurrencia.Asociado;
 import persona.paciente.Paciente;
+/**
+ * Interface que determina el comportamineto de la ventana<br>
+ *
+ * @author Los Cafeteros
+ */
 
 interface IVista {
 

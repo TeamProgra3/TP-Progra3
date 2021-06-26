@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Esta clase contiene se encarga de transferir datos desde la clase ClinicaSingleton hacia el archivo y viceversa <br>
+ * Esta clase contiene se encarga de transformar los datos para poder serializar y para levantarlos de archivo <br>
  * <b> Patrón aplicado: </b> DTO
  *
  * @author Los Cafeteros

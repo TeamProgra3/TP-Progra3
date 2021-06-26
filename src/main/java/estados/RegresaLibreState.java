@@ -3,6 +3,14 @@ package estados;
 import concurrencia.Ambulancia;
 import controlador.Controlador;
 
+
+/**
+ * Esta clase se encarga de modelar el estado "RegresaLibreState" de la ambulancia<br>
+ * <b> Patrón aplicado: </b> State
+ *
+ * @author Los Cafeteros
+ */
+
 public class RegresaLibreState implements IState {
 	@Override
 	public void solicitaAtencionDomicilio() {

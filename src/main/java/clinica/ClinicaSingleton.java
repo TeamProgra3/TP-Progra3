@@ -15,7 +15,7 @@ import modulos.ModuloFacturacion;
 import persona.paciente.Paciente;
 
 /**
- * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones)<br>
+ * Esta clase contiene en diferentes colecciones informacion (médicos, pacientes atendidos, habitaciones, asociados)<br>
  * <b> Patrón aplicado: </b> Singleton
  *
  * @author Los Cafeteros
