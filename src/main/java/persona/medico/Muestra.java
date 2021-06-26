@@ -22,6 +22,7 @@ public class Muestra {
 	 * @param matricula - Matricula del persona.medico.
 	 * @param desde - Fecha desde donde se comienzan a mostrar las consultas
 	 * @param hasta - Fecha limite de muestra de consultas
+	 * @throws NoHayPacienteException - Cuando no existe paciente
 	 */
 	public void reporteActividadDiaria2(int matricula,GregorianCalendar desde,GregorianCalendar hasta) throws NoHayPacienteException {
 		int i=0;

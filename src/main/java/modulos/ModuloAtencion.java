@@ -7,7 +7,7 @@ import persona.paciente.Paciente;
 
 /**
  * Modulo que se encarga de atender paciente retirandolo del lugar de espera y
- * ubicandolo en atencion</br>
+ * ubicandolo en atencion<br>
  * 
  * @author Los cafeteros
  *
@@ -16,7 +16,7 @@ public class ModuloAtencion {
 	ClinicaSingleton clinica = ClinicaSingleton.getInstance();
 
 	/**
-	 * Ejecuta la funcion del modulo considerando excepciones</b>
+	 * Ejecuta la funcion del modulo considerando excepciones<br>
 	 * 
 	 * @throws EsperaVaciaException Excepcion lanzada cuando no hay persona.paciente para
 	 *                              atender

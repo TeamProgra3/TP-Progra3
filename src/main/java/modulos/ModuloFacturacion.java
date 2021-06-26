@@ -21,7 +21,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 /**
  * Clase dedicada a tomar los datos de un paciente de la clinica para generar su factura correspondiente<br>
  * Retira de la lista de atencion a los pacientes atendidos<br>
- * Para la segunda parte del Tp esta en vez de mostrar las facturas por consola crea un Pdf y los guarda en la carpeta facturas</br>
+ * Para la segunda parte del Tp esta en vez de mostrar las facturas por consola crea un Pdf y los guarda en la carpeta facturas<br>
  * @author Los cafeteros
  */
 public class ModuloFacturacion {

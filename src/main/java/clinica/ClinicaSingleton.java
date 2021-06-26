@@ -167,7 +167,7 @@ public class ClinicaSingleton {
      *
      * @param id - id de persona.paciente
      * @return Paciente
-     * @throws NoHayPacienteException
+     * @throws NoHayPacienteException -cuando no existe paciente
      */
     public Paciente buscaPacienteID(int id) throws NoHayPacienteException {
     	Iterator<Paciente> it = null;

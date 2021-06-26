@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Esta clase se encarga de definir los metodos y atributos de todas las personas en la clinica<br>
  *
- * @implements Serializable
+ *
  *
  * @author Los Cafeteros
  */
