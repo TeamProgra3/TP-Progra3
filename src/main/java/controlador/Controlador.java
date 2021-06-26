@@ -19,7 +19,7 @@ import vista.Ventana;
 
 /**
  * Esta clase es la encargada de relacionar el "modelo" con la "vista"<br>
- * <b> Patrón aplicado: </b> MVC
+ * <b> Patron aplicado: </b> MVC
  *
  * @author Los Cafeteros
  */

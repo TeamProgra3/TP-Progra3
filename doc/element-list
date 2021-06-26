@@ -1,7 +1,14 @@
 unnamed package
-PClinica
-PException
-PHabitaciones
-PModulos
-PPersona.PMedico
-PPersona.PPacientes
+clinica
+clinica.serializacion
+concurrencia
+controlador
+estados
+exception
+habitacion
+modulos
+persona
+persona.medico
+persona.paciente
+uml
+vista

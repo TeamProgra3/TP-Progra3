@@ -8,7 +8,7 @@ import exception.NoHayPacienteException;
 /**
  * La clase "Ambulancia" tiene la intencion de simular un recurso compartido
  * (una ambulancia) la cual recibe peticiones de varias personas (Hilos) <br>
- * <b> Patrón aplicado: </b> Singleton
+ * <b> Patron aplicado: </b> Singleton
  *
  * @author Los Cafeteros
  */
@@ -43,7 +43,7 @@ public class Ambulancia {
 	 *                 NULL<br>
 	 */
 	public synchronized void atenderPacienteDomicilio(Asociado asociado) {
-		Controlador.agregarSuceso(asociado.getNombre() + " solicita atención en su domicilio");
+		Controlador.agregarSuceso(asociado.getNombre() + " solicita atencion en su domicilio");
 		IState estadoAnterior = this.estado;
 		this.estado.solicitaAtencionDomicilio();
 		Controlador.actualizarEstadoAmbulancia(this.estado.estadoActual());

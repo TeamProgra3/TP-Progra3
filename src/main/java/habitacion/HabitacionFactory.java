@@ -5,7 +5,7 @@ import exception.FactoryHabitacionException;
 /**
  * 
  * Esta clase tiene la responsabilidad de generar habitaciones <br>
- * <b> Patrón aplicado:</b> Factory
+ * <b> Patron aplicado:</b> Factory
  * @author Los Cafeteros
  */
 public class HabitacionFactory {

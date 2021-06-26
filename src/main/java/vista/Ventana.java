@@ -33,7 +33,7 @@ import javax.swing.JProgressBar;
 
 /**
  * Esta clase es la encargada de mostrar informacion por pantalla como tambien de determinar la valides del formato de los datos que el usuario ingresa<br>
- * <b> Patrón aplicado: </b> MVC
+ * <b> Patron aplicado: </b> MVC
  *
  * @author Los Cafeteros
  */

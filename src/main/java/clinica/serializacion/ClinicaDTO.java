@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 /**
  * Esta clase contiene se encarga de transformar los datos para poder serializar y para levantarlos de archivo <br>
- * <b> Patrón aplicado: </b> DTO
+ * <b> Patron aplicado: </b> DTO
  *
  * @author Los Cafeteros
  */

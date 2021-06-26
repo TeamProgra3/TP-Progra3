@@ -5,7 +5,7 @@ import controlador.Controlador;
 
 /**
  * Esta clase se encarga de modelar el estado "EnTallerState" de la ambulancia<br>
- * <b> Patrón aplicado: </b> State
+ * <b> Patron aplicado: </b> State
  *
  * @author Los Cafeteros
  */

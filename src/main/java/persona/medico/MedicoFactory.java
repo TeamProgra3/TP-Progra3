@@ -4,9 +4,9 @@ import exception.FactoryMedicoException;
 
 /**
  * 
- * Clase que aplica el patrón Factory para la creación de nuevas instancias de
+ * Clase que aplica el patron Factory para la creacion de nuevas instancias de
  * médicos<br>
- * <b>Patrón aplicado:</b> Factory<br>
+ * <b>Patron aplicado:</b> Factory<br>
  * 
  * @author Los Cafeteros
  */
