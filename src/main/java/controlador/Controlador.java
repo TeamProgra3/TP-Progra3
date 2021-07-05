@@ -48,8 +48,8 @@ public class Controlador implements ActionListener, WindowListener {
 				String nombre = ventana.getNombre();
 				String apellido = ventana.getApellido();
 				String DNI = ventana.getDNI();
-				String telefono = ventana.getDNI();
-				String domicilio = ventana.getDNI();
+				String telefono = ventana.getTelefono();
+				String domicilio = ventana.getDomicilio();
 				String actividad = ventana.getActividad();
 				Integer cantConsultas;
 				try {
