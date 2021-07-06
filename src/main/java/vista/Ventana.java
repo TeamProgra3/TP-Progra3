@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
+import java.awt.event.ActionEvent;
 
 /**
  * Esta clase es la encargada de mostrar informacion por pantalla como tambien de determinar la valides del formato de los datos que el usuario ingresa<br>
@@ -218,6 +219,10 @@ public class Ventana extends JFrame implements IVista{
 		tfCantidadConsultas.setHorizontalAlignment(SwingConstants.CENTER);
 		tfCantidadConsultas.setFont(new Font("Verdana", Font.PLAIN, 12));
 		tfCantidadConsultas.setColumns(10);
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 
 		btnAgregar.setBackground(new Color(0, 128, 0));
 		btnAgregar.setFont(new Font("Verdana", Font.BOLD, 12));

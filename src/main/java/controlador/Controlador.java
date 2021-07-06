@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 
 public class Controlador implements ActionListener, WindowListener {
-	static Ventana ventana;
+	public static Ventana ventana;
 
 	public Controlador(Ventana v) {
 		ventana = v;

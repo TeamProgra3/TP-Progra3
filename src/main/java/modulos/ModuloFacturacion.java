@@ -72,7 +72,7 @@ public class ModuloFacturacion {
             PdfWriter.getInstance(document,new FileOutputStream(directorio.getAbsolutePath()+"\\"+paciente.getNombre()+"_"+paciente.getApellido()+".pdf"));
             document.open();
             
-            parrafo = new Paragraph("Clinica Los Cafeteros: \"Lo importante es lucrar\" \nFactura del persona.paciente " + paciente.getNombre()+" "+paciente.getApellido()+"\n \n");
+            parrafo = new Paragraph("Clinica Los Cafeteros: \"Lo importante es lucrar\" \nFactura del paciente " + paciente.getNombre()+" "+paciente.getApellido()+"\n \n");
             document.add(parrafo);
             
             PdfPTable tabla =new PdfPTable(4);
@@ -115,10 +115,12 @@ public class ModuloFacturacion {
                     tablaHabitaciones.addCell(String.valueOf(dias));
                     tablaHabitaciones.addCell(String.valueOf(aux));
                 }
+                
                 tablaHabitaciones.addCell("El costo total es de: ");
                 tablaHabitaciones.addCell(String.valueOf(total));
                 tablaHabitaciones.addCell("");
                 tablaHabitaciones.addCell("");
+            
 
                 document.add(tablaHabitaciones);
 
