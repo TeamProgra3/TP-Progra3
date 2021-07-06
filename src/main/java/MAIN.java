@@ -48,7 +48,7 @@ public class MAIN {
 
 		//test.muestra_datos_clinica();
 		
-		//test.muestraInformacion();
+		test.muestraInformacion();
 		Ventana vista=new Ventana();
 		controlador = new Controlador(vista);
 		
